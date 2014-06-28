@@ -15,10 +15,12 @@ $('#home').live('pageinit', function(e) {
 */
 $(document).on( "pageinit", "#login", function( event ) {
     //alert( "This page was just enhanced by jQuery Mobile!" );
-    $('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
-    $('.facebook_like').socialbutton('facebook_like',{button : "button_count"}).width(110);
+    //$('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
+    //$('.facebook_like').socialbutton('facebook_like',{button : "button_count"}).width(110);
+    var test = "";
 });
 
 $(document).on( "pageinit", "#home", function( event ) {
     //$('#howtopanel').panel('open');
+    var aaa = "";
 });
