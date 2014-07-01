@@ -4,13 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>W@tchMe! Login</title>
-<link rel="stylesheet" href="../../themes/watchme.min.css" />
-<link rel="stylesheet" href="../../themes/jquery.mobile.icons.min.css" />
+<!-- link rel="stylesheet" href="../../themes/watchme.min.css" / -->
+<?php echo Asset::css('themes/watchme.min.css'); ?>
+<!-- link rel="stylesheet" href="../../themes/jquery.mobile.icons.min.css" / -->
+<?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-<link rel="stylesheet" href="../../css/sp.css" />
+<!-- link rel="stylesheet" href="../../css/sp.css" / -->
+<?php echo Asset::css('sp.css'); ?>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
-<script type="text/javascript" src="../../js/spinit.js"></script>
+<!-- script type="text/javascript" src="../../js/spinit.js"></script -->
+<?php echo Asset::js('spinit.js'); ?>
 <!-- script type="text/javascript" src="js/"></script -->
 </head>
 <body>
@@ -23,6 +27,7 @@
     <div id="socialbuttons" class="clearfix">
         <div class="tweet"></div>
         <div class="facebook_like"></div>
+        <?php echo Fuel::VERSION; ?>
     </div>
   </div>
 
@@ -30,7 +35,8 @@
     <br>
     <br>
     <br>
-    <center><img id="logintitle"  src="../../images/title.jpg"></center>
+    <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
+    <center><?php echo Asset::img('title.jpg',array('id'=>'logintitle'));  ?></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a>
         <a href="#" data-icon="twittericon" data-role="button" id="fbloginbtn">Facebookでログイン</a>
