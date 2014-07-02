@@ -4,18 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>W@tchMe! Login</title>
-<!-- link rel="stylesheet" href="../../themes/watchme.min.css" / -->
 <?php echo Asset::css('themes/watchme.min.css'); ?>
-<!-- link rel="stylesheet" href="../../themes/jquery.mobile.icons.min.css" / -->
 <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-<!-- link rel="stylesheet" href="../../css/sp.css" / -->
 <?php echo Asset::css('sp.css'); ?>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
-<!-- script type="text/javascript" src="../../js/spinit.js"></script -->
 <?php echo Asset::js('spinit.js'); ?>
-<!-- script type="text/javascript" src="js/"></script -->
 </head>
 <body>
 <!--ページ領域-->
@@ -28,6 +23,9 @@
         <div class="tweet"></div>
         <div class="facebook_like"></div>
         <?php echo Fuel::VERSION; ?>
+        <?php echo $users[0]['bang'] ?>
+        <?php echo $users[0]['name'] ?>
+        <?php echo $users[0]['tosi'] ?>
     </div>
   </div>
 
