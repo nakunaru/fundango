@@ -26,6 +26,7 @@
         <?php echo $users[0]['bang'] ?>
         <?php echo $users[0]['name'] ?>
         <?php echo $users[0]['tosi'] ?>
+        <?php echo test ?>
     </div>
   </div>
 
