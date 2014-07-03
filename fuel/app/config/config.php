@@ -42,7 +42,7 @@ return array(
 	 *
 	 * Set this to 'index.php if you don't use URL rewriting
 	 */
-	'index_file' => true,
+	'index_file' => false,
 
 	// 'profiling'  => false,
 
