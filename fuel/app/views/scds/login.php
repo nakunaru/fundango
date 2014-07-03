@@ -27,6 +27,7 @@
         <?php echo $users[0]['name'] ?>
         <?php echo $users[0]['tosi'] ?>
         <?php echo "test" ?>
+        <?php echo "test2" ?>
     </div>
   </div>
 
