@@ -39,7 +39,7 @@
     <center><?php echo Asset::img('title.jpg',array('id'=>'logintitle'));  ?></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
-        <?php echo Html::anchor('twitterlogin', 'Twitterでログイン', array('data-icon'=>'twittericon','data-role'=>'button','id'=>'tweetloginbtn')); ?>
+        <?php echo Html::anchor('index.php/twitterlogin', 'Twitterでログイン', array('data-icon'=>'twittericon','data-role'=>'button','id'=>'tweetloginbtn')); ?>
         <a href="#" data-icon="twittericon" data-role="button" id="fbloginbtn">Facebookでログイン</a>
     </div>
     <br>
