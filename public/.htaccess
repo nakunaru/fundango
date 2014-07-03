@@ -4,11 +4,11 @@
 <IfModule mod_rewrite.c>
 
 	RewriteEngine on
-#	RewriteCond %{REQUEST_FILENAME} !-f
-#	RewriteCond %{REQUEST_FILENAME} !-d
-#	RewriteRule ^(.*)$ index.php?/$1 [L]
- RewriteCond %{HTTP:X-Requested-With}  !^XMLHttpRequest$
- RewriteCond %{THE_REQUEST}                ^[^/]*/index\.php [NC]
- RewriteRule ^index\.php(.*)$          $1 [R=301,NS,L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [L]
+# RewriteCond %{HTTP:X-Requested-With}  !^XMLHttpRequest$
+# RewriteCond %{THE_REQUEST}                ^[^/]*/index\.php [NC]
+# RewriteRule ^index\.php(.*)$          $1 [R=301,NS,L]
 
 </IfModule>
