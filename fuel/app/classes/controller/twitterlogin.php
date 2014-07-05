@@ -5,8 +5,8 @@ class Controller_Twitterlogin extends Controller
     public function action_index()
     {
         if(!Twitter::logged_in()) {
-            Twitter::set_callback(Uri::current());  // 戻り先 URL
-            //Twitter::set_callback("/");  // 戻り先 URL
+            //Twitter::set_callback(Uri::current());  // 戻り先 URL
+            Twitter::set_callback("http://www.karamage.com/~kara_mage/scds/index.php/twitterlogin");  // 戻り先 URL
             //Twitter::logout();
             Twitter::login();
         }
