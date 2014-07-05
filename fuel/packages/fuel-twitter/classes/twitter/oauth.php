@@ -15,16 +15,17 @@ class Twitter_Oauth {
 	
 	protected $connection = null;
 	protected $tokens = array();
-	protected $auth_url           = 'http://api.twitter.com/oauth/authenticate';
-	protected $request_token_url  = 'http://api.twitter.com/oauth/request_token';
-	protected $access_token_url   = 'http://api.twitter.com/oauth/access_token';
+	protected $auth_url           = 'https://api.twitter.com/oauth/authenticate';
+	protected $request_token_url  = 'https://api.twitter.com/oauth/request_token';
+	protected $access_token_url   = 'https://api.twitter.com/oauth/access_token';
 	protected $signature_method   = 'HMAC-SHA1';
 	protected $version            = '1.0';
-	protected $api_url            = 'http://api.twitter.com/1.1';
-	protected $search_url         = 'http://search.twitter.com/'; /* Ver1.0終了と同時に使えなくなる */
+	protected $api_url            = 'https://api.twitter.com/1.1';
+	protected $search_url         = 'https://search.twitter.com/'; /* Ver1.0終了と同時に使えなくなる */
 	protected $callback = null;
 	protected $errors = array();
 	protected $enable_debug = true;
+
 
 	/**
 	 * Loads in the Twitter config and sets everything up.
