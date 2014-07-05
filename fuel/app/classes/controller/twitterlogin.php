@@ -5,9 +5,9 @@ class Controller_Twitterlogin extends Controller
     public function action_index()
     {
         if(!Twitter::logged_in()) {
-            //Twitter::set_callback(Uri::current());  // 戻り先 URL
-            Twitter::set_callback("/");  // 戻り先 URL
-            Twitter::logout();
+            Twitter::set_callback(Uri::current());  // 戻り先 URL
+            //Twitter::set_callback("/");  // 戻り先 URL
+            //Twitter::logout();
             Twitter::login();
         }
         $data = array();
