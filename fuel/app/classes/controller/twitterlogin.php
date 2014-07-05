@@ -22,7 +22,7 @@ class Controller_Twitterlogin extends Controller
         $data = array();
         if ( ! Twitter::logged_in() )
         {
-            Twitter::set_callback(Uri::create('index.php/twitterlogin/callback'));
+            Twitter::set_callback(Uri::create('twitterlogin/callback'));
             Twitter::login();
         }
         else
