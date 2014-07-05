@@ -62,7 +62,7 @@ class Controller_Twitterlogin extends Controller
         $user->save();
         */
 
-        Session::set('user_id', $user->id);
+        //Session::set('user_id', $user->id);
 
         $data = array();
         //Response::redirect(Uri::create('/'));
