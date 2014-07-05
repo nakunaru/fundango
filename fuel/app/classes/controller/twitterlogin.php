@@ -65,6 +65,7 @@ class Controller_Twitterlogin extends Controller
         //Session::set('user_id', $user->id);
 
         $data = array();
+        $data['screen_name'] = $twitter_user->screen_name;
         //Response::redirect(Uri::create('/'));
         return Response::forge(View::forge('scds/home', $data));
     }

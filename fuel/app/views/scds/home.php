@@ -26,6 +26,7 @@
   </div>
   <div role="main" class="ui-content">
   タイムライン
+      <?php echo $screen_name ?>
   </div>
 
   <div data-role="footer" data-position="fixed">
