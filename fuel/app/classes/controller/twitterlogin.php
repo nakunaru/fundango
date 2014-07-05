@@ -19,21 +19,25 @@ class Controller_Twitterlogin extends Controller
     */
     public function action_login()
     {
+        $data = array();
         if ( ! Twitter::logged_in() )
         {
-            Twitter::set_callback(Uri::create('twitter/callback'));
+            Twitter::set_callback(Uri::create('index.php/twitterlogin/callback'));
             Twitter::login();
         }
         else
         {
-            Response::redirect(Uri::create('/'));
+            //Response::redirect(Uri::create('/'));
+            return Response::forge(View::forge('scds/home', $data));
         }
     }
 
     public function action_logout()
     {
         Session::destroy();
-        Response::redirect(Uri::create('/'));
+        //Response::redirect(Uri::create('/'));
+        $data = array();
+        return Response::forge(View::forge('scds/login', $data));
     }
 
     public function action_callback()
@@ -60,6 +64,8 @@ class Controller_Twitterlogin extends Controller
 
         Session::set('user_id', $user->id);
 
-        Response::redirect(Uri::create('/'));
+        $data = array();
+        //Response::redirect(Uri::create('/'));
+        return Response::forge(View::forge('scds/home', $data));
     }
 }
