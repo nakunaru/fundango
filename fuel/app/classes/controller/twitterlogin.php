@@ -27,7 +27,7 @@ class Controller_Twitterlogin extends Controller
         }
         else
         {
-            Response::redirect(Uri::create('scds/home'));
+            Response::redirect(Uri::create('home'));
             /*
             //$tokens = Twitter::get_tokens();
             $twitter_user = Twitter::get('account/verify_credentials');
@@ -74,7 +74,7 @@ class Controller_Twitterlogin extends Controller
         $data['user'] = $user;
         //$data['screen_name'] = $twitter_user->screen_name;
         //Response::redirect(Uri::create('/'));
-        Response::redirect(Uri::create('scds/home'));
+        Response::redirect(Uri::create('home'));
         //return Response::forge(View::forge('scds/home', $data));
     }
 }
