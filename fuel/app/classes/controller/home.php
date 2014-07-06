@@ -7,7 +7,11 @@ class Controller_Home extends Controller
       $data = array();
       $twitter_user = Twitter::get('account/verify_credentials');
       $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
+      $timeline = Twitter::timeline("home", array(
+          'count'  => 10
+      ));
       $data['user'] = $user;
+      $data['timeline'] = $timeline;
       return Response::forge(View::forge('scds/home', $data));
   }
 }

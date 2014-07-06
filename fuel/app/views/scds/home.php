@@ -28,13 +28,14 @@
   タイムライン
       <?php echo $user['screen_name'] ?><br>
       <?php echo $user['followers_count'] ?><br>
+      <?php echo $timeline[0]['text'] ?><br>
   </div>
 
   <div data-role="footer" data-position="fixed">
     <div data-role="navbar">
         <ul>
             <li><a href="#">ホーム</a></li>
-            <li><a href="#">Stock</a></li>
+            <li><a href="#">DANGO</a></li>
             <li><a href="#">メッセージ</a></li>
             <li><a href="#">通知</a></li>
             <li><a href="#">設定</a></li>
