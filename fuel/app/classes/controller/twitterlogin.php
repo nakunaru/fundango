@@ -64,7 +64,7 @@ class Controller_Twitterlogin extends Controller
         $user->oauth_token_secret = $tokens['oauth_token_secret'];
         $user->save();
 
-        Session::set('user_id', $user->id);
+        Session::set('user_id', $user->user_id);
 
         $data = array();
         $data['user'] = $user;
