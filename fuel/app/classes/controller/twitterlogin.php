@@ -30,7 +30,8 @@ class Controller_Twitterlogin extends Controller
             //Response::redirect(Uri::create('/'));
             $tokens = Twitter::get_tokens();
             $twitter_user = Twitter::get('account/verify_credentials');
-            $user = Model_User::find_by_screen_name($twitter_user->screen_name);
+            //$user = Model_User::find_by_screen_name($twitter_user->screen_name);
+            $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
             $data['user'] = $user;
             return Response::forge(View::forge('scds/home', $data));
         }
