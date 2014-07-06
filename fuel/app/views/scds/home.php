@@ -29,6 +29,8 @@
       <?php echo $user['screen_name'] ?><br>
       <?php echo $user['followers_count'] ?><br>
       <?php echo count($timeline) ?><br>
+      <?php echo count($timeline['data']) ?><br>
+      <?php echo $timeline['data'][0]->text ?><br>
   </div>
 
   <div data-role="footer" data-position="fixed">
