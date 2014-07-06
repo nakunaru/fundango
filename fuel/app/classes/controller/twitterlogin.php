@@ -56,9 +56,11 @@ class Controller_Twitterlogin extends Controller
         // so that if they update their profile, we get that update.
         //$user = Model_User::find_by_screen_name($twitter_user->screen_name);
         $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
+        $is_new_user = false;
         if ( ! $user)
         {
             $user = new Model_User();
+            $is_new_user = true;
         }
         $user->screen_name = $twitter_user->screen_name;
         $user->name = $twitter_user->name;
@@ -66,6 +68,12 @@ class Controller_Twitterlogin extends Controller
         $user->avator = $twitter_user->profile_image_url;
         $user->oauth_token = $tokens['oauth_token'];
         $user->oauth_token_secret = $tokens['oauth_token_secret'];
+        $user->followers_count = $twitter_user->followers_count;
+        if ($is_new_user) {
+            $user->social_credit = $user->followers_count;
+            $user->deposit_credit = 0;
+            $user->deposited_credit = 0;
+        }
         $user->save();
 
         Session::set('user_id', $user->user_id);

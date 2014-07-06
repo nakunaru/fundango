@@ -26,7 +26,8 @@
   </div>
   <div role="main" class="ui-content">
   タイムライン
-      <?php echo $user['screen_name'] ?>
+      <?php echo $user['screen_name'] ?><br>
+      <?php echo $user['followers_count'] ?><br>
   </div>
 
   <div data-role="footer" data-position="fixed">
