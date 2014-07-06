@@ -28,7 +28,7 @@
   タイムライン
       <?php echo $user['screen_name'] ?><br>
       <?php echo $user['followers_count'] ?><br>
-      <?php echo count[$timeline] ?><br>
+      <?php echo count($timeline) ?><br>
   </div>
 
   <div data-role="footer" data-position="fixed">
