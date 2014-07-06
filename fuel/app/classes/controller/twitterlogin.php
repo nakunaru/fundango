@@ -59,7 +59,7 @@ class Controller_Twitterlogin extends Controller
         $user->screen_name = $twitter_user->screen_name;
         $user->name = $twitter_user->name;
         $user->description = $twitter_user->description;
-        $user->avatar = $twitter_user->profile_image_url;
+        $user->avator = $twitter_user->profile_image_url;
         $user->oauth_token = $tokens['oauth_token'];
         $user->oauth_token_secret = $tokens['oauth_token_secret'];
         $user->save();
