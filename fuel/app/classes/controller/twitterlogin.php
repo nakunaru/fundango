@@ -27,13 +27,15 @@ class Controller_Twitterlogin extends Controller
         }
         else
         {
-            //Response::redirect(Uri::create('/'));
-            $tokens = Twitter::get_tokens();
+            Response::redirect(Uri::create('scds/home'));
+            /*
+            //$tokens = Twitter::get_tokens();
             $twitter_user = Twitter::get('account/verify_credentials');
             //$user = Model_User::find_by_screen_name($twitter_user->screen_name);
             $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
             $data['user'] = $user;
             return Response::forge(View::forge('scds/home', $data));
+            */
         }
     }
 
@@ -72,6 +74,7 @@ class Controller_Twitterlogin extends Controller
         $data['user'] = $user;
         //$data['screen_name'] = $twitter_user->screen_name;
         //Response::redirect(Uri::create('/'));
-        return Response::forge(View::forge('scds/home', $data));
+        Response::redirect(Uri::create('scds/home'));
+        //return Response::forge(View::forge('scds/home', $data));
     }
 }
