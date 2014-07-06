@@ -181,6 +181,7 @@ return array(
 			'Fuel\\Core\\View',
 			'Fuel\\Core\\ViewModel',
 			'Closure',
+            'Twitter\\Twitter_Oauth_Response'
 		),
 	),
 
