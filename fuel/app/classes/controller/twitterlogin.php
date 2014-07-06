@@ -28,6 +28,10 @@ class Controller_Twitterlogin extends Controller
         else
         {
             //Response::redirect(Uri::create('/'));
+            $tokens = Twitter::get_tokens();
+            $twitter_user = Twitter::get('account/verify_credentials');
+            $user = Model_User::find_by_screen_name($twitter_user->screen_name);
+            $data['user'] = $user;
             return Response::forge(View::forge('scds/home', $data));
         }
     }
@@ -47,7 +51,6 @@ class Controller_Twitterlogin extends Controller
 
         // Update or create the user.  We update every time a user logs in
         // so that if they update their profile, we get that update.
-        /*
         $user = Model_User::find_by_screen_name($twitter_user->screen_name);
         if ( ! $user)
         {
@@ -60,12 +63,12 @@ class Controller_Twitterlogin extends Controller
         $user->oauth_token = $tokens['oauth_token'];
         $user->oauth_token_secret = $tokens['oauth_token_secret'];
         $user->save();
-        */
 
-        //Session::set('user_id', $user->id);
+        Session::set('user_id', $user->id);
 
         $data = array();
-        $data['screen_name'] = $twitter_user->screen_name;
+        $data['user'] = $user;
+        //$data['screen_name'] = $twitter_user->screen_name;
         //Response::redirect(Uri::create('/'));
         return Response::forge(View::forge('scds/home', $data));
     }
