@@ -51,7 +51,8 @@ class Controller_Twitterlogin extends Controller
 
         // Update or create the user.  We update every time a user logs in
         // so that if they update their profile, we get that update.
-        $user = Model_User::find_by_screen_name($twitter_user->screen_name);
+        //$user = Model_User::find_by_screen_name($twitter_user->screen_name);
+        $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
         if ( ! $user)
         {
             $user = new Model_User();
