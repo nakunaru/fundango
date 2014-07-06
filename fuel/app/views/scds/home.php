@@ -18,7 +18,9 @@
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed">
-    <h1>ホーム</h1>
+    <h1>
+        <?php echo $user['screen_name'] ?> さんのホーム
+    </h1>
   </div>
   <div data-role="panel" id="howtopanel" data-position="left" data-display="overlay">
     <!-- panel content goes here -->
@@ -26,11 +28,18 @@
   </div>
   <div role="main" class="ui-content">
   タイムライン
-      <?php echo $user['screen_name'] ?><br>
       <?php echo $user['followers_count'] ?><br>
       <?php echo count($timeline) ?><br>
       <?php echo $timeline[0]->text ?><br>
       <!-- ?php echo count($timeline['__resp']) ?><br -->
+      <ul data-role="listview">
+          <?php
+          foreach ($timeline as $data)
+          {
+              echo '<li>'.$data->text.'</li>';
+          }
+          ?>
+      </ul>
   </div>
 
   <div data-role="footer" data-position="fixed">
