@@ -10,6 +10,8 @@ class Controller_Home extends Controller
       $timeline = Twitter::get("statuses/home_timeline");
       $data['user'] = $user;
       $data['timeline'] = $timeline;
+      $output = print_r($timeline,true);
+      Log::debug('timeline = ' . $output);
       return Response::forge(View::forge('scds/home', $data));
   }
 }
