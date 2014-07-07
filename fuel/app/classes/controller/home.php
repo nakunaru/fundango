@@ -34,7 +34,7 @@ class Controller_Home extends Controller
                 $idstr = $idstr . ',' . $id;
             }
         }
-        $followers = Twitter::get("users/lookup",array('user_id'=>idstr));
+        $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         $data['followers'] = $followers->__resp->data;
         //$output = print_r($ids,true);
         //Log::warning('ids = ' . $output);
