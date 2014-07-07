@@ -43,7 +43,6 @@
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
         <ul data-role="listview">
-            <li>test</li>
         </ul>
     </div>
     <div data-role="footer" data-position="fixed">
