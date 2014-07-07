@@ -18,9 +18,12 @@
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed">
-    <h1>
-        <?php echo $user['screen_name'] ?> さんのホーム
-    </h1>
+      <a href="#" data-icon="gear" id="settingopenbtn"></a>
+      <h1>
+          <?php echo '<img src="' . $user['avator'] . '">' ?>
+          <?php echo $user['screen_name'] ?> さんのホーム
+      </h1>
+      <a href="#" data-icon="friend" id="friendopenbtn"></a>
   </div>
   <div data-role="panel" id="howtopanel" data-position="left" data-display="overlay">
     <!-- panel content goes here -->
