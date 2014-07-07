@@ -22,12 +22,22 @@ class Controller_Home extends Controller
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
         $timeline = Twitter::get("statuses/home_timeline");
-        $ids = Twitter::get("friends/ids");
+        $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
         $data['timeline'] = $timeline->__resp->data;
-        $data['ids'] = $ids;
-        $output = print_r($ids,true);
-        Log::warning('ids = ' . $output);
+        $data['ids'] = $ids->__resp->data;
+        $idstr = '';
+        foreach ($ids as $id){
+            if ($idstr == '') {
+                $idstr = $id;
+            } else {
+                $idstr = $idstr . ',' . $id;
+            }
+        }
+        $followers = Twitter::get("users/lookup",array('user_id'=>idstr));
+        $data['followers'] = $followers->__resp->data;
+        //$output = print_r($ids,true);
+        //Log::warning('ids = ' . $output);
         return Response::forge(View::forge('scds/home', $data));
     }
 }
