@@ -16,20 +16,20 @@
 <!--ページ領域-->
 <div data-role="page" id="home"  data-title="Home">
 
-  <!--ヘッダー領域-->
-  <div data-role="header" data-position="fixed">
-      <a href="#" data-icon="gear" id="settingopenbtn">アカウント</a>
-      <h1>
+<!--ヘッダー領域-->
+    <div data-role="header" data-position="fixed">
+        <a href="#" data-icon="gear" id="settingopenbtn">アカウント</a>
+        <h1>
           <?php echo '<img src="' . $user['avator'] . '">' ?>
           <?php echo $user['screen_name'] ?> さんのホーム
-      </h1>
-      <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
-  </div>
-  <div data-role="panel" id="howtopanel" data-position="left" data-display="overlay">
-    <!-- panel content goes here -->
-    How to
-  </div>
-  <div role="main" class="ui-content">
+        </h1>
+        <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
+    </div>
+    <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
+        <!-- panel content goes here -->
+        <a href="#" data-rel="close"></a>
+    </div>
+    <div role="main" class="ui-content">
       <ul data-role="listview">
           <?php
           foreach ($timeline as $data)
@@ -38,19 +38,23 @@
           }
           ?>
       </ul>
-  </div>
-
-  <div data-role="footer" data-position="fixed">
-    <div data-role="navbar">
-        <ul>
-            <li><a href="#" data-icon="home">ホーム</a></li>
-            <li><a href="#" data-icon="dango">団子</a></li>
-            <li><a href="#" data-icon="message">メッセージ</a></li>
-            <li><a href="#" data-icon="notify">通知</a></li>
-            <li><a href="#" data-icon="setting">設定</a></li>
-        </ul>
     </div>
-  </div>
+
+    <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
+        <!-- panel content goes here -->
+        <a href="#" data-rel="close"></a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="home">ホーム</a></li>
+                <li><a href="#" data-icon="dango">団子</a></li>
+                <li><a href="#" data-icon="message">メッセージ</a></li>
+                <li><a href="#" data-icon="notify">通知</a></li>
+                <li><a href="#" data-icon="setting">設定</a></li>
+            </ul>
+        </div>
+    </div>
 
 </div>
 </body>

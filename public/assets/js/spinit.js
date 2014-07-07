@@ -23,6 +23,9 @@ $(document).on( "pageinit", "#login", function( event ) {
 $(document).on( "pageinit", "#home", function( event ) {
     var aaa = "";
     $( "#settingopenbtn" ).bind( "click", function(event, ui) {
-        $('#howtopanel').panel('open');
+        $('#settingpanel').panel('open');
+    });
+    $( "#friendopenbtn" ).bind( "click", function(event, ui) {
+        $('#friendpanel').panel('open');
     });
 });
