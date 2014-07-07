@@ -18,12 +18,12 @@
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed">
-      <a href="#" data-icon="gear" id="settingopenbtn"></a>
+      <a href="#" data-icon="gear" id="settingopenbtn">アカウント</a>
       <h1>
           <?php echo '<img src="' . $user['avator'] . '">' ?>
           <?php echo $user['screen_name'] ?> さんのホーム
       </h1>
-      <a href="#" data-icon="friend" id="friendopenbtn"></a>
+      <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
   </div>
   <div data-role="panel" id="howtopanel" data-position="left" data-display="overlay">
     <!-- panel content goes here -->
@@ -43,11 +43,11 @@
   <div data-role="footer" data-position="fixed">
     <div data-role="navbar">
         <ul>
-            <li><a href="#">ホーム</a></li>
-            <li><a href="#">団子</a></li>
-            <li><a href="#">メッセージ</a></li>
-            <li><a href="#">通知</a></li>
-            <li><a href="#">設定</a></li>
+            <li><a href="#" data-icon="home">ホーム</a></li>
+            <li><a href="#" data-icon="dango">団子</a></li>
+            <li><a href="#" data-icon="message">メッセージ</a></li>
+            <li><a href="#" data-icon="notify">通知</a></li>
+            <li><a href="#" data-icon="setting">設定</a></li>
         </ul>
     </div>
   </div>
