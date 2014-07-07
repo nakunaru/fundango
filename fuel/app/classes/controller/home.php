@@ -27,7 +27,7 @@ class Controller_Home extends Controller
         $data['timeline'] = $timeline->__resp->data;
         $data['ids'] = $ids;
         $output = print_r($ids,true);
-        Log::warn('ids = ' . $output);
+        Log::warnning('ids = ' . $output);
         return Response::forge(View::forge('scds/home', $data));
     }
 }
