@@ -28,7 +28,7 @@ class Controller_Home extends Controller
         $data['ids'] = $ids->__resp->data;
         $idstr = '';
         $count = 0;
-        foreach ($ids as $id){
+        foreach ($data['ids'] as $id){
             if ($count == 100) {
                break;
             }
