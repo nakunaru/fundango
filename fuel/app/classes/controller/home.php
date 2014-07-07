@@ -39,11 +39,11 @@ class Controller_Home extends Controller
             }
             $count++;
         }
+        Log::warning('idstr = ' . $idstr);
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         $data['followers'] = $followers->__resp->data;
         //$output = print_r($ids,true);
         //Log::warning('ids = ' . $output);
-        Log::warning('idstr = ' . $idstr);
         return Response::forge(View::forge('scds/home', $data));
     }
 }
