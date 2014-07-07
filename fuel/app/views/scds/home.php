@@ -42,7 +42,6 @@
 
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
-        <a href="#" data-rel="close">閉じる</a>
         <ul data-role="listview">
             <li>test</li>
         </ul>
