@@ -27,17 +27,23 @@ class Controller_Home extends Controller
         $data['timeline'] = $timeline->__resp->data;
         $data['ids'] = $ids->__resp->data;
         $idstr = '';
+        $count = 0;
         foreach ($ids as $id){
+            if ($count == 100) {
+               break;
+            }
             if ($idstr == '') {
                 $idstr = $id;
             } else {
                 $idstr = $idstr . ',' . $id;
             }
+            $count++;
         }
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         $data['followers'] = $followers->__resp->data;
         //$output = print_r($ids,true);
         //Log::warning('ids = ' . $output);
+        Log::warning('idstr = ' . $idstr);
         return Response::forge(View::forge('scds/home', $data));
     }
 }
