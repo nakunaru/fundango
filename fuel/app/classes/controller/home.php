@@ -25,7 +25,7 @@ class Controller_Home extends Controller
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
         $data['timeline'] = $timeline->__resp->data;
-        $data['ids'] = $ids->__resp->data;
+        $data['ids'] = $ids->__resp->data->ids;
         $idstr = '';
         $count = 0;
         foreach ($data['ids'] as $id){
@@ -42,8 +42,8 @@ class Controller_Home extends Controller
         Log::warning('idstr = ' . $idstr);
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         $data['followers'] = $followers->__resp->data;
-        //$output = print_r($ids,true);
-        //Log::warning('ids = ' . $output);
+        $output = print_r($followers,true);
+        Log::warning('followers = ' . $output);
         return Response::forge(View::forge('scds/home', $data));
     }
 }
