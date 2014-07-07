@@ -27,7 +27,7 @@
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
         <!-- panel content goes here -->
-        <a href="#" data-rel="close"></a>
+        <a href="#" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
       <ul data-role="listview">
@@ -42,7 +42,10 @@
 
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
-        <a href="#" data-rel="close"></a>
+        <a href="#" data-rel="close">閉じる</a>
+        <ul data-role="listview">
+            <li>test</li>
+        </ul>
     </div>
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar">
