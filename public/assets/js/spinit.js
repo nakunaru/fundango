@@ -21,6 +21,8 @@ $(document).on( "pageinit", "#login", function( event ) {
 });
 
 $(document).on( "pageinit", "#home", function( event ) {
-    //$('#howtopanel').panel('open');
     var aaa = "";
+    $( "#settingopenbtn" ).bind( "click", function(event, ui) {
+        $('#howtopanel').panel('open');
+    });
 });
