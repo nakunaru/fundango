@@ -27,11 +27,6 @@
     How to
   </div>
   <div role="main" class="ui-content">
-  タイムライン
-      <?php echo $user['followers_count'] ?><br>
-      <?php echo count($timeline) ?><br>
-      <?php echo $timeline[0]->text ?><br>
-      <!-- ?php echo count($timeline['__resp']) ?><br -->
       <ul data-role="listview">
           <?php
           foreach ($timeline as $data)
@@ -46,7 +41,7 @@
     <div data-role="navbar">
         <ul>
             <li><a href="#">ホーム</a></li>
-            <li><a href="#">DANGO</a></li>
+            <li><a href="#">団子</a></li>
             <li><a href="#">メッセージ</a></li>
             <li><a href="#">通知</a></li>
             <li><a href="#">設定</a></li>
