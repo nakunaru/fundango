@@ -18,7 +18,7 @@
 
 <!--ヘッダー領域-->
     <div data-role="header" data-position="fixed">
-        <a href="#" data-icon="gear" id="settingopenbtn">アカウント</a>
+        <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
         <h1>
           <?php echo '<img src="' . $user['avator'] . '">' ?>
           <?php echo $user['screen_name'] ?> さんのホーム
@@ -52,7 +52,6 @@
                 <li><a href="#" data-icon="dango">団子</a></li>
                 <li><a href="#" data-icon="message">メッセージ</a></li>
                 <li><a href="#" data-icon="notify">通知</a></li>
-                <li><a href="#" data-icon="setting">設定</a></li>
             </ul>
         </div>
     </div>
