@@ -50,7 +50,7 @@
             {
                 //echo '<li><a href=""><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
                 $str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
-                echo '<li>' . Html::anchor('deposit/add', $str) . '</li>';
+                echo '<li>' . Html::anchor('deposit/add', $str, array('data-rel'=>'dialog')) . '</li>';
             }
             ?>
         </ul>
