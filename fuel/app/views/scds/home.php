@@ -32,6 +32,7 @@
     <div role="main" class="ui-content">
       <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
           <?php
+          echo '<li data-role="list-divider">タイムライン</li>';
           foreach ($timeline as $data)
           {
               echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><h2>' . $data->text . '</h2>' . '<p>' . $data->user->name . ' @' . $data->user->screen_name .'</p></a></li>';
@@ -47,7 +48,9 @@
             echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
             {
-                echo '<li><a href=""><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
+                //echo '<li><a href=""><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
+                $str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
+                echo '<li>' . Html::anchor('deposit/add', $str) . '</li>';
             }
             ?>
         </ul>
