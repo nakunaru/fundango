@@ -30,7 +30,7 @@
         <a href="#" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
-      <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search timeline...">
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
           <?php
           foreach ($timeline as $data)
           {
@@ -42,7 +42,7 @@
 
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
-        <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search friends...">
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends...">
             <?php
             echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
