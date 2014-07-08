@@ -34,7 +34,7 @@
           <?php
           foreach ($timeline as $data)
           {
-              echo '<li><a href="#">'.$data->text.'<img src="' . $data->user->profile_image_url . '">' . $data->user->name . '</a></li>';
+              echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><h2>' . $data->text . '</h2>' . '<p>' . $data->user->name . '</p></a></li>';
           }
           ?>
       </ul>
@@ -44,7 +44,7 @@
         <!-- panel content goes here -->
         <ul data-role="listview">
             <?php
-            echo '<li>友達</li>';
+            echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
             {
                 echo '<li><a href="">' . $data->name . '   ' . $data->screen_name . '</a></li>';
