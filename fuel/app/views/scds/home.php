@@ -43,6 +43,12 @@
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
         <ul data-role="listview">
+            <?php
+            foreach ($followers as $data)
+            {
+                echo '<li>'.$data->name . $data->screen_name . '</li>';
+            }
+            ?>
         </ul>
     </div>
     <div data-role="footer" data-position="fixed">
