@@ -34,7 +34,7 @@
           <?php
           foreach ($timeline as $data)
           {
-              echo '<li>'.$data->text.'<img src="' . $data->user->profile_image_url . '">' . $data->user->name . '</a></li>';
+              echo '<li><a href="#">'.$data->text.'<img src="' . $data->user->profile_image_url . '">' . $data->user->name . '</a></li>';
           }
           ?>
       </ul>
@@ -46,7 +46,7 @@
             <?php
             foreach ($followers as $data)
             {
-                echo '<li>'.$data->name . $data->screen_name . '</li>';
+                echo '<li><a href=""'>.$data->name . '   ' . $data->screen_name . '</a></li>';
             }
             ?>
         </ul>
