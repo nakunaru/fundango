@@ -44,9 +44,10 @@
         <!-- panel content goes here -->
         <ul data-role="listview">
             <?php
+            echo '<li>友達</li>'
             foreach ($followers as $data)
             {
-                echo '<li><a href=""'>.$data->name . '   ' . $data->screen_name . '</a></li>';
+                echo '<li><a href="">' . $data->name . '   ' . $data->screen_name . '</a></li>';
             }
             ?>
         </ul>
