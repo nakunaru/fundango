@@ -34,7 +34,7 @@
           <?php
           foreach ($timeline as $data)
           {
-              echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><h2>' . $data->text . '</h2>' . '<p>' . $data->user->name . '</p></a></li>';
+              echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><h2>' . $data->text . '</h2>' . '<p>' . $data->user->name . ' @' . $data->user->screen_name .'</p></a></li>';
           }
           ?>
       </ul>
