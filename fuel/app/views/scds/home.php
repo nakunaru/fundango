@@ -70,7 +70,7 @@
         <h2>団子を友達にデポります</h2>
     </div>
     <div role="main" class="ui-content">
-        <div screen_name=""></div>
+        <div id="depositaddscreenname" screen_name=""></div>
         <div class="ui-field-contain">
             <label for="slider-fill">デポジット数:</label>
             <input type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="100" data-highlight="true">
