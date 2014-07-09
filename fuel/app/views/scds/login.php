@@ -36,7 +36,7 @@
     <br>
     <br>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
-    <center><?php echo Asset::img('title.jpg',array('id'=>'logintitle'));  ?></center>
+    <center><?php echo Asset::img('fundango_logo.jpg',array('id'=>'logintitle'));  ?></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
         <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array('data-icon'=>'twittericon','data-role'=>'button','id'=>'tweetloginbtn', 'data-ajax'=>'false')); ?>
