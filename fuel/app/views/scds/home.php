@@ -48,7 +48,7 @@
             echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
             {
-                echo '<li class="friendli" screen_name="' . $data->screen_name . '"><a href="#depositAddDialog"><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
+                echo '<li class="friendli" screen_name="' . $data->screen_name . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
                 //$str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
                 //echo '<li>' . Html::anchor('deposit/add', $str, array('data-rel'=>'dialog')) . '</li>';
             }
