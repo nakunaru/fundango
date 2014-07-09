@@ -59,19 +59,27 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#" data-icon="home">ホーム</a></li>
-                <li><a href="#" data-icon="dango">団子</a></li>
-                <li><a href="#" data-icon="message">メッセージ</a></li>
-                <li><a href="#" data-icon="notify">通知</a></li>
+                <li><a href="#" data-icon="deposit">デポジット</a></li>
+                <li><a href="#" data-icon="notify">お知らせ</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div data-role="page" id="depositAddDialog">
     <div data-role="header">
-        <h2>Dialog</h2>
+        <h2>団子を友達にデポります</h2>
     </div>
     <div role="main" class="ui-content">
-        <p>I am a dialog</p>
+        <div screen_name=""></div>
+        <div class="ui-field-contain">
+            <label for="slider-fill">デポジット数:</label>
+            <input type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="100" data-highlight="true">
+        </div>
+        <label for="textarea-a">メッセージ:</label>
+        <textarea name="textarea" id="textarea-a">
+            I'm a basic textarea. If this is pre-populated with content, the height will be automatically adjusted to fit without needing to scroll. That is a pretty handy usability feature.
+        </textarea>
+        <?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ?>
     </div>
 </div>
 </body>
