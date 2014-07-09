@@ -38,9 +38,11 @@
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><?php echo Asset::img('fundango_logo.jpg',array('id'=>'logintitle'));  ?></center>
     <div id="sociallogincontain" data-role="fieldcontain">
-        <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
-        <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array('data-icon'=>'twittericon','data-role'=>'button','id'=>'tweetloginbtn', 'data-ajax'=>'false')); ?>
-        <a href="#" data-icon="twittericon" data-role="button" id="fbloginbtn">Facebookでログイン</a>
+        <div data-role="fieldcontain">
+            <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
+            <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array('data-icon'=>'twittericon','data-role'=>'button','id'=>'tweetloginbtn', 'data-ajax'=>'false')); ?>
+            <a href="#" data-icon="twittericon" data-role="button" id="fbloginbtn">Facebookでログイン</a>
+        </div>
     </div>
     <br>
     <br>
@@ -48,7 +50,7 @@
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
-    <h3>Copyright 2014, propra.co</h3>
+    <h3>Copyright 2014, Masaaki Kakimoto</h3>
   </div>
 
 </div>
