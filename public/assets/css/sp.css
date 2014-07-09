@@ -4,9 +4,17 @@
     opacity: 0.9;
 }
 
+.ui-listview {
+    opacity:0.95;
+}
+
+.ui-header-fixed, .ui-footer-fixed {
+    opacity: 0.9;
+}
+
 #home.ui-page-active {
     /* 画像ファイルの指定 */
-    background-image: url(../img/10.jpg);
+    background-image: url(../img/16.jpg);
 
     /* 画像を常に天地左右の中央に配置 */
     background-position: center center;
