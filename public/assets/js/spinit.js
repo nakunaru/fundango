@@ -28,4 +28,8 @@ $(document).on( "pageinit", "#home", function( event ) {
     $( "#friendopenbtn" ).bind( "click", function(event, ui) {
         $('#friendpanel').panel('open');
     });
+
+    $('.friendli').click(function(){
+        $( "#dialogPage" ).dialog({ overlayTheme: "b" });
+    });
 });
