@@ -29,7 +29,9 @@ $(document).on( "pageinit", "#home", function( event ) {
         $('#friendpanel').panel('open');
     });
 
+    /*
     $('.friendli').click(function(){
         $( "#dialogPage" ).dialog({ overlayTheme: "b" });
     });
+    */
 });
