@@ -35,7 +35,7 @@
           echo '<li data-role="list-divider">タイムライン</li>';
           foreach ($timeline as $data)
           {
-              echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><h2>' . $data->text . '</h2>' . '<p>' . $data->user->name . ' @' . $data->user->screen_name .'</p></a></li>';
+              echo '<li><a href="#">'.'<img src="' . $data->user->profile_image_url . '"><div style="text-overflow:ellipsis; overflow:hidden; ">' . $data->text . '</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">' . $data->user->name . ' @' . $data->user->screen_name .'</p></a></li>';
           }
           ?>
       </ul>
@@ -48,7 +48,7 @@
             echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
             {
-                echo '<li class="friendli" screen_name="' . $data->screen_name . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p></a></li>';
+                echo '<li class="friendli" screen_name="' . $data->screen_name . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><div style="text-overflow:ellipsis; overflow:hidden; ">' . $data->name . '</div><p style="text-overflow:ellipsis; overflow:hidden; ">' . $data->screen_name . '</p></a></li>';
                 //$str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
                 //echo '<li>' . Html::anchor('deposit/add', $str, array('data-rel'=>'dialog')) . '</li>';
             }
