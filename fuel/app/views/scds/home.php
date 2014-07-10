@@ -22,8 +22,8 @@
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
         <h1>
-          <?php echo '<img src="' . $user['avator'] . '" id="homemyicon">' ?>
-          <?php echo $user['screen_name'] ?> さんのホーム
+          <?php echo '<img src="' . $user['avator'] . '">' ?>
+          <?php echo '<div id="homemyicon">' .$user['screen_name'] . '</div>' ?> さんのホーム
         </h1>
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
