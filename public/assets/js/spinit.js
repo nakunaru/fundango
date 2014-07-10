@@ -34,5 +34,5 @@ $(document).on( "pageinit", "#home", function( event ) {
         var screen_name = $(this).attr('screen_name');
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
     });
-    $('#homemyicon').badger('100d');
+    //$('#homemyicon').badger('100d');
 });

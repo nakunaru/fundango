@@ -8,6 +8,20 @@
     /*opacity:0.95;*/
 }
 
+.badge {
+    background: none repeat scroll 0 0 #ff33aa;
+    border-radius: 12px;
+    color: white;
+    font: bold 15px/13px Helvetica,Verdana,Tahoma;
+    height: 15px;
+    left: 27px;
+    padding-top: 2px;
+    position: relative;
+    text-align: center;
+    top: -1px;
+    width: 17px;
+}
+
 .ui-header-fixed, .ui-footer-fixed {
     opacity: 0.9;
 
