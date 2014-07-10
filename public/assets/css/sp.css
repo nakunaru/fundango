@@ -22,7 +22,7 @@
    /*background-attachment:fixed;             /* 背景画像を固定する */
 
   /* 画像ファイルの指定 */
-  background-image: url(../img/fundango_bg.jpg);
+  background-image: url(../img/fundango_bg_mini.jpg);
   
   /* 画像を常に天地左右の中央に配置 */
   background-position: center center;
