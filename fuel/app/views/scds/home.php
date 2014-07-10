@@ -20,8 +20,8 @@
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
         <h1>
-          <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ?>
-          <?php echo $user['screen_name'] ?> さんのホーム
+          <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
+          <p><?php echo $user['screen_name'] ?> さんのホーム</p>
         </h1>
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
