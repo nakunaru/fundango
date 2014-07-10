@@ -17,12 +17,10 @@
 <div data-role="page" id="home"  data-title="Home">
 
 <!--ヘッダー領域-->
+    <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
-        <h5>
-          <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
-          <p style="text-overflow:ellipsis; overflow:hidden; white-space: normal;"><?php echo $user['screen_name'] ?> さんのホーム</p>
-        </h5>
+        <h1><?php echo $user['screen_name'] ?> さんのホーム</h1>
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
