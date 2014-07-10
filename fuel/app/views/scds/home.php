@@ -24,8 +24,11 @@
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
+        <div data-role="header">
+            <?php echo '<div><img src="' . $user['avator'] . '"></img></div>' ?>
+        </div>
         <!-- panel content goes here -->
-        <a href="#" data-rel="close">閉じる</a>
+        <a href="#" data-role="button" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
       <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
@@ -38,7 +41,6 @@
           ?>
       </ul>
     </div>
-
     <div data-role="panel" id="friendpanel" data-position="right" data-display="overlay">
         <!-- panel content goes here -->
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends...">
@@ -71,11 +73,11 @@
         <div id="depositaddscreenname" screen_name=""></div>
         <div class="ui-field-contain">
             <label for="slider-fill">デポジット数:</label>
-            <input type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="100" data-highlight="true">
+            <input type="range" name="slider-fill" id="slider-fill" value="1" min="0" max="100" data-highlight="true">
         </div>
         <label for="textarea-a">メッセージ:</label>
         <textarea name="textarea" id="textarea-a">
-            I'm a basic textarea. If this is pre-populated with content, the height will be automatically adjusted to fit without needing to scroll. That is a pretty handy usability feature.
+I'm a basic textarea. If this is pre-populated with content, the height will be automatically adjusted to fit without needing to scroll. That is a pretty handy usability feature.
         </textarea>
         <?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ?>
     </div>
