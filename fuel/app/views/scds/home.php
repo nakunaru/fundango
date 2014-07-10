@@ -7,9 +7,11 @@
     <?php echo Asset::css('themes/watchme.min.css'); ?>
     <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+    <?php echo Asset::css('badger.min.css'); ?>
     <?php echo Asset::css('sp.css'); ?>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <?php echo Asset::js('badger.min.js'); ?>
     <?php echo Asset::js('spinit.js'); ?>
 </head>
 <body>
@@ -20,7 +22,7 @@
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
         <h1>
-          <?php echo '<img src="' . $user['avator'] . '">' ?>
+          <?php echo '<div id="homemyicon"><img src="' . $user['avator'] . '"></div>' ?>
           <?php echo $user['screen_name'] ?> さんのホーム
         </h1>
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
