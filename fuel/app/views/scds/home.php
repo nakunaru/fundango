@@ -20,13 +20,13 @@
     <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
-        <h1><?php echo $user['screen_name'] .'(' .(0 + $user['social_credit'] + $user['deposited_credit']) . ')' ?> さんのホーム</h1>
+        <h1><?php echo $user['screen_name'] .'(' .(0 + $user['social_credit'] + $user['deposited_credit']) . 'd)' ?> さんのホーム</h1>
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
         <div data-role="header">
             <h1>
-                <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
+                <?php echo '<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;"><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
             </h1>
         </div>
         <!-- panel content goes here -->
