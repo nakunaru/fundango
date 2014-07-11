@@ -22,7 +22,8 @@
     width: 45px;
 }
 
-.ui-listview img {
+.ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb
+{
     position: absolute;
     left: 10px;
     top: 10px;
