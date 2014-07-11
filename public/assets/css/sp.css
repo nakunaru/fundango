@@ -22,7 +22,7 @@
     width: 45px;
 }
 
-.ui-listview .ui-li-has-thumb>img {
+.ui-listview img {
     position: absolute;
     left: 10px;
     top: 10px;
