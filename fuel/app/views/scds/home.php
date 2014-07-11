@@ -25,7 +25,9 @@
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
         <div data-role="header">
-            <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge"></div></img>' . $user['screen_name'] . '</div>' ?>
+            <h1>
+                <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
+            </h1>
         </div>
         <!-- panel content goes here -->
         <a href="#" data-role="button" data-rel="close">閉じる</a>
