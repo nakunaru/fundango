@@ -25,7 +25,7 @@
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
         <div data-role="header">
-            <?php echo '<div><img src="' . $user['avator'] . '"></img></div>' ?>
+            <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge"></div></img>' . $user['screen_name'] . '</div>' ?>
         </div>
         <!-- panel content goes here -->
         <a href="#" data-role="button" data-rel="close">閉じる</a>
