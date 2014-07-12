@@ -33,8 +33,9 @@
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
             <li>持ってる団子の数<div class="ui-li-count"><?php echo $user['social_credit'] . 'd'; ?></div></li>
             <li>デポジット数<div class="ui-li-count"><?php echo $user['deposit_credit'] . 'd' ?></div></li>
-            <li>非デポジット数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div>div></li>
+            <li>非デポジット数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div></li>
         </ul>
+        <br>
         <a href="#" data-role="button" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
