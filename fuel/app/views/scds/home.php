@@ -30,9 +30,11 @@
                 <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
             </h1>
         </div>
-        持ってる団子の数：<?php echo $user['social_credit'] . 'd'; ?>
-        デポジット数：<?php echo $user['deposit_credit'] . 'd' ?>
-        非デポジット数：<?php echo $user['deposited_credit'] . 'd' ?>
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
+            <li>持ってる団子の数<div class="ui-li-count"><?php echo $user['social_credit'] . 'd'; ?></div></li>
+            <li>デポジット数<div class="ui-li-count"><?php echo $user['deposit_credit'] . 'd' ?></div></li>
+            <li>非デポジット数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div>div></li>
+        </ul>
         <a href="#" data-role="button" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
