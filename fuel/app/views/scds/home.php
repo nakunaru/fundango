@@ -24,12 +24,15 @@
         <a href="#" data-icon="friend" id="friendopenbtn">友達</a>
     </div>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
+        <!-- panel content goes here -->
         <div data-role="header">
             <h1>
                 <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
             </h1>
         </div>
-        <!-- panel content goes here -->
+        持ってる団子の数：<?php echo $user['social_credit'] . 'd'; ?>
+        デポジット数：<?php echo $user['deposit_credit'] . 'd' ?>
+        非デポジット数：<?php echo $user['deposited_credit'] . 'd' ?>
         <a href="#" data-role="button" data-rel="close">閉じる</a>
     </div>
     <div role="main" class="ui-content">
