@@ -11,7 +11,7 @@ class Homecommon {
     {
         $data = array();
         $twitter_user = Twitter::get('account/verify_credentials');
-        $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
+        $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         $timeline = Twitter::get("statuses/home_timeline");
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;

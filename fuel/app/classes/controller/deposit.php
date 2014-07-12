@@ -29,6 +29,18 @@ class Controller_Deposit extends Controller
         //ホーム画面のデータを取得する
         $data = Homecommon::getdata();
 
+        $user = $data['user'];
+        $port = new Model_Port4lio();
+        $port->from_screen_name = $user->screen_name;
+        $port->from_tuserid = $user->tuserid;
+        //$port->to_screen_name = ;
+        //$port->to_tuserid = ;
+        //$port->depositnum = ;
+        //$port->message = ;
+        //$port->date = ;
+
+        $port->save();
+
         //ポートフォリオにデータを追加する
         return Response::forge(View::forge('scds/home', $data));
     }

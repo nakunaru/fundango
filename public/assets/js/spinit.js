@@ -32,7 +32,10 @@ $(document).on( "pageinit", "#home", function( event ) {
     $('.friendli').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
+        var tuserid = $(this).attr('tuserid');
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
+        $('#to_screen_name').val(screen_name);
+        $('#to_tuserid').val(tuserid);
     });
     //$('#homemyicon').badger('100d');
 });

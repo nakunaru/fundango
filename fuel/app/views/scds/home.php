@@ -56,7 +56,7 @@
             echo '<li data-role="list-divider">友達</li>';
             foreach ($followers as $data)
             {
-                echo '<li class="friendli" screen_name="' . $data->screen_name . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->name . '</div><div class="ui-li-count">0d</div><p style="text-overflow:ellipsis; overflow:hidden; ">' . $data->screen_name . '</p></a></li>';
+                echo '<li class="friendli" screen_name="' . $data->screen_name . '" tuserid="' . $data->id . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->name . '</div><div class="ui-li-count">0d</div><p style="text-overflow:ellipsis; overflow:hidden; ">' . $data->screen_name . '</p></a></li>';
                 //$str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
                 //echo '<li>' . Html::anchor('deposit/add', $str, array('data-rel'=>'dialog')) . '</li>';
             }
@@ -78,15 +78,21 @@
         <h2>団子を友達にデポります</h2>
     </div>
     <div role="main" class="ui-content">
-        <div id="depositaddscreenname" screen_name=""></div>
-        <div class="ui-field-contain">
-            <label for="slider-fill">デポジット数:</label>
-            <input type="range" name="slider-fill" id="slider-fill" value="1" min="0" max="100" data-highlight="true">
-        </div>
-        <label for="textarea-a">メッセージ:</label>
-        <textarea name="textarea" id="textarea-a">
-        </textarea>
-        <?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ?>
+        <div id="depositaddscreenname"></div>
+        <form action="<?php echo URI::create('deposit/add'); ?>" method="post">
+            <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
+            <input type="hidden" id="to_tuserid" name="to_userid" value="">
+            <div class="ui-field-contain">
+                <label for="slider-fill">デポジット数:</label>
+                <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textarea-a">メッセージ:</label>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <input type="submit" value="デポる">
+            <!-- ?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ? -->
+        </form>
     </div>
 </div>
 </body>
