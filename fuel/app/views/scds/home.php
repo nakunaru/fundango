@@ -14,7 +14,7 @@
 </head>
 <body>
 <!--ページ領域-->
-<div data-role="page" id="home"  data-title="Home">
+<div data-role="page" id="home"  data-title="Home" data-url="/home">
 
 <!--ヘッダー領域-->
     <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
