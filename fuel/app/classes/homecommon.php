@@ -1,24 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: kara_mage
+ * Date: 2014/07/12
+ * Time: 15:16
+ */
 
-class Controller_Home extends Controller
-{
-    /**
-     * あなたの before メソッド
-     */
-    public function before()
+namespace Fuel\classes;
+
+
+class Homecommon {
+    public static function getdata()
     {
-        parent::before(); // この行がないと、テンプレートが動作しません!
-
-        // 何かする
-        if ( ! Twitter::logged_in() )
-        {
-            Response::redirect(Uri::create('login'));
-        }
-    }
-
-    public function action_index()
-    {
-        /*
         $data = array();
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
@@ -31,7 +24,7 @@ class Controller_Home extends Controller
         $count = 0;
         foreach ($data['ids'] as $id){
             if ($count == 100) {
-               break;
+                break;
             }
             if ($idstr == '') {
                 $idstr = $id;
@@ -45,8 +38,6 @@ class Controller_Home extends Controller
         $data['followers'] = $followers->__resp->data;
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
-        */
-        $data = \Fuel\classes\Homecommon::getdata();
-        return Response::forge(View::forge('scds/home', $data));
+        return $data;
     }
-}
+} 
