@@ -86,7 +86,7 @@
         <label for="textarea-a">メッセージ:</label>
         <textarea name="textarea" id="textarea-a">
         </textarea>
-        <?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ?>
+        <?php echo Html::anchor('deposit/add', 'デポる', array('data-ajax'=>'false','data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ?>
     </div>
 </div>
 </body>
