@@ -44,7 +44,7 @@ class Controller_Deposit extends Controller
         $port->save();
 
         //ポートフォリオにデータを追加する
-        Response::redirect(Uri::create('home'));
+        return Response::redirect(Uri::create('home'));
         //return Response::forge(View::forge('scds/home', $data));
     }
 }
