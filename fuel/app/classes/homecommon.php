@@ -6,9 +6,6 @@
  * Time: 15:16
  */
 
-namespace Fuel\classes;
-
-
 class Homecommon {
     public static function getdata()
     {

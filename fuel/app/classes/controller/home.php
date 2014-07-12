@@ -46,7 +46,7 @@ class Controller_Home extends Controller
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         */
-        $data = \Fuel\classes\Homecommon::getdata();
+        $data = Homecommon::getdata();
         return Response::forge(View::forge('scds/home', $data));
     }
 }
