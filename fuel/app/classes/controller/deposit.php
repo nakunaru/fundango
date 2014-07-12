@@ -51,7 +51,7 @@ class Controller_Deposit extends Controller
 
     public function action_add()
     {
-        $data = array();
+        $data = Homecommon::getdata();
         return Response::forge(View::forge('scds/home', $data));
     }
 }
