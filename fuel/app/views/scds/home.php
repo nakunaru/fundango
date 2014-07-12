@@ -81,7 +81,7 @@
         <div id="depositaddscreenname"></div>
         <form action="<?php echo URI::create('deposit/add'); ?>" method="post">
             <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
-            <input type="hidden" id="to_tuserid" name="to_userid" value="">
+            <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
             <div class="ui-field-contain">
                 <label for="slider-fill">デポジット数:</label>
                 <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
