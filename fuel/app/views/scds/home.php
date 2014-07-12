@@ -79,7 +79,7 @@
     </div>
     <div role="main" class="ui-content">
         <div id="depositaddscreenname"></div>
-        <form action="<?php echo URI::create('deposit/add'); ?>" method="post">
+        <form action="<?php echo URI::create('deposit/add'); ?>" method="post" data-ajax=“false”>
             <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
             <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
             <div class="ui-field-contain">
