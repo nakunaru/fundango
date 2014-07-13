@@ -20,7 +20,8 @@ $(document).on( "pageinit", "#login", function( event ) {
     var test = "";
 });
 
-$(document).on( "pageinit", "#home", function( event ) {
+//$(document).on( "pageinit", "#home", function( event ) {
+$(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
     /*
     $( "#settingopenbtn" ).bind( "click", function(event, ui) {
