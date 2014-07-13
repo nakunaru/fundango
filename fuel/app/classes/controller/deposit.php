@@ -45,7 +45,27 @@ class Controller_Deposit extends Controller
         $port->message = $message;
         //$port->date = ;
 
+        //自分のデポジット数にカウントアップする
+        $user->deposit_credit = $user->deposit_credit + $port->depositnum;
+
+        $user->save();
         $port->save();
+
+        //相手ユーザがすでに存在するかどうか？
+        $to_user = Model_User::find_one_by('tuserid', $to_tuserid, '=');
+        if ( ! $to_user)
+        {
+            //存在しないならあらかじめ作る
+            $to_user = new Model_User();
+            $to_user->tuserid = $to_tuserid;
+            $to_user->screen_name = $to_screen_name;
+            //被デポジットをカウントアップ
+            $to_user->deposited_credit = $depositnum;
+        } else {
+            //被デポジットをカウントアップ
+            $to_user->deposited_credit = $to_user->deposited_credit + $depositnum;
+        }
+        $to_user->save();
 
         //ポートフォリオにデータを追加する
         return Response::redirect(Uri::create('home'));
