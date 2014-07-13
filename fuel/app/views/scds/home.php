@@ -14,8 +14,8 @@
 </head>
 <body>
 <!--ページ領域-->
-<!-- data-url="<?php echo URI::create('home'); ?>" -->
-<div data-role="page" id="home"  data-title="Home" >
+<!--  -->
+<div data-role="page" id="home"  data-title="Home" data-url="<?php echo URI::create('home'); ?>" >
 <!--ヘッダー領域-->
     <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
     <div data-role="header" data-position="fixed">
