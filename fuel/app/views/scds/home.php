@@ -73,7 +73,8 @@
         </div>
     </div>
 </div>
-<div data-role="page" id="depositAddDialog">
+<?php echo View::forge('scds/depositadddialog'); ?>
+<!-- div data-role="page" id="depositAddDialog">
     <div data-role="header">
         <h2>団子を友達にデポります</h2>
     </div>
@@ -91,9 +92,8 @@
                 <textarea name="message" id="message"></textarea>
             </div>
             <input id="depositaddsubmit" type="submit" value="デポる">
-            <!-- ?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ? -->
         </form>
     </div>
-</div>
+</div -->
 </body>
 </html>
