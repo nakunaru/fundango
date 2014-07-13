@@ -22,10 +22,18 @@ $(document).on( "pageinit", "#login", function( event ) {
 
 $(document).on( "pageinit", "#home", function( event ) {
     var aaa = "";
+    /*
     $( "#settingopenbtn" ).bind( "click", function(event, ui) {
         $('#settingpanel').panel('open');
     });
     $( "#friendopenbtn" ).bind( "click", function(event, ui) {
+        $('#friendpanel').panel('open');
+    });
+    */
+    $( "#settingopenbtn" ).click(function() {
+        $('#settingpanel').panel('open');
+    });
+    $( "#friendopenbtn" ).click(function() {
         $('#friendpanel').panel('open');
     });
 
