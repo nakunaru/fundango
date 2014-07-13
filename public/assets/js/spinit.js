@@ -45,6 +45,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
         $('#to_screen_name').val(screen_name);
         $('#to_tuserid').val(tuserid);
+        $('#message').val("");
     });
     /*
     $('#depositaddsubmit').click(function(){
