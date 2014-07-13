@@ -76,7 +76,7 @@ class Controller_Twitterlogin extends Controller
             $user->deposited_credit = 0;
         }
         // デポジットを先行でユーザ作成行われた場合
-        if (is_null($user->social_credit)) {
+        if (! $user->social_credit) {
             $user->social_credit = $twitter_user->followers_count;
             $user->deposit_credit = 0;
         }
