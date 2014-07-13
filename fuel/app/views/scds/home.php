@@ -9,7 +9,7 @@
 <!--  -->
 <div data-role="page" id="home"  data-title="Home" data-url="<?php echo URI::create('home'); ?>" >
     <!--ヘッダー領域-->
-    <?php echo View::forge('scds/header.php'); ?>
+    <?php echo View::forge('scds/header'); ?>
     <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
         <!-- panel content goes here -->
         <div data-role="header">
