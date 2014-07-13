@@ -16,7 +16,6 @@
                 <textarea name="message" id="message"></textarea>
             </div>
             <input id="depositaddsubmit" type="submit" value="デポる">
-            <!-- ?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ? -->
         </form>
     </div>
 </div>

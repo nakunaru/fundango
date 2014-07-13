@@ -27,10 +27,10 @@ class Controller_Deposit extends Controller
     public function action_add()
     {
         //ホーム画面のデータを取得する
-        //$data = Homecommon::getdata();
-        //$user = $data['user'];
-        $twitter_user = Twitter::get('account/verify_credentials');
-        $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
+        $data = Homecommon::getdata();
+        $user = $data['user'];
+        //$twitter_user = Twitter::get('account/verify_credentials');
+        //$user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         $depositnum = Input::param('depositnum');
         $to_screen_name = Input::param('to_screen_name');
         $to_tuserid = Input::param('to_tuserid');

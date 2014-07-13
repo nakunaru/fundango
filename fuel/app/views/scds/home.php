@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-<!-- デポジット追加ダイアログ --?
+<!-- デポジット追加ダイアログ -->
 <?php echo View::forge('scds/depositadddialog'); ?>
 </body>
 </html>
