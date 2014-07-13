@@ -42,6 +42,8 @@ class Homecommon {
         $data = Homecommon::getdata();
         $view = View::forge('scds/home', $data);
         $view->set_global('user', $data['user']);
+        $view->set_global('followers', $data['followers']);
+        $view->set_global('timeline', $data['timeline']);
         return $view;
     }
 }
