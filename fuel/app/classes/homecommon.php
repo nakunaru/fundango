@@ -32,7 +32,11 @@ class Homecommon {
         }
         //Log::warning('idstr = ' . $idstr);
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
-        $data['followers'] = $followers->__resp->data;
+        if ($followers) {
+            $data['followers'] = $followers->__resp->data;
+        } else {
+            $data['followers'] = array();
+        }
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         return $data;
