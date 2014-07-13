@@ -13,7 +13,7 @@
     <!-- 設定パネル -->
     <?php echo View::forge('scds/settingpanel'); ?>
     <!-- タイムライン -->
-    <?php echo View::forge('scds/timeline'); ?>
+    <!-- ?php echo View::forge('scds/timeline'); ? -->
     <!-- 友達パネル -->
     <?php echo View::forge('scds/friendpanel'); ?>
     <!-- footer -->
