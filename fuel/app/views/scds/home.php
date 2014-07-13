@@ -90,7 +90,7 @@
                 <label for="textarea-a">メッセージ:</label>
                 <textarea name="message" id="message"></textarea>
             </div>
-            <input type="submit" value="デポる">
+            <input id="depositaddsubmit" type="submit" value="デポる">
             <!-- ?php echo Html::anchor('deposit/add', 'デポる', array('data-icon'=>'depoicon','data-role'=>'button','id'=>'depositaddbtn')); ? -->
         </form>
     </div>
