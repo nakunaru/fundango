@@ -42,9 +42,9 @@ $(document).on( "pageshow", "#home", function( event ) {
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
-        $('.ui-page-active #depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
-        $('.ui-page-active #to_screen_name').val(screen_name);
-        $('.ui-page-active #to_tuserid').val(tuserid);
+        $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
+        $('#to_screen_name').val(screen_name);
+        $('#to_tuserid').val(tuserid);
     });
     /*
     $('#depositaddsubmit').click(function(){
