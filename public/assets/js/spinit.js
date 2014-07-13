@@ -32,19 +32,19 @@ $(document).on( "pageshow", "#home", function( event ) {
     });
     */
     $( ".ui-page-active #settingopenbtn" ).click(function() {
-        $('#settingpanel').panel('open');
+        $('.ui-page-active #settingpanel').panel('open');
     });
     $( ".ui-page-active #friendopenbtn" ).click(function() {
-        $('#friendpanel').panel('open');
+        $('.ui-page-active #friendpanel').panel('open');
     });
 
     $('.ui-page-active .friendli').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
-        $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
-        $('#to_screen_name').val(screen_name);
-        $('#to_tuserid').val(tuserid);
+        $('.ui-page-active #depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
+        $('.ui-page-active #to_screen_name').val(screen_name);
+        $('.ui-page-active #to_tuserid').val(tuserid);
     });
     /*
     $('#depositaddsubmit').click(function(){
