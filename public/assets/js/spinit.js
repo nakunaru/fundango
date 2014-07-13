@@ -37,8 +37,10 @@ $(document).on( "pageinit", "#home", function( event ) {
         $('#to_screen_name').val(screen_name);
         $('#to_tuserid').val(tuserid);
     });
+    /*
     $('#depositaddsubmit').click(function(){
         $('.ui-dialog').dialog('close')
     });
+    */
     //$('#homemyicon').badger('100d');
 });
