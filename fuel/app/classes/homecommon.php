@@ -37,4 +37,11 @@ class Homecommon {
         //Log::warning('followers = ' . $output);
         return $data;
     }
-} 
+    public static function getview()
+    {
+        $data = Homecommon::getdata();
+        $view = View::forge('scds/home', $data);
+        $view->set_global('user', $data['user']);
+        return $view;
+    }
+}

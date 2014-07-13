@@ -18,7 +18,8 @@ class Controller_Home extends Controller
 
     public function action_index()
     {
-        $data = Homecommon::getdata();
-        return Response::forge(View::forge('scds/home', $data));
+        //$data = Homecommon::getdata();
+        $view = Homecommon::getview();
+        return Response::forge($view);
     }
 }
