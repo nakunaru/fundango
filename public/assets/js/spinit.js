@@ -21,7 +21,7 @@ $(document).on( "pageinit", "#login", function( event ) {
 });
 
 //$(document).on( "pageinit", "#home", function( event ) {
-$(document).on( "pageshow", "#home", function( event ) {
+$(document).on( "pageinit", ".ui-page-active #home", function( event ) {
     var aaa = "";
     /*
     $( "#settingopenbtn" ).bind( "click", function(event, ui) {
@@ -31,14 +31,14 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#friendpanel').panel('open');
     });
     */
-    $( "#settingopenbtn" ).click(function() {
+    $( ".ui-page-active #settingopenbtn" ).click(function() {
         $('#settingpanel').panel('open');
     });
-    $( "#friendopenbtn" ).click(function() {
+    $( ".ui-page-active #friendopenbtn" ).click(function() {
         $('#friendpanel').panel('open');
     });
 
-    $('.friendli').click(function(){
+    $('.ui-page-active .friendli').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
