@@ -1,23 +1,14 @@
 <!DOCTYPE html> 
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>W@tchMe! Home</title>
-    <?php echo Asset::css('themes/watchme.min.css'); ?>
-    <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-    <?php echo Asset::css('sp.css'); ?>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-    <?php echo Asset::js('spinit.js'); ?>
+    <title>Home</title>
+    <?php echo View::forge('scds/htmlheader'); ?>
 </head>
 <body>
 <!--ページ領域-->
 <!--  -->
 <div data-role="page" id="home"  data-title="Home" data-url="<?php echo URI::create('home'); ?>" >
-<!--ヘッダー領域-->
-    <!-- ?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">100d</div></img></div>' ? -->
+    <!--ヘッダー領域-->
     <div data-role="header" data-position="fixed">
         <a href="#" data-icon="gear" id="settingopenbtn">設定</a>
         <h1><?php echo $user['screen_name'] .'(' .(0 + $user['social_credit'] + $user['deposited_credit']) . 'd)' ?> さんのホーム</h1>
@@ -57,8 +48,6 @@
             foreach ($followers as $data)
             {
                 echo '<li class="friendli" screen_name="' . $data->screen_name . '" tuserid="' . $data->id . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop"><div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->name . '</div><div class="ui-li-count">0d</div><p style="text-overflow:ellipsis; overflow:hidden; ">' . $data->screen_name . '</p></a></li>';
-                //$str = '<h2>' . $data->name . '</h2><p>' . $data->screen_name . '</p>';
-                //echo '<li>' . Html::anchor('deposit/add', $str, array('data-rel'=>'dialog')) . '</li>';
             }
             ?>
         </ul>
@@ -73,27 +62,7 @@
         </div>
     </div>
 </div>
+<!-- デポジット追加ダイアログ --?
 <?php echo View::forge('scds/depositadddialog'); ?>
-<!-- div data-role="page" id="depositAddDialog">
-    <div data-role="header">
-        <h2>団子を友達にデポります</h2>
-    </div>
-    <div role="main" class="ui-content">
-        <div id="depositaddscreenname"></div>
-        <form action="<?php echo URI::create('deposit/add'); ?>" method="post" data-ajax=“false”>
-            <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
-            <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
-            <div class="ui-field-contain">
-                <label for="slider-fill">デポジット数:</label>
-                <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
-            </div>
-            <div class="ui-field-contain">
-                <label for="textarea-a">メッセージ:</label>
-                <textarea name="message" id="message"></textarea>
-            </div>
-            <input id="depositaddsubmit" type="submit" value="デポる">
-        </form>
-    </div>
-</div -->
 </body>
 </html>
