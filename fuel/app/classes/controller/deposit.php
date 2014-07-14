@@ -61,6 +61,7 @@ class Controller_Deposit extends Controller
             $to_user->screen_name = $to_screen_name;
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $depositnum;
+            $to_user->social_credit = -1;
         } else {
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $to_user->deposited_credit + $depositnum;
