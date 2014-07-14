@@ -68,6 +68,9 @@ class Controller_Twitterlogin extends Controller
         $user->avator = $twitter_user->profile_image_url;
         $user->oauth_token = $tokens['oauth_token'];
         $user->oauth_token_secret = $tokens['oauth_token_secret'];
+        if (!$twitter_user->followers_count) {
+            $twitter_user->followers_count = 0;
+        }
         $user->followers_count = $twitter_user->followers_count;
         if ($is_new_user) {
             $user->tuserid = $twitter_user->id;
