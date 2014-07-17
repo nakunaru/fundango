@@ -1,21 +1,25 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>W@tchMe! Login</title>
-<?php echo Asset::css('themes/watchme.min.css'); ?>
-<?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-<?php echo Asset::css('sp.css'); ?>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
-<?php echo Asset::js('spinit.js'); ?>
+    <title>デポジット</title>
+    <?php echo View::forge('scds/htmlheader'); ?>
 </head>
 <body>
 <!--ページ領域-->
-<div data-role="page" id="deposit"  data-title="deposit">
-
+<!--  -->
+<div data-role="page" id="deposit"  data-title="deposit" data-url="<?php echo URI::create('deposit'); ?>" >
+    <!--ヘッダー領域-->
+    <?php echo View::forge('scds/header'); ?>
+    <!-- 設定パネル -->
+    <?php echo View::forge('scds/settingpanel'); ?>
+    <!-- タイムライン -->
+    <?php echo View::forge('scds/depositlist'); ?>
+    <!-- 友達パネル -->
+    <?php echo View::forge('scds/friendpanel'); ?>
+    <!-- footer -->
+    <?php echo View::forge('scds/footer'); ?>
 </div>
+<!-- デポジット追加ダイアログ -->
+<?php echo View::forge('scds/depositadddialog'); ?>
 </body>
 </html>

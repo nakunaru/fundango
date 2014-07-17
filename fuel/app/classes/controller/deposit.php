@@ -16,6 +16,9 @@ class Controller_Deposit extends Controller
         }
     }
 
+    /**
+     * 自分がデポジットしたリストを表示する
+     */
     public function action_index()
     {
     }
