@@ -10,6 +10,8 @@ class Depositcommon {
     public static function getdata()
     {
         $data = Session::get('homedata');
+        $output = print_r($data,true);
+        Log::warning('session data = ' . $output);
         $user = $data['user'];
         $tuserid = $user->tuserid;
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
