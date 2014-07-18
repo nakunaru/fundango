@@ -11,9 +11,10 @@ class Depositcommon {
     {
         $data = array();
         $user = Session::get('user');
-        $followers = Session::get('followers');
-        $output = print_r($user,true);
-        Log::warning('session data = ' . $output);
+        //$followers = Session::get('followers');
+        $followers = array();
+        //$output = print_r($user,true);
+        //Log::warning('session data = ' . $output);
         //$user = $data['user'];
         $tuserid = $user->tuserid;
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
