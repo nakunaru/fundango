@@ -11,7 +11,8 @@ class Depositcommon {
     {
         $data = Session::get('homedata');
         $user = $data['user'];
-        $port4lio = Model_Port4lio::find_by('from_tuserid', $user->tuserid, '=');
+        $tuserid = $user->tuserid;
+        $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
         $data['port4lio'] = $port4lio;
         return $data;
     }
