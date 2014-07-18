@@ -21,6 +21,8 @@ class Controller_Deposit extends Controller
      */
     public function action_index()
     {
+        $view = Depositcommon::getview();
+        return Response::forge($view);
     }
 
     /**

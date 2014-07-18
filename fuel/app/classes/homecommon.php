@@ -37,6 +37,7 @@ class Homecommon {
         } else {
             $data['followers'] = array();
         }
+        Session::set('homedata', $data);
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         return $data;
