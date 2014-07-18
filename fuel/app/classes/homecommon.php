@@ -38,6 +38,7 @@ class Homecommon {
             $data['followers'] = array();
         }
         Session::set('user', $data['user']);
+        Session::set('followers', $data['followers']);
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         return $data;
