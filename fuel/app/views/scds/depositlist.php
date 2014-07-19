@@ -16,7 +16,14 @@
                 echo '<li data-role="list-divider">' . $user->screen_name . ' さんのポートフォリオ</li>';
                 foreach ($port4lio as $data)
                 {
-                    echo '<li><a href="#">'.'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->to_screen_name . ' さんにデポジットしています</div>' . '<p class="ui-li-aside">' . $data->date . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:xxd</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
+                    echo '<li><a href="#">'
+                        .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+                        . $data->to_screen_name
+                        . ' さんにデポジットしています</div>'
+                        . '<p class="ui-li-aside">'
+                        . $data->date
+                        . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:xxd '
+                        . $data->message . '</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
                 }
                 ?>
             </ul>
@@ -28,7 +35,14 @@
                 echo '<li data-role="list-divider">友達からの被デポジットリスト</li>';
                 foreach ($depositedlist as $data)
                 {
-                    echo '<li><a href="#">'.'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->from_screen_name . ' さんからデポジットされています</div>' . '<p class="ui-li-aside">' . $data->date . '</p><p style="text-overflow:ellipsis; overflow:hidden; "></p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
+                    echo '<li><a href="#">'
+                        .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+                        . $data->from_screen_name
+                        . ' さんからデポジットされています</div>'
+                        . '<p class="ui-li-aside">'
+                        . $data->date
+                        . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">'
+                        . $data->message . '</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
                 }
                 ?>
             </ul>
