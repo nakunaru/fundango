@@ -33,6 +33,7 @@ class Depositcommon {
         $view->set_global('user', $data['user']);
         $view->set_global('followers', $data['followers']);
         $view->set_global('port4lio', $data['port4lio']);
+        $view->set_global('depositedlist', $data['depositedlist']);
         return $view;
     }
 }
