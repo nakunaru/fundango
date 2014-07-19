@@ -10,6 +10,7 @@
         </div>
         <!--1パネル（コンテンツ領域）を準備-->
         <div id="tabport4lio" class="ui-body ui-body-a">
+            <br>
             <ul data-role="listview">
                 <?php
                 echo '<li data-role="list-divider">ポートフォリオ</li>';
@@ -21,6 +22,7 @@
             </ul>
         </div>
         <div id="tabdeposited" class="ui-body ui-body-a">
+            <p>test</p>
         </div>
     </div>
 </div>
