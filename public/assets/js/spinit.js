@@ -22,6 +22,7 @@ $(document).on( "pageinit", "#login", function( event ) {
 
 $(document).on( "pageshow", "#deposit", function( event ) {
     $('#footerdeposit').addClass('ui-btn-active');
+    panelOpenInit();
 });
 
 //$(document).on( "pageinit", "#home", function( event ) {
@@ -37,12 +38,7 @@ $(document).on( "pageshow", "#home", function( event ) {
     */
     $('#footerhome').addClass('ui-btn-active');
 
-    $( ".ui-page-active #settingopenbtn" ).click(function() {
-        $('.ui-page-active #settingpanel').panel('open');
-    });
-    $( ".ui-page-active #friendopenbtn" ).click(function() {
-        $('.ui-page-active #friendpanel').panel('open');
-    });
+    panelOpenInit();
 
     $('.ui-page-active .friendli').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
@@ -60,3 +56,13 @@ $(document).on( "pageshow", "#home", function( event ) {
     */
     //$('#homemyicon').badger('100d');
 });
+
+function panelOpenInit()
+{
+    $( ".ui-page-active #settingopenbtn" ).click(function() {
+        $('.ui-page-active #settingpanel').panel('open');
+    });
+    $( ".ui-page-active #friendopenbtn" ).click(function() {
+        $('.ui-page-active #friendpanel').panel('open');
+    });
+}
