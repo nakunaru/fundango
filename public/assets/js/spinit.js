@@ -20,6 +20,10 @@ $(document).on( "pageinit", "#login", function( event ) {
     var test = "";
 });
 
+$(document).on( "pageshow", "#deposit", function( event ) {
+    $('#footerdeposit').addClass('ui-btn-active');
+});
+
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
@@ -31,6 +35,8 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#friendpanel').panel('open');
     });
     */
+    $('#footerhome').addClass('ui-btn-active');
+
     $( ".ui-page-active #settingopenbtn" ).click(function() {
         $('.ui-page-active #settingpanel').panel('open');
     });
