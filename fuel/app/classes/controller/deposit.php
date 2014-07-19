@@ -48,8 +48,9 @@ class Controller_Deposit extends Controller
         $port->to_tuserid = $to_tuserid;
         $port->depositnum = $depositnum;
         $port->message = $message;
-        $timestamp = Date::time();
-        $timestr = Date::forge($timestamp)->format('mysql');
+        //$timestamp = Date::time();
+        //$timestr = Date::forge($timestamp)->format('mysql');
+        $timestr = Date::forge()->format('mysql');
         $port->date = $timestr;
 
         //自分のデポジット数にカウントアップする
