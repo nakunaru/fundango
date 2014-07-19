@@ -16,7 +16,7 @@
                 echo '<li data-role="list-divider">ポートフォリオ</li>';
                 foreach ($port4lio as $data)
                 {
-                    echo '<li><a href="#">'.'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->to_screen_name . ' さんにデポジットしています</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:xxd</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
+                    echo '<li><a href="#">'.'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">' . $data->to_screen_name . ' さんにデポジットしています</div>' . '<p class="ui-li-aside">' . $data->date . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:xxd</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
                 }
                 ?>
             </ul>
