@@ -37,8 +37,9 @@ class Homecommon {
         } else {
             $data['followers'] = array();
         }
+        Session::delete('user');
         Session::set('user', $data['user']);
-        Session::set('followers', $data['followers']);
+        //Session::set('followers', $data['followers']);
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         return $data;
