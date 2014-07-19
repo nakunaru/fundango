@@ -10,7 +10,7 @@
         </div>
         <!--1パネル（コンテンツ領域）を準備-->
         <div id="tabport4lio" class="ui-body ui-body-a">
-            <ul data-role="listview" data-filter="true" data-filter-placeholder="Search Portfolio...">
+            <ul data-role="listview">
                 <?php
                 echo '<li data-role="list-divider">ポートフォリオ</li>';
                 foreach ($port4lio as $data)
