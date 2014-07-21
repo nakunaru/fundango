@@ -27,8 +27,8 @@ class Controller_Board extends Controller
      */
     public function action_index()
     {
-        //$view = Depositcommon::getview();
-        //return Response::forge($view);
+        $view = Boardcommon::getview();
+        return Response::forge($view);
     }
 
     /**
