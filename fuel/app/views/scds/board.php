@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>デポジット</title>
+    <title>ボード</title>
     <?php echo View::forge('scds/htmlheader'); ?>
 </head>
 <body>
 <!--ページ領域-->
 <!--  -->
-<div data-role="page" id="deposit"  data-title="deposit" data-url="<?php echo URI::create('deposit'); ?>" >
+<div data-role="page" id="board"  data-title="board" data-url="<?php echo URI::create('board'); ?>" >
     <!--ヘッダー領域-->
     <?php echo View::forge('scds/header'); ?>
     <!-- 設定パネル -->
     <?php echo View::forge('scds/settingpanel'); ?>
-    <!-- ポートフォリオ -->
-    <?php echo View::forge('scds/depositlist'); ?>
+    <!-- 株価ボード -->
+    <?php echo View::forge('scds/boardlist'); ?>
     <!-- 友達パネル -->
     <?php echo View::forge('scds/friendpanel'); ?>
     <!-- footer -->
