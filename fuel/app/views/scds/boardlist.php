@@ -15,6 +15,7 @@
         </div>
         <div id="tabchart" class="ui-body ui-body-a">
             <br>
+            <canvas id="chartcanvas" height="500" width="500"></canvas>
         </div>
         <div id="tabranking" class="ui-body ui-body-a">
             <br>
