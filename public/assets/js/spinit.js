@@ -62,7 +62,7 @@ $(document).on( "pageshow", "#home", function( event ) {
 
     //URLを自動リンクする
     var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    $('#timelinelist').html($('#timelinelist').html().replace(exp,"<a href='$1'>$1</a>"));
+    $('.timelinetext').html($('.timelinetext').html().replace(exp,"<a href='$1'>$1</a>"));
 
     /*
     $('#depositaddsubmit').click(function(){
