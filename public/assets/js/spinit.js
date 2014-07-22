@@ -51,9 +51,10 @@ $(document).on( "pageshow", "#board", function( event ) {
     }
     ];
 
-    var myDoughnut = new Chart(document.getElementById("chartcanvas").
-        getContext("2d")).Doughnut(doughnutData);
-
+    $('#tabchart').click(function(){
+        var myDoughnut = new Chart(document.getElementById("chartcanvas").
+            getContext("2d")).Doughnut(doughnutData);
+    });
 });
 
 $(document).on( "pageshow", "#deposit", function( event ) {
