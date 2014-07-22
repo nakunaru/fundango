@@ -20,6 +20,16 @@ $(document).on( "pageinit", "#login", function( event ) {
     var test = "";
 });
 
+$(document).on( "pageshow", "#notify", function( event ) {
+    $('#footernotify').addClass('ui-btn-active');
+    panelOpenInit();
+});
+
+$(document).on( "pageshow", "#board", function( event ) {
+    $('#footerboard').addClass('ui-btn-active');
+    panelOpenInit();
+});
+
 $(document).on( "pageshow", "#deposit", function( event ) {
     $('#footerdeposit').addClass('ui-btn-active');
     panelOpenInit();
@@ -49,6 +59,11 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#to_tuserid').val(tuserid);
         $('#message').val("");
     });
+
+    //URLを自動リンクする
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    $('#timelinelist').html($('timelinelist').html().replace(exp,"<a href='$1'>$1</a>"));
+
     /*
     $('#depositaddsubmit').click(function(){
         $('.ui-dialog').dialog('close')

@@ -1,5 +1,5 @@
 <div role="main" class="ui-content">
-    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
+    <ul id="timelinelist" data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
         <?php
         echo '<li data-role="list-divider">タイムライン</li>';
         foreach ($timeline as $data)
