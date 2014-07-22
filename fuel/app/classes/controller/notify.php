@@ -27,7 +27,7 @@ class Controller_Notify extends Controller
      */
     public function action_index()
     {
-        //$view = Boardcommon::getview();
-        //return Response::forge($view);
+        $view = Notifycommon::getview();
+        return Response::forge($view);
     }
 }

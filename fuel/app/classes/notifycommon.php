@@ -12,6 +12,7 @@ class Notifycommon {
         $user = Session::get('user');
         //$followers = Session::get('followers');
         $followers = array();
+        $notifylist = array();
         //$output = print_r($user,true);
         //Log::warning('session data = ' . $output);
         //$user = $data['user'];
@@ -22,6 +23,7 @@ class Notifycommon {
         */
         $data['user'] = $user;
         $data['followers'] = $followers;
+        $data['notifylist'] = $notifylist;
         //$data['port4lio'] = $port4lio;
         //$data['depositedlist'] = $depositedlist;
         return $data;
@@ -33,6 +35,7 @@ class Notifycommon {
         $view = View::forge('scds/notify', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('followers', $data['followers']);
+        $view->set_global('notifylist', $data['notifylist']);
         /*
         $view->set_global('port4lio', $data['port4lio']);
         $view->set_global('depositedlist', $data['depositedlist']);
