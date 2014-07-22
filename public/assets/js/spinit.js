@@ -64,11 +64,11 @@ $(document).on( "pageshow", "#home", function( event ) {
     //var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     //$('#timelinelist').html($('#timelinelist').html().replace(exp,"<a href='$1'>$1</a>"));
 
-    $(".timelinetext").each(function(){
+    $('.timelinetext').each(function(){
         $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
     });
 
-.    /*
+    /*
     $('#depositaddsubmit').click(function(){
         $('.ui-dialog').dialog('close')
     });
