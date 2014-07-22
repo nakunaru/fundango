@@ -31,7 +31,7 @@ class Notifycommon {
 
     public static function getview()
     {
-        $data = Boardcommon::getdata();
+        $data = Notifycommon::getdata();
         $view = View::forge('scds/notify', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('followers', $data['followers']);
