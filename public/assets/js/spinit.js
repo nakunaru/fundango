@@ -190,14 +190,13 @@ $(document).on( "pageshow", "#home", function( event ) {
 function panelOpenInit()
 {
     $( ".ui-page-active #settingopenbtn" ).click(function() {
+        $('.ui-page-active #settingpanel').panel('open');
         var myDoughnut = new Chart(document.getElementById("accountchartcanvas").
             getContext("2d")).Doughnut(doughnutData);
         var ctx = document.getElementById("accountchartcanvas2").getContext("2d");
         new Chart(ctx).Radar(radarchartdata, {
             pointDot: false
         });
-
-        $('.ui-page-active #settingpanel').panel('open');
     });
     $( ".ui-page-active #friendopenbtn" ).click(function() {
         $('.ui-page-active #friendpanel').panel('open');
