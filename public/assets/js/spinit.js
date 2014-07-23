@@ -179,6 +179,23 @@ $(document).on( "pageshow", "#home", function( event ) {
         $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
     });
 
+    //@ユーザ名を自動リンクする
+    // 要素を指定
+    $('.timelinetext').each(function() {
+        var _html;
+        _html = $(this).html().replace(/(^|\>)([^\<]*\@[^\<]*)(\<|$)/g, function() {
+            return arguments[1]
+                + arguments[2]
+                .replace(/\@([a-z0-9\_]+)(\.)?/gi, function() {
+                    if(arguments[2]) return arguments[0];
+                    return '<a href="https://www.twitter.com/'
+                        + arguments[1] + '" target="_blank" class="twlink">@'
+                        + arguments[1] + '</a>';
+                })
+                + arguments[3];
+        });
+        $(this).html(_html);
+    });
     /*
     $('#depositaddsubmit').click(function(){
         $('.ui-dialog').dialog('close')
