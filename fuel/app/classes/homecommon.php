@@ -12,7 +12,9 @@ class Homecommon {
         $data = array();
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
-        $timeline = Twitter::get("statuses/home_timeline?count=100");
+        $timeline = Twitter::get("statuses/home_timeline",
+            array('count'=>100)
+        );
 
         //twitter に投稿するやり方
         /*
