@@ -193,7 +193,7 @@ function panelOpenInit()
         var myDoughnut = new Chart(document.getElementById("accountchartcanvas").
             getContext("2d")).Doughnut(doughnutData);
         var ctx = document.getElementById("accountchartcanvas2").getContext("2d");
-        new Chart(ctx).Radar(data, {
+        new Chart(ctx).Radar(radarchartdata, {
             pointDot: false
         });
 
