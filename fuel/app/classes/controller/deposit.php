@@ -76,6 +76,11 @@ class Controller_Deposit extends Controller
         }
         $to_user->save();
 
+        //twitter に投稿するやり方
+        $result = Twitter::post('statuses/update',
+            array('status' => '. @' . $to_user->screen_name . 'さんに' . $depositnum . '団子、デポりました。 #scds'
+            ));
+
         //ポートフォリオにデータを追加する
         return Response::redirect(Uri::create('home'));
         //return Response::forge(View::forge('scds/home', $data));
