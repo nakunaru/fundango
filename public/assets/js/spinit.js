@@ -54,7 +54,7 @@ $(document).on( "pageshow", "#board", function( event ) {
     var myDoughnut = new Chart(document.getElementById("chartcanvas").
             getContext("2d"));
         //.Doughnut(doughnutData);
-    $('#tabchart').click(function(){
+    $('#ui-id-2').click(function(){
         myDoughnut.Doughnut(doughnutData);
     });
 });
