@@ -1,5 +1,5 @@
 
-var global_tekitou = 'test';
+//var global_tekitou = 'test';
 
 /**
  * 
@@ -51,10 +51,12 @@ $(document).on( "pageshow", "#board", function( event ) {
     }
     ];
 
-    //$('#tabchart').click(function(){
-        var myDoughnut = new Chart(document.getElementById("chartcanvas").
-            getContext("2d")).Doughnut(doughnutData);
-    //});
+    var myDoughnut = new Chart(document.getElementById("chartcanvas").
+            getContext("2d"));
+        //.Doughnut(doughnutData);
+    $('#tabchart').click(function(){
+        myDoughnut.Doughnut(doughnutData);
+    });
 });
 
 $(document).on( "pageshow", "#deposit", function( event ) {
@@ -65,14 +67,6 @@ $(document).on( "pageshow", "#deposit", function( event ) {
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
-    /*
-    $( "#settingopenbtn" ).bind( "click", function(event, ui) {
-        $('#settingpanel').panel('open');
-    });
-    $( "#friendopenbtn" ).bind( "click", function(event, ui) {
-        $('#friendpanel').panel('open');
-    });
-    */
     $('#footerhome').addClass('ui-btn-active');
 
     panelOpenInit();
