@@ -80,8 +80,10 @@ $(document).on( "pageshow", "#board", function( event ) {
     $('#footerboard').addClass('ui-btn-active');
     panelOpenInit();
     var ctx = $("#chartcanvas").get(0).getContext("2d");
-    new Chart(ctx).Line(linechartdata, {
-        bezierCurve: false
+    $('#ui-id-2').click(function(){
+        new Chart(ctx).Line(linechartdata, {
+            bezierCurve: false
+        });
     });
     /*
     var myDoughnut = new Chart(document.getElementById("chartcanvas").
