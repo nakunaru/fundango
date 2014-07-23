@@ -63,6 +63,28 @@ var linechartdata = {
     ]
 };
 
+var barchartdata = {
+    labels: ["kara_mage", "devfundango", "bryu_seru", "user2", "user3", "user4", "user5"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }
+    ]
+};
+
 
 $(document).on( "pageinit", "#login", function( event ) {
     //alert( "This page was just enhanced by jQuery Mobile!" );
@@ -79,10 +101,16 @@ $(document).on( "pageshow", "#notify", function( event ) {
 $(document).on( "pageshow", "#board", function( event ) {
     $('#footerboard').addClass('ui-btn-active');
     panelOpenInit();
-    var ctx = $("#chartcanvas").get(0).getContext("2d");
+    var ctx2 = $("#chartcanvas").get(0).getContext("2d");
     $('#ui-id-2').click(function(){
-        new Chart(ctx).Line(linechartdata, {
+        new Chart(ctx2).Line(linechartdata, {
             bezierCurve: false
+        });
+    });
+    var ctx3 = $("#rankingcanvas").get(0).getContext("2d");
+    $('#ui-id-3').click(function(){
+        new Chart(ctx3).Bar(barchartdata, {
+            barShowStroke: false
         });
     });
     /*

@@ -12,6 +12,7 @@
         <!--1パネル（コンテンツ領域）を準備-->
         <div id="tabboardlist" class="ui-body ui-body-a">
             <br>
+            <canvas id="boardcanvas" height="500" width="500"></canvas>
         </div>
         <div id="tabchart" class="ui-body ui-body-a">
             <br>
@@ -19,6 +20,7 @@
         </div>
         <div id="tabranking" class="ui-body ui-body-a">
             <br>
+            <canvas id="rankingcanvas" height="500" width="500"></canvas>
         </div>
     </div>
 </div>
