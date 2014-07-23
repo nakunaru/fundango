@@ -37,6 +37,33 @@ var doughnutData = [
     }
 ];
 
+var linechartdata = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }
+    ]
+};
+
+
 $(document).on( "pageinit", "#login", function( event ) {
     //alert( "This page was just enhanced by jQuery Mobile!" );
     //$('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
@@ -52,11 +79,17 @@ $(document).on( "pageshow", "#notify", function( event ) {
 $(document).on( "pageshow", "#board", function( event ) {
     $('#footerboard').addClass('ui-btn-active');
     panelOpenInit();
+    var ctx = $("#chartcanvas").get(0).getContext("2d");
+    new Chart(ctx).Line(linechartdata, {
+        bezierCurve: false
+    });
+    /*
     var myDoughnut = new Chart(document.getElementById("chartcanvas").
             getContext("2d"));
     $('#ui-id-2').click(function(){
         myDoughnut.Doughnut(doughnutData);
     });
+    */
 });
 
 $(document).on( "pageshow", "#deposit", function( event ) {
