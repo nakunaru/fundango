@@ -5,7 +5,8 @@
             <?php echo '<div><img src="' . $user['avator'] . '"><div class="badge">' . (0 + $user['social_credit'] + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
         </h1>
     </div>
-    <ul data-role="listview" data-filter="true" >
+    <canvas id="accountchartcanvas" height="150" width="150"></canvas>
+    <ul data-role="listview" >
         <li>ランキング 124/1045</li>
         <li>持ってる団子の数<div class="ui-li-count"><?php echo $user['social_credit'] . 'd'; ?></div></li>
         <li>デポジット可能数<div class="ui-li-count"><?php echo $user['social_credit'] - $user['deposit_credit'] . 'd' ?></div></li>

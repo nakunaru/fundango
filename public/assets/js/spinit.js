@@ -13,22 +13,8 @@ $('#home').live('pageinit', function(e) {
     $('#howtopanel').panel('open');
 });
 */
-$(document).on( "pageinit", "#login", function( event ) {
-    //alert( "This page was just enhanced by jQuery Mobile!" );
-    //$('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
-    //$('.facebook_like').socialbutton('facebook_like',{button : "button_count"}).width(110);
-    var test = "";
-});
 
-$(document).on( "pageshow", "#notify", function( event ) {
-    $('#footernotify').addClass('ui-btn-active');
-    panelOpenInit();
-});
-
-$(document).on( "pageshow", "#board", function( event ) {
-    $('#footerboard').addClass('ui-btn-active');
-    panelOpenInit();
-    var doughnutData = [
+var doughnutData = [
     {
         value: 30,
         color:"#aaf2fb"
@@ -49,11 +35,25 @@ $(document).on( "pageshow", "#board", function( event ) {
         value: 70,
         color: "#A8BECB"
     }
-    ];
+];
 
+$(document).on( "pageinit", "#login", function( event ) {
+    //alert( "This page was just enhanced by jQuery Mobile!" );
+    //$('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
+    //$('.facebook_like').socialbutton('facebook_like',{button : "button_count"}).width(110);
+    var test = "";
+});
+
+$(document).on( "pageshow", "#notify", function( event ) {
+    $('#footernotify').addClass('ui-btn-active');
+    panelOpenInit();
+});
+
+$(document).on( "pageshow", "#board", function( event ) {
+    $('#footerboard').addClass('ui-btn-active');
+    panelOpenInit();
     var myDoughnut = new Chart(document.getElementById("chartcanvas").
             getContext("2d"));
-        //.Doughnut(doughnutData);
     $('#ui-id-2').click(function(){
         myDoughnut.Doughnut(doughnutData);
     });
@@ -100,6 +100,8 @@ $(document).on( "pageshow", "#home", function( event ) {
 function panelOpenInit()
 {
     $( ".ui-page-active #settingopenbtn" ).click(function() {
+        var myDoughnut = new Chart(document.getElementById("accountchartcanvas").
+            getContext("2d")).Doughnut(doughnutData);
         $('.ui-page-active #settingpanel').panel('open');
     });
     $( ".ui-page-active #friendopenbtn" ).click(function() {
