@@ -6,6 +6,8 @@
         </h1>
     </div>
     <canvas id="accountchartcanvas" height="150" width="150"></canvas>
+    <br>
+    <canvas id="accountchartcanvas2" height="150" width="150"></canvas>
     <ul data-role="listview" >
         <li>ランキング 124/1045</li>
         <li>持ってる団子の数<div class="ui-li-count"><?php echo $user['social_credit'] . 'd'; ?></div></li>
@@ -14,5 +16,6 @@
         <li>友達から被デポジット数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div></li>
     </ul>
     <br>
+    <a href="#" data-role="button" data-rel="">ログアウト</a>
     <a href="#" data-role="button" data-rel="close">閉じる</a>
 </div>
