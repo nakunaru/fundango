@@ -12,7 +12,10 @@ class Homecommon {
         $data = array();
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
-        //$timeline = Twitter::get("statuses/home_timeline");
+        $timeline = Twitter::get("statuses/home_timeline?count=100");
+
+        //twitter に投稿するやり方
+        /*
         $timeline = Twitter::post('statuses/update',
             array('status' => 'Using this new awesome cool Twitter package for Fuel!',
             'count' => 100
@@ -20,6 +23,7 @@ class Homecommon {
 
         $output = print_r($timeline,true);
         Log::warning('timeline = ' . $output);
+        */
 
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
