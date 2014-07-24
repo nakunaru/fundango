@@ -35,11 +35,11 @@
                         $img = preg_replace('/photozou.jp\/photo\/show\/[0-9]*\//','photozou.jp/p/img/',$img);
                     }
                     if(strpos($img,'instagram.com/p/') != 0){
-                        $isimg = true;
                         $instaurl = 'http://api.instagram.com/oembed?url=' . $img;
                         $instajson = file_get_contents($instaurl);
                         $json =  json_decode($instajson);
                         if (property_exists($json,'url')) {
+                            $isimg = true;
                             $img = $json->url;
                         }
                     }
