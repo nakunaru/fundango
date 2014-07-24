@@ -13,7 +13,7 @@ class Homecommon {
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         $timeline = Twitter::get("statuses/home_timeline",
-            array('count'=>100,
+            array('count'=>20,
                 "include_entities"=>true
             )
         );
