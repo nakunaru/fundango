@@ -39,7 +39,9 @@
                         $instaurl = 'http://api.instagram.com/oembed?url=' . $img;
                         $instajson = file_get_contents($instaurl);
                         $json =  json_decode($instajson);
-                        $img = $json->url;
+                        if (property_exists($json,'url')) {
+                            $img = $json->url;
+                        }
                     }
                     if ($isimg) {
                         echo '<img src="' . $img . '">';
