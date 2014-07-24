@@ -120,12 +120,12 @@ $(document).on( "pageinit", "#login", function( event ) {
     var test = "";
 });
 
-$(document).on( "pageshow", "#notify", function( event ) {
+$(document).on( "pageinit", "#notify", function( event ) {
     $('#footernotify').addClass('ui-btn-active');
     panelOpenInit();
 });
 
-$(document).on( "pageshow", "#board", function( event ) {
+$(document).on( "pageinit", "#board", function( event ) {
     $('#footerboard').addClass('ui-btn-active');
     panelOpenInit();
     var ctx2 = $("#chartcanvas").get(0).getContext("2d");
@@ -149,15 +149,15 @@ $(document).on( "pageshow", "#board", function( event ) {
     */
 });
 
-$(document).on( "pageshow", "#deposit", function( event ) {
+$(document).on( "pageinit", "#deposit", function( event ) {
     $('#footerdeposit').addClass('ui-btn-active');
     panelOpenInit();
 });
 
-//$(document).on( "pageinit", "#home", function( event ) {
-$(document).on( "pageshow", "#home", function( event ) {
+$(document).on( "pageinit", "#home", function( event ) {
+//$(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
-    new WOW().init();
+    //new WOW().init();
     $('#footerhome').addClass('ui-btn-active');
 
     panelOpenInit();
