@@ -8,15 +8,36 @@
                 . '"><div class="timelinetext" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                 . $data->text . '</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                 . $data->user->name . ' @' . $data->user->screen_name .'</p>';
+            // twitter の投稿画像表示
             if (property_exists($data->entities,'media')) {
                 if (count($data->entities->media) > 0) {
-                    echo 'media';
                     $img = $data->entities->media[0]->media_url;
                     echo '<img src="' . $img . '">';
                 }
             }
-            if (count($data->entities->urls) > 0) {
-                echo 'urls';
+            //外部サービスの画像を表示
+            if (property_exists($data->entities,'urls')) {
+                if (count($data->entities->urls) > 0) {
+                    $img = $statuses->entities->urls[0]->expanded_url;
+                    //URLを「twitpic.com/show/full/ID」とすることで画像の直リンクが取得できる。
+                    //「full」を「thumb」にすればサムネイルサイズが取得できます。
+                    if(strpos($img,'twitpic') != 0){
+                        $img = str_replace('twitpic.com/','twitpic.com/show/full/',$img);
+                    }
+                    if(strpos($img,'twipple') != 0){
+                        $img = str_replace('twipple.jp/','twipple.jp/show/large/',$img);
+                    }
+                    if(strpos($img,'photozou') != 0){
+                        $img = preg_replace('/photozou.jp\/photo\/show\/[0-9]*\//','photozou.jp/p/img/',$img);
+                    }
+                    if(strpos($img,'instagram.com/p/') != 0){
+                        $instaurl = 'http://api.instagram.com/oembed?url=' . $img;
+                        $instajson = file_get_contents($instaurl);
+                        $json =  json_decode($instajson);
+                        $img = $json->url;
+                    }
+                    echo '<img src="' . $img . '">';
+                }
             }
             echo '</li>';
         }
