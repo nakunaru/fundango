@@ -12,7 +12,7 @@
             if (property_exists($data->entities,'media')) {
                 if (count($data->entities->media) > 0) {
                     $img = $data->entities->media[0]->media_url;
-                    echo '<img src="' . $img . '">';
+                    echo '<img class="slideUp" src="' . $img . '">';
                 }
             }
             //外部サービスの画像を表示
@@ -44,7 +44,7 @@
                         }
                     }
                     if ($isimg) {
-                        echo '<img src="' . $img . '">';
+                        echo '<img class="slideUp" src="' . $img . '">';
                     }
                 }
             }
