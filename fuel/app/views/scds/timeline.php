@@ -11,6 +11,8 @@
             if (property_exists($data->entities,'media')) {
                 if (count($data->entities->media) > 0) {
                     echo 'media';
+                    $img = $data->entities->media[0]->media_url;
+                    echo '<img src="' . $img . '">';
                 }
             }
             if (count($data->entities->urls) > 0) {
