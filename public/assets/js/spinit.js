@@ -157,6 +157,8 @@ $(document).on( "pageinit", "#deposit", function( event ) {
 $(document).on( "pageinit", "#home", function( event ) {
 //$(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
+    var wow = new WOW();
+    wow.init();
     //new WOW().init();
     $('#footerhome').addClass('ui-btn-active');
 
