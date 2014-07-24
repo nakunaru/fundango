@@ -18,25 +18,32 @@
             //外部サービスの画像を表示
             if (property_exists($data->entities,'urls')) {
                 if (count($data->entities->urls) > 0) {
+                    $isimg = false;
                     $img = $data->entities->urls[0]->expanded_url;
                     //URLを「twitpic.com/show/full/ID」とすることで画像の直リンクが取得できる。
                     //「full」を「thumb」にすればサムネイルサイズが取得できます。
                     if(strpos($img,'twitpic') != 0){
+                        $isimg = true;
                         $img = str_replace('twitpic.com/','twitpic.com/show/full/',$img);
                     }
                     if(strpos($img,'twipple') != 0){
+                        $isimg = true;
                         $img = str_replace('twipple.jp/','twipple.jp/show/large/',$img);
                     }
                     if(strpos($img,'photozou') != 0){
+                        $isimg = true;
                         $img = preg_replace('/photozou.jp\/photo\/show\/[0-9]*\//','photozou.jp/p/img/',$img);
                     }
                     if(strpos($img,'instagram.com/p/') != 0){
+                        $isimg = true;
                         $instaurl = 'http://api.instagram.com/oembed?url=' . $img;
                         $instajson = file_get_contents($instaurl);
                         $json =  json_decode($instajson);
                         $img = $json->url;
                     }
-                    echo '<img src="' . $img . '">';
+                    if ($isimg) {
+                        echo '<img src="' . $img . '">';
+                    }
                 }
             }
             echo '</li>';
