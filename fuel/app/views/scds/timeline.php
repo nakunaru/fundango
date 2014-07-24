@@ -4,7 +4,7 @@
         echo '<li data-role="list-divider">タイムライン</li>';
         foreach ($timeline as $data)
         {
-            echo '<li>'.'<img src="' . $data->user->profile_image_url
+            echo '<li>'.'<img class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s" src="' . $data->user->profile_image_url
                 . '"><div class="timelinetext" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                 . $data->text . '</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                 . $data->user->name . ' @' . $data->user->screen_name .'</p>';
