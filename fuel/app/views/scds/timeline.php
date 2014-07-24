@@ -18,7 +18,7 @@
             //外部サービスの画像を表示
             if (property_exists($data->entities,'urls')) {
                 if (count($data->entities->urls) > 0) {
-                    $img = $statuses->entities->urls[0]->expanded_url;
+                    $img = $data->entities->urls[0]->expanded_url;
                     //URLを「twitpic.com/show/full/ID」とすることで画像の直リンクが取得できる。
                     //「full」を「thumb」にすればサムネイルサイズが取得できます。
                     if(strpos($img,'twitpic') != 0){
