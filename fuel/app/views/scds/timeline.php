@@ -4,8 +4,8 @@
         echo '<li data-role="list-divider">タイムライン</li>';
         foreach ($timeline as $data)
         {
-            echo '<li>'.'<img class="slideLeft" src="' . $data->user->profile_image_url
-                . '"><div class="timelinetext" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+            echo '<li>'.'<img class="slideRight" src="' . $data->user->profile_image_url
+                . '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                 . $data->text . '</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                 . $data->user->name . ' @' . $data->user->screen_name .'</p>';
             // twitter の投稿画像表示
