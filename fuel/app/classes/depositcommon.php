@@ -19,6 +19,12 @@ class Depositcommon {
         $tuserid = $user->tuserid;
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
+        if ($port4lio === null) {
+           $port4lio = array();
+        }
+        if ($depositedlist === null) {
+            $depositedlist = array();
+        }
         $data['user'] = $user;
         $data['followers'] = $followers;
         $data['port4lio'] = $port4lio;
