@@ -17,8 +17,9 @@ class Controller_Timeline extends Controller_Rest
      * POSTでタイムライン取得
      */
     public function post_timeline() {
-        $timeline = array();
-        //TODO タイムライン取得処理。途中から差分取得
+        //タイムライン取得処理。途中から差分取得
+        $since_id = Input::param('since_id');
+        $timeline = Timelinecommon::gettimeline($since_id);
         $this->response($timeline);
     }
 }

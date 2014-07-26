@@ -205,7 +205,24 @@ $(document).on( "pageshow", "#home", function( event ) {
     });
     */
     //$('#homemyicon').badger('100d');
+
+    //タイムライン取得を６０秒間隔で行う
+    setInterval("getTimeline()",60000);
 });
+
+function getTimeline()
+{
+    var since_id = $('.ui-page-active .timelineli').attr('timelineid');
+    var url = $('#timelinelist').attr('timelineurl');
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: "since_id=" + siince_id,
+        success: function(data){
+            alert( "Data Saved: " + data );
+        }
+    });
+}
 
 function panelOpenInit()
 {
