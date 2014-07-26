@@ -1,7 +1,7 @@
 <div role="main" class="ui-content">
     <ul id="timelinelist" timelineurl="<?php echo URI::create('timeline/timeline.json'); ?>"data-role="listview" data-filter="true" data-filter-placeholder="Search timeline...">
         <?php
-        echo '<li data-role="list-divider">タイムライン</li>';
+        echo '<li class="timelinedivider" data-role="list-divider">タイムライン</li>';
         foreach ($timeline as $data)
         {
             echo '<li class="timelineli" timelineid="' . $data->id . '" >'.'<img class="slideRight" src="' . $data->user->profile_image_url

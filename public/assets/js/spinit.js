@@ -215,16 +215,37 @@ function getTimeline()
     var since_id = $('.ui-page-active .timelineli').attr('timelineid');
     var url = $('#timelinelist').attr('timelineurl');
     var timelineul = $('.ui-page-active #timelinelist');
+    $.mobile.loading( "show", {
+        text: "Loading...",
+        textVisible: true,
+        theme: "z",
+        html: ""
+    });
     $.ajax({
         type: "POST",
         url: url,
         data: "since_id=" + since_id,
-        success: function(data){
+        success: function(timeline){
             //alert( "Data Saved: " + data );
-            for (var i=0; i<data.length; i++) {
-                $(timelineul).prepend('<li>' + data[i].text + '</li>');
+            $('.timelinedivider').remove();
+            for (var i=0; i<timeline.length; i++) {
+                var $data = timeline[i];
+                var str = '<li class="timelineli" timelineid="' + $data.id + '" >'+ '<img class="slideRight" src="' + $data.user.profile_image_url
+                    + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+                    + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
+                    + $data.user.name + ' @' + $data.user.screen_name + '</p>';
+                $(timelineul).prepend(str);
             }
+            $(timelineul).prepend('<li class="timelinedivider" data-role="list-divider">タイムライン</li>');
             $(timelineul).listview('refresh');
+        },
+        complete: function() {
+            $.mobile.loading( "hide", {
+                text: "Loading...",
+                textVisible: true,
+                theme: "z",
+                html: ""
+            });
         }
     });
 }
