@@ -48,7 +48,7 @@
                     }
                 }
             }
-            echo '<input type="button" value="デポ" data-mini="true">';
+            //echo '<input type="button" value="デポ" data-mini="true">';
             echo '</li>';
         }
         ?>
