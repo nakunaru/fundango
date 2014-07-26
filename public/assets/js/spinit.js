@@ -217,7 +217,7 @@ function getTimeline()
     $.ajax({
         type: "POST",
         url: url,
-        data: "since_id=" + siince_id,
+        data: "since_id=" + since_id,
         success: function(data){
             alert( "Data Saved: " + data );
         }
