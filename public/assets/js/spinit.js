@@ -214,12 +214,17 @@ function getTimeline()
 {
     var since_id = $('.ui-page-active .timelineli').attr('timelineid');
     var url = $('#timelinelist').attr('timelineurl');
+    var timelineul = $('.ui-page-active #timelinelist');
     $.ajax({
         type: "POST",
         url: url,
         data: "since_id=" + since_id,
         success: function(data){
-            alert( "Data Saved: " + data );
+            //alert( "Data Saved: " + data );
+            for (var i=0; i<data.length; i++) {
+                $(timelineul).prepend('<li>' + data[i].text + '</li>');
+            }
+            $(timelineul).listview('refresh');
         }
     });
 }
