@@ -341,7 +341,7 @@ function panelOpenInit()
         });
     });
     $( ".ui-page-active #friendopenbtn" ).click(function() {
-        $('#fromdepoimg').attr('src', $('myaccountimg').attr('src'));
+        $('#fromdepoimg').attr('src', $('#myaccountimg').attr('src'));
         $('.ui-page-active #friendpanel').panel('open');
     });
 }
