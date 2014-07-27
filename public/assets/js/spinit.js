@@ -241,7 +241,7 @@ function getTimeline()
             var since_id = 0;
             for (var i=0; i<timeline.length; i++) {
                 if (since_id == 0) {
-                   since_id = timeline[i];
+                   since_id = timeline[i].id;
                 }
                 var $data = timeline[i];
                 var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'+ '<img class="slideRight" src="' + $data.user.profile_image_url
