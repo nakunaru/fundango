@@ -7,7 +7,7 @@
         {
             echo '<li class="friendli" screen_name="'
                 . $data->screen_name . '" tuserid="'
-                . $data->id . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop">'
+                . $data->id . '" image_url="' . $data->profile_image_url . '"><a href="#depositAddDialog" data-rel="dialog" data-transition="pop">'
                 . '<img src="' . $data->profile_image_url . '">'
                 . '<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                 . $data->name . '</div><div class="ui-li-count">0d</div><p style="text-overflow:ellipsis; overflow:hidden; ">@'

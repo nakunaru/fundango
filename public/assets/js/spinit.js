@@ -172,6 +172,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#to_screen_name').val(screen_name);
         $('#to_tuserid').val(tuserid);
         $('#message').val("");
+        $('#todepoimg').attr('src', $(this).attr('image_url'));
     });
 
     setUrlLink();
