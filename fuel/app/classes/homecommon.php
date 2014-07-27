@@ -21,7 +21,11 @@ class Homecommon {
 
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
-        $data['timeline'] = $timeline->__resp->data;
+        if ($timeline) {
+            $data['timeline'] = $timeline->__resp->data;
+        } else {
+            $data['timeline'] = array();
+        }
         $data['ids'] = $ids->__resp->data->ids;
         $idstr = '';
         $count = 0;

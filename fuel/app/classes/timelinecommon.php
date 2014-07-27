@@ -18,7 +18,11 @@ class Timelinecommon {
                 "include_entities"=>true
             )
         );
-        $timeline = $response->__resp->data;
+        if ($response) {
+            $timeline = $response->__resp->data;
+        } else {
+            $timeline = array();
+        }
         return $timeline;
     }
 }
