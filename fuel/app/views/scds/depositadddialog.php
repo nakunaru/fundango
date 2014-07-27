@@ -7,7 +7,7 @@
         <form action="<?php echo URI::create('deposit/add'); ?>" method="post" data-ajax=“false”>
             <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
             <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
-            <?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?>
+            <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><img id="todepoimg" src="">
             <div class="ui-field-contain">
                 <label for="slider-fill">デポジット数:</label>
                 <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
