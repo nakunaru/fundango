@@ -4,7 +4,7 @@
         echo '<li class="timelinedivider" data-role="list-divider">タイムライン</li>';
         foreach ($timeline as $data)
         {
-            echo '<li class="timelineli" timelineid="' . $data->id . '" >'.'<img class="slideRight" src="' . $data->user->profile_image_url
+            echo '<li class="timelineli currli" timelineid="' . $data->id . '" >'.'<img class="slideRight" src="' . $data->user->profile_image_url
                 . '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                 . $data->text . '</div>' . '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                 . $data->user->name . ' @' . $data->user->screen_name .'</p>';

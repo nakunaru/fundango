@@ -174,17 +174,34 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#message').val("");
     });
 
+    setUrlLink();
+    $('.currli').removeClass('currli');
+    /*
+    $('#depositaddsubmit').click(function(){
+        $('.ui-dialog').dialog('close')
+    });
+    */
+    //$('#homemyicon').badger('100d');
+
+    //タイムライン取得を６０秒間隔で行う
+    setInterval("getTimeline()",60000);
+});
+
+/**
+ * URLを自動リンクする
+ */
+function setUrlLink() {
     //URLを自動リンクする
     //var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     //$('#timelinelist').html($('#timelinelist').html().replace(exp,"<a href='$1'>$1</a>"));
 
-    $('.timelinetext').each(function(){
+    $('.currli .timelinetext').each(function(){
         $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ') );
     });
 
     //@ユーザ名を自動リンクする
     // 要素を指定
-    $('.timelinetext').each(function() {
+    $('.currli .timelinetext').each(function() {
         var _html;
         _html = $(this).html().replace(/(^|\>)([^\<]*\@[^\<]*)(\<|$)/g, function() {
             return arguments[1]
@@ -199,16 +216,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         });
         $(this).html(_html);
     });
-    /*
-    $('#depositaddsubmit').click(function(){
-        $('.ui-dialog').dialog('close')
-    });
-    */
-    //$('#homemyicon').badger('100d');
-
-    //タイムライン取得を６０秒間隔で行う
-    setInterval("getTimeline()",60000);
-});
+}
 
 function getTimeline()
 {
@@ -230,7 +238,7 @@ function getTimeline()
             $('.timelinedivider').remove();
             for (var i=0; i<timeline.length; i++) {
                 var $data = timeline[i];
-                var str = '<li class="timelineli" timelineid="' + $data.id + '" >'+ '<img class="slideRight" src="' + $data.user.profile_image_url
+                var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'+ '<img class="slideRight" src="' + $data.user.profile_image_url
                     + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                     + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>';
@@ -240,6 +248,8 @@ function getTimeline()
             $(timelineul).listview('refresh');
         },
         complete: function() {
+            setUrlLink();
+            $('.currli').removeClass('currli');
             $.mobile.loading( "hide", {
                 text: "Loading...",
                 textVisible: true,
