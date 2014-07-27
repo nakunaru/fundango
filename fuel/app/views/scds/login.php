@@ -7,6 +7,7 @@
 <?php echo Asset::css('themes/watchme.min.css'); ?>
 <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+<?php echo Asset::css('animations.css'); ?>
 <?php echo Asset::css('sp.css'); ?>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
@@ -36,7 +37,7 @@
     <br>
     <br>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
-    <center><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle'));  ?></center>
+    <center><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'Hatch'));  ?></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
