@@ -249,6 +249,11 @@ function getTimeline()
                     + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>';
                 //$(timelineul).prepend(str);
+                var img = getImageUrlLink($data);
+                if (img) {
+                   str += '<img class="slideUp" src="' + img + '">';
+                }
+                str += '</li>';
                 $(timelineultmp).append(str);
             }
             $(timelineul).prepend($(timelineultmp).html());
@@ -267,6 +272,17 @@ function getTimeline()
             });
         }
     });
+}
+
+function getImageUrlLink($data)
+{
+    var $img = false;
+    if ($data.entities.media != undefined) {
+        if ($data.entities.media.length > 0) {
+            $img = $data.entities.media[0].media_url;
+        }
+    }
+    return $img;
 }
 
 function panelOpenInit()
