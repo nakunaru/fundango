@@ -106,7 +106,7 @@
     color: #FFF;
 }
 
-#depoarrowimg {
+#depoarrowimg, #todepoimg, #fromdepoimg {
     width: 100px;
     height: 100px;
 }
