@@ -10,6 +10,7 @@ class Homecommon {
     public static function getdata()
     {
         $data = array();
+        $since_id = 0;
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         $timeline = Twitter::get("statuses/home_timeline",
@@ -18,23 +19,18 @@ class Homecommon {
             )
         );
 
-        //twitter に投稿するやり方
-        /*
-        $timeline = Twitter::post('statuses/update',
-            array('status' => 'Using this new awesome cool Twitter package for Fuel!',
-            'count' => 100
-            ));
-
-        $output = print_r($timeline,true);
-        Log::warning('timeline = ' . $output);
-        */
-
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
         $data['timeline'] = $timeline->__resp->data;
         $data['ids'] = $ids->__resp->data->ids;
         $idstr = '';
         $count = 0;
+        foreach ($data['timeline'] as $line){
+            $since_id = $line->id;
+            break;
+        }
+        $data['since_id'] = $since_id;
+
         foreach ($data['ids'] as $id){
             if ($count == 100) {
                 break;
@@ -67,6 +63,7 @@ class Homecommon {
         $view->set_global('user', $data['user']);
         $view->set_global('followers', $data['followers']);
         $view->set_global('timeline', $data['timeline']);
+        $view->set_global('since_id', $data['since_id']);
         return $view;
     }
 }
