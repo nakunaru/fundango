@@ -21,5 +21,7 @@
 </div>
 <!-- デポジット追加ダイアログ -->
 <?php echo View::forge('scds/depositadddialog'); ?>
+<!-- デポジット削除ダイアログ -->
+<?php echo View::forge('scds/depositdeldialog'); ?>
 </body>
 </html>

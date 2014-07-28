@@ -16,7 +16,7 @@
                 echo '<li data-role="list-divider">' . $user->screen_name . ' さんのポートフォリオ</li>';
                 foreach ($port4lio as $data)
                 {
-                    echo '<li><a href="#">'
+                    echo '<li class="port4lioli"><a href="#depositDelDialog" data-rel="dialog" data-transition="pop">'
                         .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                         . $data->to_screen_name
                         . ' さんにデポジットしています</div>'

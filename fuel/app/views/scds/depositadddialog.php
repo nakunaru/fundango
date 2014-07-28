@@ -11,11 +11,11 @@
             <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><img id="todepoimg" src="">
             </center>
             <div class="ui-field-contain">
-                <label for="slider-fill">デポジット数:</label>
+                <label for="depositnum">デポジット数:</label>
                 <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
             </div>
             <div class="ui-field-contain">
-                <label for="textarea-a">メッセージ:</label>
+                <label for="message">メッセージ:</label>
                 <textarea name="message" id="message"></textarea>
             </div>
             <input id="depositaddsubmit" type="submit" value="デポる">

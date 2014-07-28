@@ -237,6 +237,9 @@ function getTimeline()
         url: url,
         data: "since_id=" + since_id,
         success: function(timeline){
+            if (timeline == undefined || timeline == null || timeline.length == undefined) {
+                return;
+            }
             //alert( "Data Saved: " + data );
             $('.timelinedivider').remove();
             var since_id = 0;
