@@ -14,6 +14,8 @@ $('#home').live('pageinit', function(e) {
 });
 */
 
+var timeline_timer = 0;
+
 var radarchartdata = {
     labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
     datasets: [
@@ -160,9 +162,14 @@ $(document).on( "pageshow", "#home", function( event ) {
     //var wow = new WOW();
     //wow.init();
     //new WOW().init();
+    panelOpenInit();
+
+    if (timeline_timer != 0) {
+       return;
+    }
+
     $('#footerhome').addClass('ui-btn-active');
 
-    panelOpenInit();
 
     $('.ui-page-active .friendli').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
@@ -184,8 +191,10 @@ $(document).on( "pageshow", "#home", function( event ) {
     */
     //$('#homemyicon').badger('100d');
 
-    //タイムライン取得を６０秒間隔で行う
-    setInterval("getTimeline()",60000);
+    if (timeline_timer == 0) {
+        //タイムライン取得を６０秒間隔で行う
+        timeline_timer = setInterval("getTimeline()",60000);
+    }
 });
 
 /**
