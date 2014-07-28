@@ -78,7 +78,7 @@ class Controller_Deposit extends Controller
 
         //twitter に投稿するやり方
         $result = Twitter::post('statuses/update',
-            array('status' => '. @' . $to_user->screen_name . 'さんに' . $depositnum . '団子、デポりました。 #scds'
+            array('status' => '🍡' . ' @' . $to_user->screen_name . 'さんに' . $depositnum . '団子、デポりました。 #scds'
             ));
 
         //ポートフォリオにデータを追加する
