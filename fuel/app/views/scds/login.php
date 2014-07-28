@@ -23,12 +23,6 @@
     <div id="socialbuttons" class="clearfix">
         <div class="tweet"></div>
         <div class="facebook_like"></div>
-        <?php echo Fuel::VERSION; ?>
-        <?php echo $users[0]['bang'] ?>
-        <?php echo $users[0]['name'] ?>
-        <?php echo $users[0]['tosi'] ?>
-        <?php echo "test" ?>
-        <?php echo "test2" ?>
     </div>
   </div>
 
