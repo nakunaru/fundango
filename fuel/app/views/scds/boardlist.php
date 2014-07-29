@@ -13,7 +13,7 @@
         <div id="tabboardlist" class="ui-body ui-body-a">
             <br>
             <ul data-role="listview">
-                <li><h5>test</h5><div>test3</div><p>test2</p><p class="ui-li-aside">test4</p></li>
+                <li><h1>kara_mage</h1><h5>現値 : 503</h5><h5 class="boardparcent">前比 : ▲+0.23%</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>
             </ul>
             <!-- canvas id="boardcanvas" height="500" width="500"></canvas -->
         </div>
