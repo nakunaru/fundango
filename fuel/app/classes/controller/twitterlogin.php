@@ -44,7 +44,8 @@ class Controller_Twitterlogin extends Controller
         Session::destroy();
         //Response::redirect(Uri::create('/'));
         $data = array();
-        return Response::forge(View::forge('scds/login', $data));
+        //return Response::forge(View::forge('scds/login', $data));
+        Response::redirect(Uri::create('login'));
     }
 
     public function action_callback()
