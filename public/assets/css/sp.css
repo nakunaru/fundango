@@ -44,6 +44,18 @@
 
 }
 
+.boardli {
+    background: #111;
+    color: #fff;
+}
+
+.boardpercentplus {
+    color: #009926;
+}
+
+.boardpercentminus {
+    color: #f13c31;
+}
 #home.ui-page-active {
     /*
     position: fixed;
