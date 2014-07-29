@@ -13,7 +13,7 @@
         <div id="tabboardlist" class="ui-body ui-body-a">
             <br>
             <ul data-role="listview">
-                <li>test</li>
+                <li><h5>test</h5><div>test3</div><p>test2</p><p class="ui-li-aside">test4</p></li>
             </ul>
             <!-- canvas id="boardcanvas" height="500" width="500"></canvas -->
         </div>
