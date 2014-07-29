@@ -8,9 +8,11 @@
                     + $user['deposited_credit']) . 'd</div></img>' . $user['screen_name'] . '</div>' ?>
         </h1>
     </div>
-    <canvas id="accountchartcanvas" height="150" width="150"></canvas>
-    <br>
-    <canvas id="accountchartcanvas2" height="150" width="150"></canvas>
+    <center>
+        <canvas id="accountchartcanvas" height="150" width="150"></canvas>
+        <br>
+        <canvas id="accountchartcanvas2" height="200" width="200"></canvas>
+    </center>
     <ul data-role="listview" >
         <li>ランキング 124/1045</li>
         <li>団子のカラー 青</li>
