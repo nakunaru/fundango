@@ -44,16 +44,16 @@
 
 }
 
-.ui-listview .boardli {
+#board .ui-listview .boardli {
     background-color: #111;
     color: #fff;
 }
 
-.ui-listview .boardpercentplus {
+#board .ui-listview .boardpercentplus {
     color: #009926;
 }
 
-.ui-listview .boardpercentminus {
+#board .ui-listview .boardpercentminus {
     color: #f13c31;
 }
 #home.ui-page-active {
