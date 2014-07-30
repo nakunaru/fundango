@@ -49,11 +49,11 @@
     color: #fff;
 }
 
-#board .ui-listview .boardpercentplus {
+#board .ui-listview .boardparcentplus {
     color: #009926;
 }
 
-#board .ui-listview .boardpercentminus {
+#board .ui-listview .boardparcentminus {
     color: #f13c31;
 }
 #home.ui-page-active {
