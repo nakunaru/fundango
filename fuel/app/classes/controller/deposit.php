@@ -57,7 +57,6 @@ class Controller_Deposit extends Controller
         $user->deposit_credit = $user->deposit_credit + $port->depositnum;
 
         $user->save();
-        $port->save();
 
         //相手ユーザがすでに存在するかどうか？
         $to_user = Model_User::find_one_by('tuserid', $to_tuserid, '=');
@@ -76,9 +75,12 @@ class Controller_Deposit extends Controller
         }
         $to_user->save();
 
+        $port->base_credit = $to_user->social_credit + $to_user->deposited_credit;
+        $port->save();
+
         //twitter に投稿するやり方
         $result = Twitter::post('statuses/update',
-            array('status' => '🍡' . ' @' . $to_user->screen_name . 'さんに' . $depositnum . '団子、デポりました。 #scds'
+            array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 #scds'
             ));
 
         //ポートフォリオにデータを追加する
