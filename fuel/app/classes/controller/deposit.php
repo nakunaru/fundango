@@ -41,6 +41,7 @@ class Controller_Deposit extends Controller
         $to_tuserid = Input::param('to_tuserid');
         $message = Input::param('message');
 
+        //ポートフォリオ情報を作成する
         $port = new Model_Port4lio();
         $port->from_screen_name = $user->screen_name;
         $port->from_tuserid = $user->tuserid;
@@ -52,6 +53,7 @@ class Controller_Deposit extends Controller
         //$timestr = Date::forge($timestamp)->format('mysql');
         $timestr = Date::forge()->format('mysql');
         $port->date = $timestr;
+
 
         //自分のデポジット数にカウントアップする
         $user->deposit_credit = $user->deposit_credit + $port->depositnum;
@@ -75,8 +77,18 @@ class Controller_Deposit extends Controller
         }
         $to_user->save();
 
+        //株価の基準値を設定するこの値からキャピタルゲインがわかる
         $port->base_credit = $to_user->social_credit + $to_user->deposited_credit;
         $port->save();
+
+        //株価情報を作成する
+        $board = new Model_Board();
+        $board->tuserid = $to_tuserid;
+        $board->screen_name = $to_screen_name;
+        $board->social_credit = $port->base_credit;
+        $board->base_credit = $port->base_credit - $depositnum;
+        $board->date = $timestr;
+        $board->save();
 
         //twitter に投稿するやり方
         $result = Twitter::post('statuses/update',
