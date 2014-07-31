@@ -39,4 +39,24 @@ class Boardcommon {
         */
         return $view;
     }
+
+    /**
+     * 株価情報の作成
+     * @param $to_tuserid
+     * @param $to_screen_name
+     * @param $social_credit
+     * @param $base_credit
+     * @param $timestr
+     */
+    public static function addboard($to_tuserid, $to_screen_name, $social_credit, $base_credit, $timestr)
+    {
+        $board = new Model_Board();
+        $board->tuserid = $to_tuserid;
+        $board->screen_name = $to_screen_name;
+        $board->social_credit = $social_credit;
+        $board->base_credit = $base_credit;
+        $board->date = $timestr;
+        $board->save();
+        return $board;
+    }
 }

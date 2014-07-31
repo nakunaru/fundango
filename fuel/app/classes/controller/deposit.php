@@ -70,7 +70,7 @@ class Controller_Deposit extends Controller
             $to_user->screen_name = $to_screen_name;
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $depositnum;
-            $to_user->social_credit = -1;
+            $to_user->social_credit = 0;
         } else {
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $to_user->deposited_credit + $depositnum;
@@ -82,13 +82,7 @@ class Controller_Deposit extends Controller
         $port->save();
 
         //株価情報を作成する
-        $board = new Model_Board();
-        $board->tuserid = $to_tuserid;
-        $board->screen_name = $to_screen_name;
-        $board->social_credit = $port->base_credit;
-        $board->base_credit = $port->base_credit - $depositnum;
-        $board->date = $timestr;
-        $board->save();
+        Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
 
         //twitter に投稿するやり方
         $result = Twitter::post('statuses/update',

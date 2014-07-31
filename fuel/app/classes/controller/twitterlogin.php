@@ -52,6 +52,7 @@ class Controller_Twitterlogin extends Controller
     {
         $tokens = Twitter::get_tokens();
         $twitter_user = Twitter::get('account/verify_credentials');
+        $timestr = Date::forge()->format('mysql');
 
         // Update or create the user.  We update every time a user logs in
         // so that if they update their profile, we get that update.
@@ -81,11 +82,14 @@ class Controller_Twitterlogin extends Controller
             $user->deposited_credit = 0;
         }
         // デポジットを先行でユーザ作成行われた場合
-        if ($user->social_credit == -1) {
+        if ($user->social_credit == 0) {
             $user->social_credit = $user->followers_count;
             $user->deposit_credit = 0;
         }
         $user->save();
+
+        //株価情報を作成
+        Boardcommon::addboard($user->tuserid,$user->screen_name,$user->social_credit,$user->social_credit,$timestr);
 
         Session::set('user_id', $user->user_id);
 
