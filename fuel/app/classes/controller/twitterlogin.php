@@ -95,9 +95,6 @@ class Controller_Twitterlogin extends Controller
 
         $data = array();
         $data['user'] = $user;
-        //$data['screen_name'] = $twitter_user->screen_name;
-        //Response::redirect(Uri::create('/'));
         Response::redirect(Uri::create('home'));
-        //return Response::forge(View::forge('scds/home', $data));
     }
 }

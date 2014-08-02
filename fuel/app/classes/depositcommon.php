@@ -25,6 +25,17 @@ class Depositcommon {
         if ($depositedlist === null) {
             $depositedlist = array();
         }
+
+        //キャピタルゲインを計算する
+        foreach ($port4lio as $port) {
+            $to_user = Model_User::find_by('tuserid', $port->to_tuserid, '=');
+            if ($to_user) {
+                $port->gc = 0;
+            } else {
+                $port->gc = 0;
+            }
+        }
+
         $data['user'] = $user;
         $data['followers'] = $followers;
         $data['port4lio'] = $port4lio;

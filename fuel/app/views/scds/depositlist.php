@@ -22,7 +22,7 @@
                         . ' さんにデポジットしています</div>'
                         . '<p class="ui-li-aside">'
                         . $data->date
-                        . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:xxd '
+                        . '</p><p style="text-overflow:ellipsis; overflow:hidden; ">キャピタルゲイン:' . $data->base_credit . 'd '
                         . $data->message . '</p><div class="ui-li-count">' . $data->depositnum .'d</div></a></li>';
                 }
                 ?>
