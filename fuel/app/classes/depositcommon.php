@@ -32,7 +32,7 @@ class Depositcommon {
             if ($to_user) {
                 $port->cg = $to_user->social_credit - $port->base_credit;
                 if ($to_user->deposited_credit) {
-                    $port->cg +=  $to_user->deposited_credit
+                    $port->cg +=  $to_user->deposited_credit;
                 }
                 if ($port->cg < 0) {
                     $port->cg = 0;
