@@ -30,9 +30,12 @@ class Depositcommon {
         foreach ($port4lio as $port) {
             $to_user = Model_User::find_by('tuserid', $port->to_tuserid, '=');
             if ($to_user) {
-                $port->gc = 0;
+                $port->cg = $to_user->social_credit + $to_user->deposited_credit - $port->base_credit;
+                if ($port->cg < 0) {
+                    $port->cg = 0;
+                }
             } else {
-                $port->gc = 0;
+                $port->cg = 0;
             }
         }
 
