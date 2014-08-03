@@ -73,7 +73,7 @@ class Homecommon {
 
         foreach ($data['followers'] as $follower) {
             $followerid = '' . $follower->id;
-            if ($to_users[$followerid] != undefined) {
+            if (isset($to_users[$followerid])) {
                 $to_user = $to_users[$followerid];
                 if ($to_user) {
                     $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
