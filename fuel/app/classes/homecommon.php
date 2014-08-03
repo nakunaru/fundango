@@ -76,7 +76,10 @@ class Homecommon {
             if (isset($to_users[$followerid])) {
                 $to_user = $to_users[$followerid];
                 if ($to_user) {
-                    $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
+                    $follower->credit = $to_user->social_credit;
+                    if ($to_user->deposited_credit) {
+                        $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
+                    }
                 } else {
                     $follower->credit = 0;
                 }
