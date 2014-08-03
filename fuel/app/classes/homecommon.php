@@ -45,14 +45,12 @@ class Homecommon {
                 $idstr = $id;
                 $sqlwherestr = "where tuserid = '" . $id . "'";
                 $is_sql = true;
-                //Log::warning('sqlwherestr init');
             } else {
                 $idstr = $idstr . ',' . $id;
                 $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
             }
             $count++;
         }
-        //Log::warning('idstr = ' . $idstr);
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         if ($followers) {
             $data['followers'] = $followers->__resp->data;
@@ -64,11 +62,8 @@ class Homecommon {
 
         if ($is_sql) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
-            //$output = print_r($to_users,true);
-            //Log::warning('to_users = ' . $output);
         } else {
             $to_users = array();
-            //Log::warning('to_users = empty');
         }
 
         foreach ($data['followers'] as $follower) {
@@ -76,13 +71,8 @@ class Homecommon {
             if (isset($to_users[$followerid])) {
                 $to_user = $to_users[$followerid];
                 if ($to_user) {
-                    //$output = print_r($to_user,true);
-                    //Log::warning('to_user = ' . $output);
                     $follower->credit = '0';
-                    //$follower->credit = $to_user['social_credit'];
-                    //if ($to_user->deposited_credit) {
-                        $follower->credit = $to_user['social_credit'] + $to_user['deposited_credit'];
-                    //}
+                    $follower->credit = $to_user['social_credit'] + $to_user['deposited_credit'];
                 } else {
                     $follower->credit = '0';
                 }
