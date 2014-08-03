@@ -35,14 +35,17 @@ class Homecommon {
         }
         $data['since_id'] = $since_id;
 
+        $sqlwherestr = '';
         foreach ($data['ids'] as $id){
             if ($count == 100) {
                 break;
             }
             if ($idstr == '') {
                 $idstr = $id;
+                $sqlwherestr = "where tuserid = '" . $id . "'";
             } else {
                 $idstr = $idstr . ',' . $id;
+                $sqlwherestr = " or tuserid = '" . $id . "'";
             }
             $count++;
         }
@@ -55,6 +58,15 @@ class Homecommon {
         }
         Session::delete('user');
         Session::set('user', $data['user']);
+
+        if ($sqlwherestr != '') {
+            $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
+        } else {
+            $to_users = array();
+        }
+
+        $data['to_users'] = $to_users;
+
         //Session::set('followers', $data['followers']);
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
