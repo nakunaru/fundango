@@ -86,6 +86,8 @@ class Homecommon {
                 } else {
                     $follower->credit = '0';
                 }
+            } else {
+                $follower->credit = '0';
             }
         }
 
