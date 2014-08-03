@@ -92,8 +92,8 @@ class Homecommon {
         $data['to_users'] = $to_users;
 
         //Session::set('followers', $data['followers']);
-        //$output = print_r($followers,true);
-        //Log::warning('followers = ' . $output);
+        $output = print_r($followers,true);
+        Log::warning('followers = ' . $output);
         return $data;
     }
     public static function getview()
