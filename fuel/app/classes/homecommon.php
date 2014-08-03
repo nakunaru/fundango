@@ -59,13 +59,13 @@ class Homecommon {
         Session::delete('user');
         Session::set('user', $data['user']);
 
-        if ($sqlwherestr != '') {
+        if (empty($sqlwherestr)) {
+            $to_users = array();
+            Log::warning('to_users = empty');
+        } else {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
             $output = print_r($to_users,true);
             Log::warning('to_users = ' . $output);
-        } else {
-            $to_users = array();
-            Log::warning('to_users = empty');
         }
 
         foreach ($data['followers'] as $follower) {
