@@ -45,7 +45,7 @@ class Homecommon {
                 $idstr = $id;
                 $sqlwherestr = "where tuserid = '" . $id . "'";
                 $is_sql = true;
-                Log::warning('sqlwherestr init');
+                //Log::warning('sqlwherestr init');
             } else {
                 $idstr = $idstr . ',' . $id;
                 $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
@@ -64,19 +64,21 @@ class Homecommon {
 
         if ($is_sql) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
-            $output = print_r($to_users,true);
-            Log::warning('to_users = ' . $output);
+            //$output = print_r($to_users,true);
+            //Log::warning('to_users = ' . $output);
         } else {
             $to_users = array();
-            Log::warning('to_users = empty');
+            //Log::warning('to_users = empty');
         }
 
         foreach ($data['followers'] as $follower) {
-            $to_user = $to_users[$follower->id];
-            if ($to_user) {
-                $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
-            } else {
-                $follower->credit = 0;
+            if ($to_users[$follower->id] != undefined) {
+                $to_user = $to_users[$follower->id];
+                if ($to_user) {
+                    $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
+                } else {
+                    $follower->credit = 0;
+                }
             }
         }
 
