@@ -72,7 +72,7 @@ class Homecommon {
         }
 
         foreach ($data['followers'] as $follower) {
-            $followerid = $follower->id;
+            $followerid = '' . $follower->id;
             if ($to_users[$followerid] != undefined) {
                 $to_user = $to_users[$followerid];
                 if ($to_user) {
