@@ -43,6 +43,7 @@ class Homecommon {
             if ($idstr == '') {
                 $idstr = $id;
                 $sqlwherestr = "where tuserid = '" . $id . "'";
+                Log::warning('sqlwherestr init');
             } else {
                 $idstr = $idstr . ',' . $id;
                 $sqlwherestr += " or tuserid = '" . $id . "'";
