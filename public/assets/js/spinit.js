@@ -241,7 +241,7 @@ function getTimeline()
     $.mobile.loading( "show", {
         text: "Loading...",
         textVisible: true,
-        theme: "z",
+        theme: "a",
         html: ""
     });
     $.ajax({
@@ -260,10 +260,13 @@ function getTimeline()
                    since_id = timeline[i].id;
                 }
                 var $data = timeline[i];
-                var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'+ '<img class="slideRight" src="' + $data.user.profile_image_url
+                var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'
+                    + '<img class="slideRight" src="' + $data.user.profile_image_url
                     + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                     + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
-                    + $data.user.name + ' @' + $data.user.screen_name + '</p>';
+                    + '<p class="ui-li-aside">2014/08/xx</p>'
+                    + $data.user.name + ' @' + $data.user.screen_name + ' (0d)</p>'
+                    + '<a href="#">デポる</a>';
                 //$(timelineul).prepend(str);
                 var img = getImageUrlLink($data);
                 if (img) {
@@ -283,7 +286,7 @@ function getTimeline()
             $.mobile.loading( "hide", {
                 text: "Loading...",
                 textVisible: true,
-                theme: "z",
+                theme: "a",
                 html: ""
             });
         }
