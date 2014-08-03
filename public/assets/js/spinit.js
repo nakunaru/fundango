@@ -262,11 +262,12 @@ function getTimeline()
                 var $data = timeline[i];
                 var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'
                     + '<img class="slideRight" src="' + $data.user.profile_image_url
-                    + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+                    + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal; width: 80%">'
                     + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + '<p class="ui-li-aside">2014/08/xx</p>'
                     + $data.user.name + ' @' + $data.user.screen_name + ' (0d)</p>'
-                    + '<a href="#">デポる</a>';
+                    //+ '<a href="#">デポる</a>'
+                    ;
                 //$(timelineul).prepend(str);
                 var img = getImageUrlLink($data);
                 if (img) {
