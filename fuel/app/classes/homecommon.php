@@ -65,6 +65,15 @@ class Homecommon {
             $to_users = array();
         }
 
+        foreach ($data['followers'] as $follower) {
+            $to_user = $to_users[$follower->id];
+            if ($to_user) {
+                $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
+            } else {
+                $follower->credit = 0;
+            }
+        }
+
         $data['to_users'] = $to_users;
 
         //Session::set('followers', $data['followers']);
@@ -78,6 +87,7 @@ class Homecommon {
         $view = View::forge('scds/home', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('followers', $data['followers']);
+        $view->set_global('to_users', $data['to_users']);
         $view->set_global('timeline', $data['timeline']);
         $view->set_global('since_id', $data['since_id']);
         return $view;
