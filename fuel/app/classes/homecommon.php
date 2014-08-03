@@ -45,7 +45,7 @@ class Homecommon {
                 $sqlwherestr = "where tuserid = '" . $id . "'";
             } else {
                 $idstr = $idstr . ',' . $id;
-                $sqlwherestr = " or tuserid = '" . $id . "'";
+                $sqlwherestr += " or tuserid = '" . $id . "'";
             }
             $count++;
         }
