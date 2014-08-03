@@ -263,8 +263,9 @@ function getTimeline()
                 var str = '<li class="timelineli currli" timelineid="' + $data.id + '" >'
                     + '<img class="slideRight" src="' + $data.user.profile_image_url
                     + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal; width: 80%">'
-                    + $data.text + '</div>' + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
+                    + $data.text + '</div>'
                     + '<p class="ui-li-aside">10:01</p>'
+                    + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">0d</p>'
                     //+ '<a href="#">デポる</a>'
