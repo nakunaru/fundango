@@ -48,7 +48,7 @@ class Homecommon {
                 Log::warning('sqlwherestr init');
             } else {
                 $idstr = $idstr . ',' . $id;
-                $sqlwherestr += " or tuserid = '" . $id . "'";
+                $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
             }
             $count++;
         }
