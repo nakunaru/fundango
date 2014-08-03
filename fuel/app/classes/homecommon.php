@@ -61,6 +61,8 @@ class Homecommon {
 
         if ($sqlwherestr != '') {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
+            $output = print_r($to_users,true);
+            Log::warning('to_users = ' . $output);
         } else {
             $to_users = array();
         }
