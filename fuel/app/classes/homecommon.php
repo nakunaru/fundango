@@ -65,6 +65,7 @@ class Homecommon {
             Log::warning('to_users = ' . $output);
         } else {
             $to_users = array();
+            Log::warning('to_users = empty');
         }
 
         foreach ($data['followers'] as $follower) {
