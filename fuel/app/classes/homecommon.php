@@ -36,6 +36,7 @@ class Homecommon {
         $data['since_id'] = $since_id;
 
         $sqlwherestr = '';
+        $is_sql = false;
         foreach ($data['ids'] as $id){
             if ($count == 100) {
                 break;
@@ -43,6 +44,7 @@ class Homecommon {
             if ($idstr == '') {
                 $idstr = $id;
                 $sqlwherestr = "where tuserid = '" . $id . "'";
+                $is_sql = true;
                 Log::warning('sqlwherestr init');
             } else {
                 $idstr = $idstr . ',' . $id;
@@ -60,13 +62,13 @@ class Homecommon {
         Session::delete('user');
         Session::set('user', $data['user']);
 
-        if (empty($sqlwherestr)) {
-            $to_users = array();
-            Log::warning('to_users = empty');
-        } else {
+        if ($is_sql) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
             $output = print_r($to_users,true);
             Log::warning('to_users = ' . $output);
+        } else {
+            $to_users = array();
+            Log::warning('to_users = empty');
         }
 
         foreach ($data['followers'] as $follower) {
