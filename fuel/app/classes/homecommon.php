@@ -82,9 +82,9 @@ class Homecommon {
                         $follower->credit = $to_user->social_credit + $to_user->deposited_credit;
                     }
                     */
-                    $follower->credit = 0;
+                    $follower->credit = '0';
                 } else {
-                    $follower->credit = 0;
+                    $follower->credit = '0';
                 }
             }
         }
