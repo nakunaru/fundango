@@ -12,12 +12,20 @@ class Timelinecommon {
      */
     public static function gettimeline($since_id)
     {
-        $response = Twitter::get("statuses/home_timeline",
-            array('count'=>20,
-                'since_id'=>$since_id,
-                "include_entities"=>true
-            )
-        );
+        if ($since_id != 0) {
+            $response = Twitter::get("statuses/home_timeline",
+                array('count'=>20,
+                    'since_id'=>$since_id,
+                    "include_entities"=>true
+                )
+            );
+        } else {
+            $response = Twitter::get("statuses/home_timeline",
+                array('count'=>20,
+                    "include_entities"=>true
+                )
+            );
+        }
         if ($response) {
             $timeline = $response->__resp->data;
         } else {

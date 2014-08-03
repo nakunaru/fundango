@@ -192,6 +192,9 @@ $(document).on( "pageshow", "#home", function( event ) {
     //$('#homemyicon').badger('100d');
 
     if (timeline_timer == 0) {
+        //最初の呼び出し
+        getTimeline();
+
         //タイムライン取得を６０秒間隔で行う
         timeline_timer = setInterval("getTimeline()",60000);
     }

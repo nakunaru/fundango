@@ -13,26 +13,35 @@ class Homecommon {
         $since_id = 0;
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
+
+        /*
         $timeline = Twitter::get("statuses/home_timeline",
             array('count'=>20,
                 "include_entities"=>true
             )
         );
+        */
+        $data['timeline'] = array();
 
         $ids = Twitter::get("followers/ids");
         $data['user'] = $user;
+        /*
         if ($timeline) {
             $data['timeline'] = $timeline->__resp->data;
         } else {
             $data['timeline'] = array();
         }
+        */
         $data['ids'] = $ids->__resp->data->ids;
         $idstr = '';
         $count = 0;
+        /*
         foreach ($data['timeline'] as $line){
             $since_id = $line->id;
             break;
         }
+        */
+        $since_id = 0;
         $data['since_id'] = $since_id;
 
         $sqlwherestr = '';
