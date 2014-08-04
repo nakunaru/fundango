@@ -267,7 +267,7 @@ function getTimeline()
                     + '<p class="ui-li-aside">' + $data.datestr + '</p>'
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
-                    + '<p class="ui-li-count">0d</p>'
+                    + '<p class="ui-li-count">' + $data.credit + 'd</p>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
