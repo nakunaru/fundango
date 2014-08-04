@@ -75,6 +75,7 @@ class Controller_Deposit extends Controller
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $to_user->deposited_credit + $depositnum;
         }
+        $to_user->total_credit = $to_user->social_credit + $to_user->deposited_credit;
         $to_user->save();
 
         //株価の基準値を設定するこの値からキャピタルゲインがわかる
