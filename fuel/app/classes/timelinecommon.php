@@ -31,6 +31,14 @@ class Timelinecommon {
         } else {
             $timeline = array();
         }
+
+        //ツイートされた時間を文字列に変換する
+        foreach ($timeline as $tweet) {
+            //$created_at = 'Wed, 03 Oct 2012 00:00:00 +0000';
+            $created_at = $tweet->created_at;
+            $datetime = date('H:i', strtotime($created_at));
+            $tweet->datestr = $datetime;
+        }
         return $timeline;
     }
 }
