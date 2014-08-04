@@ -40,7 +40,7 @@ class Timelinecommon {
             $tweet->datestr = $datetime;
 
             //団子の数を取得する
-            $user = Model_User::find_one_by('tuserid', $tweet->id, '=');
+            $user = Model_User::find_one_by('tuserid', $tweet->user->id_str, '=');
             if ($user) {
                 $tweet->credit = $user->social_credit + $user->deposited_credit;
             } else {
