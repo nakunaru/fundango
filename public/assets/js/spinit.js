@@ -164,14 +164,16 @@ $(document).on( "pageshow", "#home", function( event ) {
     //new WOW().init();
     panelOpenInit();
 
+    /*
     if (timeline_timer != 0) {
        return;
     }
+    */
 
     $('#footerhome').addClass('ui-btn-active');
 
 
-    $('.ui-page-active .friendli').click(function(){
+    $('.ui-page-active .friendli').unbind('click').click(function(){
         //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
@@ -193,13 +195,16 @@ $(document).on( "pageshow", "#home", function( event ) {
     */
     //$('#homemyicon').badger('100d');
 
-    if (timeline_timer == 0) {
-        //最初の呼び出し
-        getTimeline();
+    //if (timeline_timer == 0) {
+    //最初の呼び出し
+    getTimeline();
 
-        //タイムライン取得を６０秒間隔で行う
-        timeline_timer = setInterval("getTimeline()",60000);
+    if (timeline_timer != 0) {
+        clearInterval(timeline_timer);
     }
+    //タイムライン取得を６０秒間隔で行う
+    timeline_timer = setInterval("getTimeline()",60000);
+    //}
 });
 
 /**
@@ -355,7 +360,7 @@ function getImageUrlLink($data)
 
 function panelOpenInit()
 {
-    $( ".ui-page-active #settingopenbtn" ).click(function() {
+    $( ".ui-page-active #settingopenbtn").unbind('click').click(function() {
         $('.ui-page-active #settingpanel').panel('open');
         var myDoughnut = new Chart(document.getElementById("accountchartcanvas").
             getContext("2d")).Doughnut(doughnutData);
@@ -364,7 +369,7 @@ function panelOpenInit()
             pointDot: false
         });
     });
-    $( ".ui-page-active #friendopenbtn" ).click(function() {
+    $( ".ui-page-active #friendopenbtn").unbind('click').click(function() {
         $('#fromdepoimg').attr('src', $('#myaccountimg').attr('src'));
         $('.ui-page-active #friendpanel').panel('open');
     });
