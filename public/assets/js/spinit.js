@@ -182,8 +182,10 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#todepoimg').attr('src', $(this).attr('image_url'));
     });
 
+    /*
     setUrlLink();
     $('.currli').removeClass('currli');
+    */
     /*
     $('#depositaddsubmit').click(function(){
         $('.ui-dialog').dialog('close')
