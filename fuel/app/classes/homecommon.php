@@ -15,9 +15,17 @@ class Homecommon {
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
 
         //ユーザの総数を取得
-        $all_users = DB::query('select * from user;')->execute()->as_array();
+        $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
         $all_users_count = count($all_users);
         $user->all_users_count = $all_users_count;
+        $rank = 0;
+        foreach ($all_users as $tmp) {
+            $rank++;
+            if ($user->tuserid == $tmp->tuserid) {
+                break;
+            }
+        }
+        $user->user_rank = $rank;
 
         /*
         $timeline = Twitter::get("statuses/home_timeline",
