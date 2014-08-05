@@ -21,7 +21,7 @@ class Homecommon {
         $rank = 0;
         foreach ($all_users as $tmp) {
             $rank++;
-            if ($user->tuserid == $tmp->tuserid) {
+            if ($user->tuserid == $tmp['tuserid']) {
                 break;
             }
         }
