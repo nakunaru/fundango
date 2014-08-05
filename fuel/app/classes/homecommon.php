@@ -14,6 +14,11 @@ class Homecommon {
         $twitter_user = Twitter::get('account/verify_credentials');
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
 
+        //ユーザの総数を取得
+        $all_users = DB::query('select * from user;')->execute()->as_array();
+        $all_users_count = count($all_users);
+        $user->all_users_count = $all_users_count;
+
         /*
         $timeline = Twitter::get("statuses/home_timeline",
             array('count'=>20,

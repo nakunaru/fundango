@@ -14,7 +14,7 @@
         <canvas id="accountchartcanvas2" height="200" width="200"></canvas>
     </center>
     <ul data-role="listview" >
-        <li>ランキング 124/1045</li>
+        <li>ランキング 1/<?php echo $user['all_users_count'] ?></li>
         <li>団子のカラー 青</li>
         <li>持ってる団子の数<div class="ui-li-count"><?php echo $user['social_credit'] . 'd'; ?></div></li>
         <li>デポジット可能数<div class="ui-li-count"><?php echo $user['social_credit'] - $user['deposit_credit'] . 'd' ?></div></li>
