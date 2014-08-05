@@ -18,7 +18,7 @@
                 <label for="message">メッセージ:</label>
                 <textarea name="message" id="message"></textarea>
             </div>
-            <input id="depositaddsubmit" type="submit" value="デポる">
+            <input id="depositaddsubmit" type="submit" value="デポる" data-ajax="false">
         </form>
     </div>
 </div>
