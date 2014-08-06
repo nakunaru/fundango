@@ -54,6 +54,10 @@ class Controller_Twitterlogin extends Controller
         $twitter_user = Twitter::get('account/verify_credentials');
         $timestr = Date::forge()->format('mysql');
 
+        //認証キャンセル
+        if (! $twitter_user) {
+            Response::redirect(Uri::create('login'));
+        }
         // Update or create the user.  We update every time a user logs in
         // so that if they update their profile, we get that update.
         //$user = Model_User::find_one_by('screen_name', $twitter_user->screen_name, '=');
