@@ -182,7 +182,8 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#to_tuserid').val(tuserid);
         $('#message').val("");
         $('#todepoimg').attr('src', $(this).attr('image_url'));
-        //$('#tweetflipswitch').val(true).flipswitch( "refresh" );
+        $('#tweetflipswitch')[0].selectedIndex =1;
+        $('#tweetflipswitch').flipswitch( "refresh" );
     });
 
     /*
