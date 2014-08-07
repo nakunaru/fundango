@@ -11,12 +11,16 @@
             <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><img id="todepoimg" src="">
             </center>
             <div class="ui-field-contain">
-                <label for="depositnum">デポジット数:</label>
+                <label for="depositnum">デポる数:</label>
                 <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
             </div>
             <div class="ui-field-contain">
                 <label for="message">メッセージ:</label>
                 <textarea name="message" id="message"></textarea>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="tweetflipswitch">ツイートする:</label>
+                <input type="checkbox" data-defaults="true" name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch">
             </div>
             <input id="depositaddsubmit" type="submit" value="デポる" data-ajax="false">
         </form>
