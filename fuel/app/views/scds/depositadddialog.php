@@ -19,10 +19,10 @@
                 <label for="message">メッセージ:</label>
                 <textarea name="message" id="message"></textarea>
             </div>
-            <div data-role="fieldcontain">
+            <!--div data-role="fieldcontain">
                 <label for="tweetflipswitch">シェア:</label>
                 <input type="checkbox" name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch">
-            </div>
+            </div -->
             <input id="depositaddsubmit" type="submit" value="デポる" data-ajax="false">
         </form>
     </div>
