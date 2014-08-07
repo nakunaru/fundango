@@ -22,6 +22,7 @@
         <li>友達から被デポジット数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div></li>
     </ul>
     <br>
+    <a href="#" data-role="button" data-rel="dialog">fundangoとは?</a>
     <a href="<?php echo URI::create('twitterlogin/logout'); ?>" data-ajax="false" data-role="button" data-rel="">ログアウト</a>
     <a href="#" data-role="button" data-rel="close">閉じる</a>
 </div>
