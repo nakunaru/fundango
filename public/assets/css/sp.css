@@ -118,10 +118,12 @@
 .ui-corner-all.ui-btn.ui-link#tweetloginbtn {
     background-color: #55ACEE;
     color: #FFF;
+    border: 0px;
 }
 .ui-corner-all.ui-btn.ui-link#fbloginbtn {
     background-color: #3B5998;
     color: #FFF;
+    border: 0px;
 }
 
 #depoarrowimg, #todepoimg, #fromdepoimg {
