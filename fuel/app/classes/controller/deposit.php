@@ -89,9 +89,10 @@ class Controller_Deposit extends Controller
         //$output = print_r($istweet,true);
         //Log::warning('istweet = ' . $output);
         if ($istweet === "on") {
+            $url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
             //twitter に投稿するやり方
             $result = Twitter::post('statuses/update',
-                array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 #scds'
+                array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
                 ));
         } else {
             //Log::warning('not tweet');
