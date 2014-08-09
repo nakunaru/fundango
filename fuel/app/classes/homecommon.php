@@ -13,6 +13,7 @@ class Homecommon {
         $since_id = 0;
         $twitter_user = Twitter::get('account/verify_credentials');
         if (!$twitter_user) {
+            Session::destroy();
             Response::redirect(Uri::create('login'));
         }
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
