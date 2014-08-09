@@ -22,6 +22,10 @@
             <div data-role="fieldcontain">
                 <label for="tweetflipswitch">シェア:</label>
                 <input type="checkbox" name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch">
+                <select name="flip-3" id="snd-switch" data-role="flipswitch" data-mini="true">
+                    <option value="off">Off</option>
+                    <option selected="selected" value="on">On</option>
+                </select>
             </div>
             <input id="depositaddsubmit" type="submit" value="デポる" data-ajax="false">
         </form>
