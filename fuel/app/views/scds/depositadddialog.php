@@ -20,9 +20,9 @@
                 <textarea name="message" id="message"></textarea>
             </div>
             <div data-role="fieldcontain">
+                <!--input type="checkbox" name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch" -->
                 <label for="tweetflipswitch">シェア:</label>
-                <input type="checkbox" name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch">
-                <select name="flip-3" id="snd-switch" data-role="flipswitch" data-mini="true">
+                <select name="tweetflipswitch" id="tweetflipswitch" data-role="flipswitch">
                     <option value="off">Off</option>
                     <option selected="selected" value="on">On</option>
                 </select>
