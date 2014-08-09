@@ -10,6 +10,7 @@ class Boardcommon {
     {
         $data = array();
         $user = Session::get('user');
+        $rank = Session::get('rank');
         //$followers = Session::get('followers');
         $followers = array();
         //$output = print_r($user,true);
@@ -21,6 +22,7 @@ class Boardcommon {
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
         */
         $data['user'] = $user;
+        $data['rank'] = $rank;
         $data['followers'] = $followers;
         //$data['port4lio'] = $port4lio;
         //$data['depositedlist'] = $depositedlist;
@@ -32,6 +34,7 @@ class Boardcommon {
         $data = Boardcommon::getdata();
         $view = View::forge('scds/board', $data);
         $view->set_global('user', $data['user']);
+        $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
         /*
         $view->set_global('port4lio', $data['port4lio']);

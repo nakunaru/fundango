@@ -16,8 +16,9 @@ class Homecommon {
 
         //ユーザの総数を取得
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
+        $rank = array();
         $all_users_count = count($all_users);
-        $user->all_users_count = $all_users_count;
+        $rank['all_users_count'] = $all_users_count;
         $rank = 0;
         foreach ($all_users as $tmp) {
             $rank++;
@@ -25,7 +26,11 @@ class Homecommon {
                 break;
             }
         }
-        $user->user_rank = $rank;
+        $rank['user_rank'] = $rank;
+
+        $data['rank'] = $rank;
+        Session::delete('rank');
+        Session::set('rank', $data['rank']);
 
         /*
         $timeline = Twitter::get("statuses/home_timeline",
@@ -119,6 +124,7 @@ class Homecommon {
         $view->set_global('to_users', $data['to_users']);
         $view->set_global('timeline', $data['timeline']);
         $view->set_global('since_id', $data['since_id']);
+        $view->set_global('rank', $data['rank']);
         return $view;
     }
 }

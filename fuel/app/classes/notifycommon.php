@@ -10,6 +10,7 @@ class Notifycommon {
     {
         $data = array();
         $user = Session::get('user');
+        $rank = Session::get('rank');
         //$followers = Session::get('followers');
         $followers = array();
         $notifylist = array();
@@ -22,6 +23,7 @@ class Notifycommon {
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
         */
         $data['user'] = $user;
+        $data['rank'] = $rank;
         $data['followers'] = $followers;
         $data['notifylist'] = $notifylist;
         //$data['port4lio'] = $port4lio;
@@ -34,6 +36,7 @@ class Notifycommon {
         $data = Notifycommon::getdata();
         $view = View::forge('scds/notify', $data);
         $view->set_global('user', $data['user']);
+        $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
         $view->set_global('notifylist', $data['notifylist']);
         /*

@@ -11,6 +11,7 @@ class Depositcommon {
     {
         $data = array();
         $user = Session::get('user');
+        $rank = Session::get('rank');
         //$followers = Session::get('followers');
         $followers = array();
         //$output = print_r($user,true);
@@ -44,6 +45,7 @@ class Depositcommon {
         }
 
         $data['user'] = $user;
+        $data['rank'] = $rank;
         $data['followers'] = $followers;
         $data['port4lio'] = $port4lio;
         $data['depositedlist'] = $depositedlist;
@@ -55,6 +57,7 @@ class Depositcommon {
         $data = Depositcommon::getdata();
         $view = View::forge('scds/deposit', $data);
         $view->set_global('user', $data['user']);
+        $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
         $view->set_global('port4lio', $data['port4lio']);
         $view->set_global('depositedlist', $data['depositedlist']);
