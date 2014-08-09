@@ -86,6 +86,8 @@ class Controller_Deposit extends Controller
         Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
 
         $istweet = Input::param('tweetflipswitch');
+        $output = print_r($istweet,true);
+        Log::warning('istweet = ' . $output);
         if ($istweet) {
             //twitter に投稿するやり方
             $result = Twitter::post('statuses/update',
