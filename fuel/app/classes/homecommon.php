@@ -19,14 +19,14 @@ class Homecommon {
         $rank = array();
         $all_users_count = count($all_users);
         $rank['all_users_count'] = $all_users_count;
-        $rank = 0;
+        $rankcnt = 0;
         foreach ($all_users as $tmp) {
-            $rank++;
+            $rankcnt++;
             if ($user->tuserid == $tmp['tuserid']) {
                 break;
             }
         }
-        $rank['user_rank'] = $rank;
+        $rank['user_rank'] = $rankcnt;
 
         $data['rank'] = $rank;
         Session::delete('rank');
