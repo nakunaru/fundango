@@ -85,13 +85,13 @@ class Controller_Deposit extends Controller
         //株価情報を作成する
         Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
 
-        //$istweet = Input::param('tweetflipswitch');
-        //if ($istweet) {
+        $istweet = Input::param('tweetflipswitch');
+        if ($istweet) {
             //twitter に投稿するやり方
             $result = Twitter::post('statuses/update',
                 array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 #scds'
                 ));
-        //}
+        }
 
         //ポートフォリオにデータを追加する
         return Response::redirect(Uri::create('home'));
