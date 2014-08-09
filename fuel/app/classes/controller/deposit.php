@@ -86,13 +86,15 @@ class Controller_Deposit extends Controller
         Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
 
         $istweet = Input::param('tweetflipswitch');
-        //$output = print_r($istweet,true);
-        //Log::warning('istweet = ' . $output);
-        if ($istweet == 'on') {
+        $output = print_r($istweet,true);
+        Log::warning('istweet = ' . $output);
+        if ($istweet === "on") {
             //twitter に投稿するやり方
             $result = Twitter::post('statuses/update',
                 array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 #scds'
                 ));
+        } else {
+            Log::warning('not tweet');
         }
 
         //ポートフォリオにデータを追加する
