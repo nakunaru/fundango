@@ -154,6 +154,13 @@ $(document).on( "pageshow", "#board", function( event ) {
 $(document).on( "pageshow", "#deposit", function( event ) {
     $('#footerdeposit').addClass('ui-btn-active');
     panelOpenInit();
+
+    //ポートフォリオをタップした時、ドローダイアログを開く
+    $('.ui-page-active .port4lioli').unbind('click').click(function(){
+        var port4lio_id = $(this).attr('port4lio_id');
+        var screen_name = $(this).attr('screen_name');
+        var tuserid = $(this).attr('tuserid');
+    });
 });
 
 //$(document).on( "pageinit", "#home", function( event ) {
