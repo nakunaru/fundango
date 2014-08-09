@@ -12,6 +12,9 @@ class Homecommon {
         $data = array();
         $since_id = 0;
         $twitter_user = Twitter::get('account/verify_credentials');
+        if (!$twitter_user) {
+            Response::redirect(Uri::create('login'));
+        }
         $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
 
         //ユーザの総数を取得
