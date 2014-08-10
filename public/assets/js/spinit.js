@@ -161,7 +161,7 @@ $(document).on( "pageshow", "#deposit", function( event ) {
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
         var from_img_url = $(this).attr('from_img_url');
-        $('#del_fromdepoimg')attr("src", from_img_url);
+        $('#del_fromdepoimg').attr("src", from_img_url);
     });
 });
 
