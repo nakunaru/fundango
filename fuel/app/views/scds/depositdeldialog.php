@@ -9,7 +9,7 @@
             <input type="hidden" id="del_to_screen_name" name="del_to_screen_name" value="">
             <input type="hidden" id="del_to_tuserid" name="del_to_tuserid" value="">
             <center>
-            <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><?php echo '<img id="todepoimg" src="' . $user['avator'] . '">' ?>
+            <img id="del_fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><?php echo '<img id="del_todepoimg" src="' . $user['avator'] . '">' ?>
             </center>
             <div class="ui-field-contain">
                 <label for="slider-fill">デポジット数:</label>
