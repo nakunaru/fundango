@@ -9,6 +9,7 @@
             <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
             <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
             <input type="hidden" id="to_image_url" name="to_image_url" value="">
+            <input type="hidden" id="from_image_url" name="from_image_url" value="<?php echo $user['avator'] ?>">
             <center>
             <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><img id="todepoimg" src="">
             </center>

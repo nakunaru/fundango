@@ -41,6 +41,7 @@ class Controller_Deposit extends Controller
         $to_tuserid = Input::param('to_tuserid');
         $message = Input::param('message');
         $to_image_url = Input::param('to_image_url');
+        $from_image_url = Input::param('from_image_url');
 
         //ポートフォリオ情報を作成する
         $port = new Model_Port4lio();
@@ -49,6 +50,7 @@ class Controller_Deposit extends Controller
         $port->to_screen_name = $to_screen_name;
         $port->to_tuserid = $to_tuserid;
         $port->to_image_url = $to_image_url;
+        $port->from_image_url = $from_image_url;
         $port->depositnum = $depositnum;
         $port->message = $message;
         //$timestamp = Date::time();

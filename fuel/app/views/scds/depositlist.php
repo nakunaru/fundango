@@ -39,6 +39,7 @@
                 foreach ($depositedlist as $data)
                 {
                     echo '<li><a href="#">'
+                        .'<img src="' . $data->from_image_url . '">'
                         .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                         . $data->from_screen_name
                         . ' さんからデポジットされています</div>'
