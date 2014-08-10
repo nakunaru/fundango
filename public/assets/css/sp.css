@@ -126,7 +126,7 @@
     border: 0px;
 }
 
-#depoarrowimg, #todepoimg, #fromdepoimg {
+#depoarrowimg, #todepoimg, #fromdepoimg, #del_todepoimg, #del_fromdepoimg {
     width: 100px;
     height: 100px;
 }
