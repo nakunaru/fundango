@@ -17,6 +17,7 @@
                 foreach ($port4lio as $data)
                 {
                     echo '<li class="port4lioli" port4lio_id="' . $data->id . '" tuserid="' . $data->from_tuserid . '" screen_name="' . $data->from_screen_name . '"><a href="#depositDelDialog" data-rel="dialog" data-transition="pop">'
+                        .'<img src="' . $data->to_image_url . '">'
                         .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                         . $data->to_screen_name
                         . ' さんにデポジットしています</div>'
