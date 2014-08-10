@@ -16,7 +16,7 @@
                 echo '<li data-role="list-divider">' . $user->screen_name . ' さんのポートフォリオ</li>';
                 foreach ($port4lio as $data)
                 {
-                    echo '<li class="port4lioli" from_img_url="' . $data->from_image_url .'" port4lio_id="' . $data->id . '" tuserid="' . $data->from_tuserid . '" screen_name="' . $data->from_screen_name . '"><a href="#depositDelDialog" data-rel="dialog" data-transition="pop">'
+                    echo '<li class="port4lioli" to_img_url="' . $data->to_image_url .'" port4lio_id="' . $data->id . '" tuserid="' . $data->from_tuserid . '" screen_name="' . $data->from_screen_name . '"><a href="#depositDelDialog" data-rel="dialog" data-transition="pop">'
                         .'<img src="' . $data->to_image_url . '">'
                         .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                         . $data->to_screen_name
