@@ -8,6 +8,7 @@
         <form action="<?php echo URI::create('deposit/add'); ?>" method="post" data-ajax=“false”>
             <input type="hidden" id="to_screen_name" name="to_screen_name" value="">
             <input type="hidden" id="to_tuserid" name="to_tuserid" value="">
+            <input type="hidden" id="to_image_url" name="to_image_url" value="">
             <center>
             <img id="fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><img id="todepoimg" src="">
             </center>
