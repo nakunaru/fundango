@@ -161,7 +161,11 @@ $(document).on( "pageshow", "#deposit", function( event ) {
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
         var to_img_url = $(this).attr('to_img_url');
+        var deposit_num = $(this).attr('deposit_num');
+        var cg = $(this).attr('cg');
         $('#del_fromdepoimg').attr("src", to_img_url);
+        $('#del_deposit_num').text(deposit_num);
+        $('#del_capitalgain').text(cg);
     });
 });
 
