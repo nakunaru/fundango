@@ -166,7 +166,7 @@ $(document).on( "pageshow", "#deposit", function( event ) {
         $('#del_fromdepoimg').attr("src", to_img_url);
         $('#del_deposit_num').text(deposit_num);
         $('#del_capitalgain').text(cg);
-        $('#del_port4lio_id')
+        $('#del_port4lio_id').val(port4lio_id);
         $('#del_to_tuserid').val(tuserid);
     });
 });
