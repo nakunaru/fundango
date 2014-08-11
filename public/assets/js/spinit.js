@@ -159,7 +159,7 @@ $(document).on( "pageshow", "#deposit", function( event ) {
     $('.ui-page-active .port4lioli').unbind('click').click(function(){
         var port4lio_id = $(this).attr('port4lio_id');
         var screen_name = $(this).attr('screen_name');
-        var tuserid = $(this).attr('tuserid');
+        var tuserid = $(this).attr('to_tuserid');
         var to_img_url = $(this).attr('to_img_url');
         var deposit_num = $(this).attr('deposit_num');
         var cg = $(this).attr('cg');
