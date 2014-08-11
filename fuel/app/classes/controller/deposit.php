@@ -26,6 +26,25 @@ class Controller_Deposit extends Controller
     }
 
     /**
+     * 団子を友達からドローする
+     */
+    public function action_del()
+    {
+        $del_port4lio_id = Input::param('del_port4lio_id');
+        $user = Session::get('user');
+        $from_tuserid = $user->tuserid;
+        $to_tuserid = Input::param('del_to_tuserid');
+        //$port4lio = Model_Port4lio::find_one_by('id', $del_port4lio_id, '=');
+        $port4lio = Model_Port4lio::find_by_pk($del_port4lio_id);
+        if ($port4lio->from_tuserid != $from_tuserid
+        || $port4lio->to_tuserid != $to_tuserid) {
+            Log::warning('port4lio draw error to_tuserid = ' . $to_tuserid . ' from_tuserid = ' . $from_tuserid . ' id=' . $port4lio->id);
+            return Response::redirect(Uri::create('deposit'));
+        }
+        return Response::redirect(Uri::create('deposit'));
+    }
+
+    /**
      * 団子を友達にデポジットする
      * @return mixed
      */
