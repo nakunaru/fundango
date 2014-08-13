@@ -78,6 +78,7 @@ class Depositcommon {
             }
             $percent = $percent / $base_credit;
             $cg = floor($percent * $depositnum);
+            $cg = $cg - $depositnum;
             if ($cg < 0) {
                 $cg = 0;
             }
