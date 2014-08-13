@@ -41,6 +41,17 @@ class Controller_Deposit extends Controller
             Log::warning('port4lio draw error to_tuserid = ' . $to_tuserid . ' from_tuserid = ' . $from_tuserid . ' id=' . $port4lio->id);
             return Response::redirect(Uri::create('deposit'));
         }
+
+        //該当するポートフォリオを削除する
+
+        //相手の株価情報を更新する
+
+        //キャピタルゲインを自分に足す
+
+        //自分の株価情報を更新する
+
+        //通知情報を作成する
+
         return Response::redirect(Uri::create('deposit'));
     }
 

@@ -30,6 +30,8 @@ class Depositcommon {
         //キャピタルゲインを計算する
         foreach ($port4lio as $port) {
             $to_user = Model_User::find_one_by('tuserid', $port->to_tuserid, '=');
+            $port->cg = Depositcommon::getcg($to_user, $port->base_credit, $port->depositnum);
+            /*
             if ($to_user) {
                 $port->cg = $to_user->social_credit - $port->base_credit;
                 //$port->cg = 0;
@@ -42,6 +44,7 @@ class Depositcommon {
             } else {
                 $port->cg = 0;
             }
+            */
         }
 
         $data['user'] = $user;
@@ -50,6 +53,33 @@ class Depositcommon {
         $data['port4lio'] = $port4lio;
         $data['depositedlist'] = $depositedlist;
         return $data;
+    }
+
+    /**
+     * キャピタルゲインの取得
+     */
+    public static function getcg($to_user, $base_credit, $depositnum)
+    {
+        $cg = 0;
+        if ($to_user) {
+            if ($base_credit < 1) {
+                $base_credit = 1;
+            }
+            //倍率
+            $percent = $to_user->social_credit ;
+
+            $cg = $to_user->social_credit - $base_credit;
+            if ($to_user->deposited_credit) {
+                $cg +=  $to_user->deposited_credit;
+                $percent += $to_user->deposited_credit;
+            }
+            $percent = $percent / $base_credit;
+            $cg = floor($cg * $percent * $depositnum);
+            if ($cg < 0) {
+                $cg = 0;
+            }
+        }
+        return $cg;
     }
 
     public static function getview()
