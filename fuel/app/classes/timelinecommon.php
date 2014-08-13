@@ -49,4 +49,18 @@ class Timelinecommon {
         }
         return $timeline;
     }
+
+    /**
+     * ツイッターのタイムラインに投稿する
+     * @param $screen_name
+     * @param $depositnum
+     */
+    public static function updatetimeline($screen_name, $depositnum)
+    {
+        $url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
+        $result = Twitter::post('statuses/update',
+            array('status' => '🍡' . ' @' . $screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
+            ));
+        return $result;
+    }
 }

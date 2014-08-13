@@ -42,15 +42,17 @@ class Controller_Deposit extends Controller
             return Response::redirect(Uri::create('deposit'));
         }
 
-        //該当するポートフォリオを削除する
 
-        //相手の株価情報を更新する
+        //相手の株価情報を追加する
 
         //キャピタルゲインを自分に足す
 
-        //自分の株価情報を更新する
+        //自分の株価情報を追加する
 
         //通知情報を作成する
+
+        //該当するポートフォリオを削除する
+        $port4lio->delete();
 
         return Response::redirect(Uri::create('deposit'));
     }
@@ -120,15 +122,13 @@ class Controller_Deposit extends Controller
         //株価情報を作成する
         Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
 
+        //tweetするかどうか
         $istweet = Input::param('tweetflipswitch');
         //$output = print_r($istweet,true);
         //Log::warning('istweet = ' . $output);
         if ($istweet === "on") {
-            $url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
             //twitter に投稿するやり方
-            $result = Twitter::post('statuses/update',
-                array('status' => '🍡' . ' @' . $to_user->screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
-                ));
+            $result = Timelinecommon::updatetimeline($to_user->screen_name, $depositnum);
         } else {
             //Log::warning('not tweet');
         }
