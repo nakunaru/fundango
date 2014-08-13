@@ -62,7 +62,7 @@ class Depositcommon {
     {
         $cg = 0;
         if ($to_user) {
-            if ($base_credit < 1) {
+            if ($base_credit <= 1) {
                 $base_credit = 1;
                 if ($to_user->social_credit > 0) {
                     $base_credit = $to_user->social_credit;
