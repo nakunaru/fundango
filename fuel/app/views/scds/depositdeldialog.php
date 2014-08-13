@@ -12,11 +12,11 @@
             <img id="del_fromdepoimg" src=""><?php echo Asset::img('depoarrow.png',array('id'=>'depoarrowimg', 'class'=>'stretchRight'));  ?><?php echo '<img id="del_todepoimg" src="' . $user['avator'] . '">' ?>
             </center>
             <div class="ui-field-contain">
-                <label for="del_deposit_num">デポジット数:</label>
+                <label for="del_deposit_num">デポ数:</label>
                 <div id="del_deposit_num"></div>
             </div>
             <div class="ui-field-contain">
-                <label for="del_capitalgain">キャピタルゲイン:</label>
+                <label for="del_capitalgain">CG:</label>
                 <div id="del_capitalgain"></div>
             </div>
             <input id="depositdelsubmit" type="submit" value="ドロー">
