@@ -69,13 +69,13 @@ class Depositcommon {
                 }
             }
             //倍率
+            $percent = $to_user->total_credit;
+            /*
             $percent = $to_user->social_credit ;
-
-            //$cg = $to_user->social_credit - $base_credit;
             if ($to_user->deposited_credit) {
-                //$cg +=  $to_user->deposited_credit;
                 $percent += $to_user->deposited_credit;
             }
+            */
             $percent = $percent / $base_credit;
             $cg = floor($percent * $depositnum);
             $cg = $cg - $depositnum;

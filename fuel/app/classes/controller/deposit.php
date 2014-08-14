@@ -34,7 +34,7 @@ class Controller_Deposit extends Controller
         $user = Session::get('user');
         $from_tuserid = $user->tuserid;
         $to_tuserid = Input::param('del_to_tuserid');
-        //$port4lio = Model_Port4lio::find_one_by('id', $del_port4lio_id, '=');
+        $timestr = Date::forge()->format('mysql');
         $port4lio = Model_Port4lio::find_by_pk($del_port4lio_id);
         if ($port4lio->from_tuserid != $from_tuserid
         || $port4lio->to_tuserid != $to_tuserid) {
@@ -44,6 +44,13 @@ class Controller_Deposit extends Controller
 
 
         //相手の株価情報を追加する
+        $to_user = Model_User::find_one_by('tuserid', $to_tuserid, '=');
+        $to_screen_name = $port4lio->to_screen_name;
+        Boardcommon::addboard($to_tuserid, $to_screen_name, $to_user->total_credit - $port4lio->depositnum, $to_user->total_credit , $timestr);
+
+        //Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
+
+        //相手の株価情報を更新する
 
         //キャピタルゲインを自分に足す
 
