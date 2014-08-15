@@ -33,6 +33,7 @@ class Controller_Deposit extends Controller
         $del_port4lio_id = Input::param('del_port4lio_id');
         $user = Session::get('user');
         $from_tuserid = $user->tuserid;
+        $from_screen_name = $user->screen_name;
         $to_tuserid = Input::param('del_to_tuserid');
         $timestr = Date::forge()->format('mysql');
         $port4lio = Model_Port4lio::find_by_pk($del_port4lio_id);
@@ -42,19 +43,28 @@ class Controller_Deposit extends Controller
             return Response::redirect(Uri::create('deposit'));
         }
 
-
         //相手の株価情報を追加する
         $to_user = Model_User::find_one_by('tuserid', $to_tuserid, '=');
+        //キャピタルゲインを算出
+        $gc = Depositcommon::getcg($to_user, $port4lio->base_credit, $port4lio->depositnum);
+
         $to_screen_name = $port4lio->to_screen_name;
         Boardcommon::addboard($to_tuserid, $to_screen_name, $to_user->total_credit - $port4lio->depositnum, $to_user->total_credit , $timestr);
 
-        //Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
-
-        //相手の株価情報を更新する
+        //相手のクレジット情報を更新する
+        $to_user->deposited_credit = $to_user->deposited_credit - $port4lio->depositnum;
+        $to_user->total_credit = $to_user->total_credit - $port4lio->depositnum;
+        $to_user->save();
 
         //キャピタルゲインを自分に足す
+        $user->social_credit = $user->social_credit + $gc;
+        $user->total_credit = $user->total_credit + $gc;
 
         //自分の株価情報を追加する
+        Boardcommon::addboard($from_tuserid, $from_screen_name, $user->total_credit, $user->total_credit - $gc , $timestr);
+
+        //自分のクレジット情報を更新する
+        $user->save();
 
         //通知情報を作成する
 
