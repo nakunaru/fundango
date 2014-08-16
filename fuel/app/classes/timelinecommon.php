@@ -32,6 +32,8 @@ class Timelinecommon {
             $timeline = array();
         }
 
+        $since_id_cnt = -1; //もしsince_idを含んでいるのならそれは取り除く
+        $cnt = 0;
         foreach ($timeline as $tweet) {
             //ツイートされた時間を文字列に変換する
             //$created_at = 'Wed, 03 Oct 2012 00:00:00 +0000';
@@ -46,6 +48,14 @@ class Timelinecommon {
             } else {
                 $tweet->credit = 0;
             }
+            if ($since_id == $tweet->id_str) {
+                $since_id_cnt = $cnt;
+            }
+            $cnt++;
+        }
+        if ($since_id_cnt > -1) {
+            //since_id を取り除く
+            array_splice($timeline, $since_id_cnt, 1);
         }
         return $timeline;
     }
