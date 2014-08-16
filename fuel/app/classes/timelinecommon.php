@@ -48,7 +48,7 @@ class Timelinecommon {
             } else {
                 $tweet->credit = 0;
             }
-            if ($since_id == $tweet->id_str) {
+            if ($since_id == $tweet->id) {
                 $since_id_cnt = $cnt;
             }
             $cnt++;
