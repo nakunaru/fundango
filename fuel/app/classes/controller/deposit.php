@@ -31,7 +31,8 @@ class Controller_Deposit extends Controller
     public function action_del()
     {
         $del_port4lio_id = Input::param('del_port4lio_id');
-        $user = Session::get('user');
+        $usertmp = Session::get('user');
+        $user = Model_User::find_one_by('tuserid', $usertmp->tuserid, '=');
         $from_tuserid = $user->tuserid;
         $from_screen_name = $user->screen_name;
         $to_tuserid = Input::param('del_to_tuserid');
