@@ -67,6 +67,9 @@ class Controller_Deposit extends Controller
         $user->save();
 
         //通知情報を作成する
+        $notify = new Model_Notify();
+        $notify->save();
+
 
         //該当するポートフォリオを削除する
         $port4lio->delete();
