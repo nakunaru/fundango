@@ -68,6 +68,10 @@ class Controller_Deposit extends Controller
 
         //通知情報を作成する
         $notify = new Model_Notify();
+        $notify->seen = 0;
+        $notify->tuserid = $to_user->tuserid;
+        $notify->message = $user->screen_name . 'さんが' . $port4lio->depositnum . 'dドローしました';
+        $notify->date = $timestr;
         $notify->save();
 
 
@@ -141,6 +145,14 @@ class Controller_Deposit extends Controller
 
         //株価情報を作成する
         Boardcommon::addboard($to_tuserid, $to_screen_name, $port->base_credit, $port->base_credit - $depositnum, $timestr);
+
+        //通知情報を作成する
+        $notify = new Model_Notify();
+        $notify->seen = 0;
+        $notify->tuserid = $to_user->tuserid;
+        $notify->message = $user->screen_name . 'さんが' . $port4lio->depositnum . 'dデポりました';
+        $notify->date = $timestr;
+        $notify->save();
 
         //tweetするかどうか
         $istweet = Input::param('tweetflipswitch');
