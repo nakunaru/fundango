@@ -71,6 +71,7 @@ class Controller_Deposit extends Controller
         $notify = new Model_Notify();
         $notify->seen = 0;
         $notify->tuserid = $to_user->tuserid;
+        $notify->from_tuserid = $user->tuserid;
         $notify->message = $user->screen_name . 'さんが' . $port4lio->depositnum . 'dドローしました';
         $notify->date = $timestr;
         $notify->save();
@@ -151,6 +152,7 @@ class Controller_Deposit extends Controller
         $notify = new Model_Notify();
         $notify->seen = 0;
         $notify->tuserid = $to_user->tuserid;
+        $notify->from_tuserid = $user->tuserid;
         $notify->message = $user->screen_name . 'さんが' . $port->depositnum . 'dデポりました';
         $notify->date = $timestr;
         $notify->save();
