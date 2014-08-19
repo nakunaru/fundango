@@ -13,7 +13,7 @@ class Notifycommon {
         $rank = Session::get('rank');
         //$followers = Session::get('followers');
         $followers = array();
-        $notifylist = array();
+        //$notifylist = array();
         //$output = print_r($user,true);
         //Log::warning('session data = ' . $output);
         //$user = $data['user'];
@@ -22,6 +22,10 @@ class Notifycommon {
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
         */
+
+        $tuserid = $user->tuserid;
+        $notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
+
         $data['user'] = $user;
         $data['rank'] = $rank;
         $data['followers'] = $followers;
