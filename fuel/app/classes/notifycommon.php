@@ -26,7 +26,7 @@ class Notifycommon {
         $tuserid = $user->tuserid;
         $notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
 
-        if (notifylist) {
+        if ($notifylist) {
             //既読save用の配列をクローンする
             $updatenotifylist = array();
             foreach ($notifylist as $notify) {
