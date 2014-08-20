@@ -37,6 +37,8 @@ class Notifycommon {
                     array_push($updatenotifylist, $update_notify);
                 }
             }
+        } else {
+            $notifylist = array();
         }
 
         $data['user'] = $user;
