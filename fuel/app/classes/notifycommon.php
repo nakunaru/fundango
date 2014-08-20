@@ -26,14 +26,16 @@ class Notifycommon {
         $tuserid = $user->tuserid;
         $notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
 
-        //既読save用の配列をクローンする
-        $updatenotifylist = array();
-        foreach ($notifylist as $notify) {
-            if ($notify->seen == 0) {
-                $update_notify = clone $notify;
-                $update_notify->seen = 1;
-                $update_notify->save();
-                array_push($updatenotifylist, $update_notify);
+        if (notifylist) {
+            //既読save用の配列をクローンする
+            $updatenotifylist = array();
+            foreach ($notifylist as $notify) {
+                if ($notify->seen == 0) {
+                    $update_notify = clone $notify;
+                    $update_notify->seen = 1;
+                    $update_notify->save();
+                    array_push($updatenotifylist, $update_notify);
+                }
             }
         }
 
