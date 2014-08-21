@@ -41,15 +41,17 @@ class Homecommon {
 
         $data['timeline'] = array();
 
-        $ids = Session::get('ids');
-        if ($ids == null) {
+        //$ids = Session::get('ids');
+        //if ($ids == null) {
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
+        /*
         } else {
             $data['ids'] = $ids;
         }
         Session::delete('ids');
         Session::set('ids', $data['ids']);
+        */
 
         $data['user'] = $user;
         $idstr = '';
