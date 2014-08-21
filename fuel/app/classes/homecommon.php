@@ -11,12 +11,15 @@ class Homecommon {
     {
         $data = array();
         $since_id = 0;
-        $twitter_user = Twitter::get('account/verify_credentials');
-        if (!$twitter_user) {
-            Session::destroy();
-            Response::redirect(Uri::create('login'));
+        $user = Session::get('user');
+        if (!$user) {
+            $twitter_user = Twitter::get('account/verify_credentials');
+            if (!$twitter_user) {
+                Session::destroy();
+                Response::redirect(Uri::create('login'));
+            }
+            $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         }
-        $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
 
         //ユーザの総数を取得
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
@@ -36,33 +39,21 @@ class Homecommon {
         Session::delete('rank');
         Session::set('rank', $data['rank']);
 
-        /*
-        $timeline = Twitter::get("statuses/home_timeline",
-            array('count'=>20,
-                "include_entities"=>true
-            )
-        );
-        */
         $data['timeline'] = array();
 
-        $ids = Twitter::get("followers/ids");
-        $data['user'] = $user;
-        /*
-        if ($timeline) {
-            $data['timeline'] = $timeline->__resp->data;
+        $ids = Session::get('ids');
+        if (!$ids) {
+            $ids = Twitter::get("followers/ids");
+            $data['ids'] = $ids->__resp->data->ids;
         } else {
-            $data['timeline'] = array();
+            $data['ids'] = $ids;
         }
-        */
-        $data['ids'] = $ids->__resp->data->ids;
+        Session::delete('ids');
+        Session::set('ids', $data['ids']);
+
+        $data['user'] = $user;
         $idstr = '';
         $count = 0;
-        /*
-        foreach ($data['timeline'] as $line){
-            $since_id = $line->id;
-            break;
-        }
-        */
         $since_id = 0;
         $data['since_id'] = $since_id;
 
