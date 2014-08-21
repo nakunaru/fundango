@@ -12,7 +12,7 @@ class Homecommon {
         $data = array();
         $since_id = 0;
         $user = Session::get('user');
-        if (!$user) {
+        if ($user == null) {
             $twitter_user = Twitter::get('account/verify_credentials');
             if (!$twitter_user) {
                 Session::destroy();
@@ -42,7 +42,7 @@ class Homecommon {
         $data['timeline'] = array();
 
         $ids = Session::get('ids');
-        if (!$ids) {
+        if ($ids == null) {
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
         } else {
