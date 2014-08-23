@@ -11,15 +11,15 @@ class Homecommon {
     {
         $data = array();
         $since_id = 0;
-        //$user = Session::get('user');
-        //if ($user == null) {
+        $user = Session::get('user');
+        if ($user == null) {
             $twitter_user = Twitter::get('account/verify_credentials');
             if (!$twitter_user) {
                 Session::destroy();
                 Response::redirect(Uri::create('login'));
             }
             $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
-        //}
+        }
 
         //ユーザの総数を取得
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
