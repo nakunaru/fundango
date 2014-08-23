@@ -117,7 +117,7 @@ class Homecommon {
                     $idstr = $idstr . ',' . $id;
                 }
             }
-            Session::delete('idstr');
+            //Session::delete('idstr');
             Session::set('idstr', $idstr);
         } else {
             $ids = explode(',', $idstr);
@@ -145,7 +145,7 @@ class Homecommon {
                 }
             }
             $rank['user_rank'] = $rankcnt;
-            Session::delete('rank');
+            //Session::delete('rank');
             Session::set('rank', $rank);
         }
         return $rank;
@@ -158,14 +158,14 @@ class Homecommon {
     public static function getuser()
     {
         $user = Session::get('user');
-        if ($user == null) {
+        if (!$user) {
             $twitter_user = Twitter::get('account/verify_credentials');
             if (!$twitter_user) {
                 Session::destroy();
                 Response::redirect(Uri::create('login'));
             }
             $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
-            Session::delete('user');
+            //Session::delete('user');
             Session::set('user', $user);
         }
         return $user;
