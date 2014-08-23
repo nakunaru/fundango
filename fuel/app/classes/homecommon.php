@@ -120,7 +120,7 @@ class Homecommon {
             //Session::delete('idstr');
             $ret = Session::set('idstr', $idstr);
             $output = print_r($ret,true);
-            Log::warning('session set ret = ' . $ret);
+            Log::warning('session set ret = ' . $output);
         } else {
             $ids = explode(',', $idstr);
         }
