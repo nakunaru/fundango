@@ -11,9 +11,11 @@ class Depositcommon {
     {
         $data = array();
 
+        /*
         $ret = Session::get();
         $output = print_r($ret,true);
         Log::warning('deposit session all get ret = ' . $output);
+        */
 
         $user = Session::get('user');
         $rank = Session::get('rank');

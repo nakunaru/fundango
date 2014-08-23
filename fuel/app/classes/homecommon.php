@@ -23,7 +23,7 @@ class Homecommon {
 
         $data['timeline'] = array();
 
-        $ids = Homecommon::getfollowerids();
+        $ids = Homecommon::getfollowerids($user->tuserid);
         $data['ids'] = $ids;
         //$ids = Session::get('ids');
         //if (!$ids) {
@@ -100,8 +100,8 @@ class Homecommon {
      * フォロワーのIDの配列を返す
      * @return mixed
      */
-    public static function getfollowerids() {
-        $idstr = Session::get('idstr');
+    public static function getfollowerids($tuserid) {
+        $idstr = Cache::get('idstr_' . $tuserid);
         if (!$idstr) {
             $idstr = '';
             $ids = Twitter::get("followers/ids");
@@ -114,17 +114,21 @@ class Homecommon {
                 if ($idstr == '') {
                     $idstr = $id;
                 } else {
-                    $idstr = $idstr . '&' . $id;
+                    $idstr = $idstr . ',' . $id;
                 }
             }
             //Session::delete('idstr');
-            $ret = Session::set('idstr', $idstr);
+            $ret = Cache::set('idstr_' . $tuserid, $idstr);
 
+            /*
             $ret = Session::get();
             $output = print_r($ret,true);
             Log::warning('follower ids session all get ret = ' . $output);
+            */
+            Log::warning('ids get twitter');
         } else {
-            $ids = explode('&', $idstr);
+            $ids = explode(',', $idstr);
+            Log::warning('ids get cache');
         }
         return $ids;
     }
@@ -172,9 +176,11 @@ class Homecommon {
             //Session::delete('user');
             Session::set('user', $user);
 
+            /*
             $ret = Session::get();
             $output = print_r($ret,true);
             Log::warning('user session all get ret = ' . $output);
+            */
         }
         return $user;
     }
