@@ -121,6 +121,9 @@ class Homecommon {
             $ret = Session::set('idstr', $idstr);
             //$output = print_r($ret,true);
             //Log::warning('session set ret = ' . $output);
+            $ret = Session::get();
+            $output = print_r($ret,true);
+            Log::warning('follower ids session all get ret = ' . $output);
         } else {
             $ids = explode(',', $idstr);
         }
@@ -169,6 +172,10 @@ class Homecommon {
             $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
             //Session::delete('user');
             Session::set('user', $user);
+
+            $ret = Session::get();
+            $output = print_r($ret,true);
+            Log::warning('user session all get ret = ' . $output);
         }
         return $user;
     }
