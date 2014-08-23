@@ -23,15 +23,15 @@ class Homecommon {
 
         $data['timeline'] = array();
 
-        //$ids = Session::get('ids');
-        //if (!$ids) {
+        $ids = Session::get('ids');
+        if (!$ids) {
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
-            //Session::delete('ids');
-            //Session::set('ids', $data['ids']);
-        //} else {
-        //    $data['ids'] = $ids;
-        //}
+            Session::delete('ids');
+            Session::set('ids', $data['ids']);
+        } else {
+            $data['ids'] = $ids;
+        }
 
         $idstr = '';
         $count = 0;
