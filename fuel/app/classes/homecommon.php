@@ -100,7 +100,7 @@ class Homecommon {
      * @return mixed
      */
     public static function getfollowerids() {
-        $idstr = Session.get('idstr');
+        $idstr = Session::get('idstr');
         if ($idstr) {
             $idstr = '';
             $ids = Twitter::get("followers/ids");
