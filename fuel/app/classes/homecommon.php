@@ -23,15 +23,20 @@ class Homecommon {
 
         $data['timeline'] = array();
 
-        $ids = Session::get('ids');
-        if (!$ids) {
+        $ids = Homecommon::getfollowerids();
+        //$ids = Session::get('ids');
+        //if (!$ids) {
+        /*
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
-            Session::delete('ids');
-            Session::set('ids', $data['ids']);
+        */
+            //Session::delete('ids');
+            //Session::set('ids', $data['ids']);
+        /*
         } else {
             $data['ids'] = $ids;
         }
+        */
 
         $idstr = '';
         $count = 0;
@@ -88,6 +93,35 @@ class Homecommon {
         //$output = print_r($followers,true);
         //Log::warning('followers = ' . $output);
         return $data;
+    }
+
+    /**
+     * フォロワーのIDの配列を返す
+     * @return mixed
+     */
+    public static function getfollowerids() {
+        $idstr = Session.get('idstr');
+        if ($idstr) {
+            $idstr = '';
+            $ids = Twitter::get("followers/ids");
+            if ($ids) {
+                $ids = $ids->__resp->data->ids;
+            } else {
+                $ids = array();
+            }
+            foreach ($ids as $id) {
+                if ($idstr == '') {
+                    $idstr = $id;
+                } else {
+                    $idstr = $idstr . ',' . $id;
+                }
+            }
+            Session::delete('idstr');
+            Session::set('idstr', $idstr);
+        } else {
+            $ids = explode(',', $idstr);
+        }
+        return $ids;
     }
 
     /**
