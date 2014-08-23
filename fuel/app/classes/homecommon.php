@@ -101,7 +101,18 @@ class Homecommon {
      * @return mixed
      */
     public static function getfollowerids($tuserid) {
-        $idstr = Cache::get('idstr_' . $tuserid);
+        try
+        {
+            $idstr = Cache::get('idstr_' . $tuserid);
+        }
+        catch (\CacheNotFoundException $e)
+        {
+            /*
+                例外 CacheNotFoundException をキャッチすると、
+                CacheNotFoundException と CacheExpiredException の両方をキャッチします。
+                例外をキャッチするときにはこれを使います。
+            */
+        }
         if (!$idstr) {
             $idstr = '';
             $ids = Twitter::get("followers/ids");
