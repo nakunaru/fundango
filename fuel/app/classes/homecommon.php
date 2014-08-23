@@ -7,10 +7,16 @@
  */
 
 class Homecommon {
+    /**
+     * ホーム画面に関するデータの取得処理
+     * @return array
+     */
     public static function getdata()
     {
         $data = array();
         $since_id = 0;
+        $user = Homecommon::getuser();
+        /*
         $user = Session::get('user');
         if ($user == null) {
             $twitter_user = Twitter::get('account/verify_credentials');
@@ -20,6 +26,7 @@ class Homecommon {
             }
             $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         }
+        */
 
         //ユーザの総数を取得
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
@@ -81,8 +88,8 @@ class Homecommon {
         } else {
             $data['followers'] = array();
         }
-        Session::delete('user');
-        Session::set('user', $data['user']);
+        //Session::delete('user');
+        //Session::set('user', $data['user']);
 
         if ($is_sql) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
@@ -112,6 +119,26 @@ class Homecommon {
         //Log::warning('followers = ' . $output);
         return $data;
     }
+
+    public static function getuser()
+    {
+        $user = Session::get('user');
+        if ($user == null) {
+            $twitter_user = Twitter::get('account/verify_credentials');
+            if (!$twitter_user) {
+                Session::destroy();
+                Response::redirect(Uri::create('login'));
+            }
+            $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
+            Session::delete('user');
+            Session::set('user', $user);
+        }
+        return $user;
+    }
+    /**
+     * ビューを取得する
+     * @return mixed
+     */
     public static function getview()
     {
         $data = Homecommon::getdata();
