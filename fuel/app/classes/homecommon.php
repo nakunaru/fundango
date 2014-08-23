@@ -16,19 +16,10 @@ class Homecommon {
         $data = array();
         $since_id = 0;
         $user = Homecommon::getuser();
-        /*
-        $user = Session::get('user');
-        if ($user == null) {
-            $twitter_user = Twitter::get('account/verify_credentials');
-            if (!$twitter_user) {
-                Session::destroy();
-                Response::redirect(Uri::create('login'));
-            }
-            $user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
-        }
-        */
-
+        $data['user'] = $user;
         //ユーザの総数を取得
+        $rank = Homecommon::getrank();
+        /*
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
         $rank = array();
         $all_users_count = count($all_users);
@@ -41,10 +32,11 @@ class Homecommon {
             }
         }
         $rank['user_rank'] = $rankcnt;
+        */
 
         $data['rank'] = $rank;
-        Session::delete('rank');
-        Session::set('rank', $data['rank']);
+        //Session::delete('rank');
+        //Session::set('rank', $data['rank']);
 
         $data['timeline'] = array();
 
@@ -60,7 +52,6 @@ class Homecommon {
         Session::set('ids', $data['ids']);
         */
 
-        $data['user'] = $user;
         $idstr = '';
         $count = 0;
         $since_id = 0;
@@ -88,8 +79,6 @@ class Homecommon {
         } else {
             $data['followers'] = array();
         }
-        //Session::delete('user');
-        //Session::set('user', $data['user']);
 
         if ($is_sql) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
@@ -120,6 +109,36 @@ class Homecommon {
         return $data;
     }
 
+    /**
+     * ランク情報の取得
+     */
+    public static function getrank()
+    {
+        $rank = Session::get('rank');
+        if (!$rank) {
+            //ユーザの総数を取得
+            $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
+            $rank = array();
+            $all_users_count = count($all_users);
+            $rank['all_users_count'] = $all_users_count;
+            $rankcnt = 0;
+            foreach ($all_users as $tmp) {
+                $rankcnt++;
+                if ($user->tuserid == $tmp['tuserid']) {
+                    break;
+                }
+            }
+            $rank['user_rank'] = $rankcnt;
+            Session::delete('rank');
+            Session::set('rank', $rank);
+        }
+        return $rank;
+    }
+
+    /**
+     * 自分の情報を取得する
+     * @return mixed
+     */
     public static function getuser()
     {
         $user = Session::get('user');
