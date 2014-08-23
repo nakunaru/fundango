@@ -12,11 +12,11 @@ class Depositcommon {
         $data = array();
         $user = Session::get('user');
         $rank = Session::get('rank');
-        //$followers = Session::get('followers');
         $followers = array();
-        //$output = print_r($user,true);
-        //Log::warning('session data = ' . $output);
-        //$user = $data['user'];
+
+        $output = print_r($user,true);
+        Log::warning('session data = ' . $output);
+
         $tuserid = $user->tuserid;
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
