@@ -14,8 +14,8 @@ class Depositcommon {
         $rank = Session::get('rank');
         $followers = array();
 
-        $output = print_r($user,true);
-        Log::warning('session data = ' . $output);
+        //$output = print_r($user,true);
+        //Log::warning('session data = ' . $output);
 
         $tuserid = $user->tuserid;
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
