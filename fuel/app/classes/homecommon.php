@@ -24,6 +24,7 @@ class Homecommon {
         $data['timeline'] = array();
 
         $ids = Homecommon::getfollowerids();
+        $data['ids'] = $ids;
         //$ids = Session::get('ids');
         //if (!$ids) {
         /*
