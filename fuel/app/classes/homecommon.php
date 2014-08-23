@@ -19,38 +19,19 @@ class Homecommon {
         $data['user'] = $user;
         //ユーザの総数を取得
         $rank = Homecommon::getrank($user->tuserid);
-        /*
-        $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
-        $rank = array();
-        $all_users_count = count($all_users);
-        $rank['all_users_count'] = $all_users_count;
-        $rankcnt = 0;
-        foreach ($all_users as $tmp) {
-            $rankcnt++;
-            if ($user->tuserid == $tmp['tuserid']) {
-                break;
-            }
-        }
-        $rank['user_rank'] = $rankcnt;
-        */
-
         $data['rank'] = $rank;
-        //Session::delete('rank');
-        //Session::set('rank', $data['rank']);
 
         $data['timeline'] = array();
 
-        //$ids = Session::get('ids');
-        //if ($ids == null) {
+        $ids = Cache::get('ids');
+        if (!$ids) {
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
-        /*
+            Cache::delete('ids');
+            Cache::set('ids', $data['ids']);
         } else {
             $data['ids'] = $ids;
         }
-        Session::delete('ids');
-        Session::set('ids', $data['ids']);
-        */
 
         $idstr = '';
         $count = 0;
