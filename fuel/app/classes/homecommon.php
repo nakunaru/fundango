@@ -114,17 +114,17 @@ class Homecommon {
                 if ($idstr == '') {
                     $idstr = $id;
                 } else {
-                    $idstr = $idstr . ',' . $id;
+                    $idstr = $idstr . '&' . $id;
                 }
             }
             //Session::delete('idstr');
-            //$ret = Session::set('idstr', $idstr);
+            $ret = Session::set('idstr', $idstr);
 
             $ret = Session::get();
             $output = print_r($ret,true);
             Log::warning('follower ids session all get ret = ' . $output);
         } else {
-            $ids = explode(',', $idstr);
+            $ids = explode('&', $idstr);
         }
         return $ids;
     }
