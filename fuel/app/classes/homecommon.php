@@ -101,6 +101,7 @@ class Homecommon {
      * @return mixed
      */
     public static function getfollowerids($tuserid) {
+        $idstr = false;
         try
         {
             $idstr = Cache::get('idstr_' . $tuserid);
