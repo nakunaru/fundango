@@ -18,7 +18,7 @@ class Homecommon {
         $user = Homecommon::getuser();
         $data['user'] = $user;
         //ユーザの総数を取得
-        $rank = Homecommon::getrank();
+        $rank = Homecommon::getrank($user->tuserid);
         /*
         $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
         $rank = array();
@@ -112,7 +112,7 @@ class Homecommon {
     /**
      * ランク情報の取得
      */
-    public static function getrank()
+    public static function getrank($tuserid)
     {
         $rank = Session::get('rank');
         if (!$rank) {
@@ -124,7 +124,7 @@ class Homecommon {
             $rankcnt = 0;
             foreach ($all_users as $tmp) {
                 $rankcnt++;
-                if ($user->tuserid == $tmp['tuserid']) {
+                if ($tuserid == $tmp['tuserid']) {
                     break;
                 }
             }
