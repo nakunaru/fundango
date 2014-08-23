@@ -118,7 +118,9 @@ class Homecommon {
                 }
             }
             //Session::delete('idstr');
-            Session::set('idstr', $idstr);
+            $ret = Session::set('idstr', $idstr);
+            $output = print_r($ret,true);
+            Log::warning('session set ret = ' . $ret);
         } else {
             $ids = explode(',', $idstr);
         }
