@@ -118,9 +118,8 @@ class Homecommon {
                 }
             }
             //Session::delete('idstr');
-            $ret = Session::set('idstr', $idstr);
-            //$output = print_r($ret,true);
-            //Log::warning('session set ret = ' . $output);
+            //$ret = Session::set('idstr', $idstr);
+
             $ret = Session::get();
             $output = print_r($ret,true);
             Log::warning('follower ids session all get ret = ' . $output);
