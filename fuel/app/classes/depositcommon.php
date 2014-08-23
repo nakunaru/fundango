@@ -10,6 +10,12 @@ class Depositcommon {
     public static function getdata()
     {
         $data = array();
+
+
+        $ret = Session::get();
+        $output = print_r($ret,true);
+        Log::warning('session all get ret = ' . $output);
+
         $user = Session::get('user');
         $rank = Session::get('rank');
         $followers = array();
