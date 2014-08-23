@@ -41,6 +41,7 @@ class Controller_Twitterlogin extends Controller
 
     public function action_logout()
     {
+        //Cache::delete_all();
         Session::destroy();
         //Response::redirect(Uri::create('/'));
         $data = array();

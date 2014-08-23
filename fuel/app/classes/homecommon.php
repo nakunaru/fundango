@@ -23,12 +23,12 @@ class Homecommon {
 
         $data['timeline'] = array();
 
-        $ids = Cache::get('ids');
+        $ids = Session::get('ids');
         if (!$ids) {
             $ids = Twitter::get("followers/ids");
             $data['ids'] = $ids->__resp->data->ids;
-            Cache::delete('ids');
-            Cache::set('ids', $data['ids']);
+            Session::delete('ids');
+            Session::set('ids', $data['ids']);
         } else {
             $data['ids'] = $ids;
         }
