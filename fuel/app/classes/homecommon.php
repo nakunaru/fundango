@@ -97,6 +97,37 @@ class Homecommon {
     }
 
     /**
+     * フォロワーの取得
+     * @param $ids
+     */
+    public static function getfollowers($ids) {
+        $count;
+        $sqlwherestr = '';
+        $is_sql = false;
+        $idstr;
+        foreach ($ids as $id){
+            if ($count == 100) {
+                break;
+            }
+            if ($idstr == '') {
+                $idstr = $id;
+                $sqlwherestr = "where tuserid = '" . $id . "'";
+                $is_sql = true;
+            } else {
+                $idstr = $idstr . ',' . $id;
+                $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
+            }
+            $count++;
+        }
+        $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
+        if ($followers) {
+            $data['followers'] = $followers->__resp->data;
+        } else {
+            $data['followers'] = array();
+        }
+    }
+
+    /**
      * フォロワーのIDの配列を返す
      * @return mixed
      */
