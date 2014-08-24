@@ -122,6 +122,7 @@ class Homecommon {
                 CacheNotFoundException と CacheExpiredException の両方をキャッチします。
                 例外をキャッチするときにはこれを使います。
             */
+            $followers = false;
         }
 
         if (!$followers) {
@@ -171,6 +172,7 @@ class Homecommon {
                 CacheNotFoundException と CacheExpiredException の両方をキャッチします。
                 例外をキャッチするときにはこれを使います。
             */
+            $idstr = false;
         }
         if (!$idstr) {
             $idstr = '';
