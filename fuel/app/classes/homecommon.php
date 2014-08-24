@@ -60,14 +60,18 @@ class Homecommon {
             }
             $count++;
         }
+        /*
         $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
         if ($followers) {
             $data['followers'] = $followers->__resp->data;
         } else {
             $data['followers'] = array();
         }
+        */
+        $followers = Homecommon::getfollowers($ids, $user->tuserid);
+        $data['followers'] = $followers;
 
-        if ($is_sql) {
+        if (count($followers) > 0) {
             $to_users = DB::query('select * from user ' . $sqlwherestr . ';')->execute()->as_array('tuserid');
         } else {
             $to_users = array();
@@ -100,31 +104,51 @@ class Homecommon {
      * フォロワーの取得
      * @param $ids
      */
-    public static function getfollowers($ids) {
-        $count;
+    public static function getfollowers($ids, $tuserid) {
+        $count = 0;
         $sqlwherestr = '';
         $is_sql = false;
-        $idstr;
-        foreach ($ids as $id){
-            if ($count == 100) {
-                break;
+        $idstr = '';
+
+        $followers = false;
+        try
+        {
+            $followers = Cache::get('followers_' . $tuserid);
+        }
+        catch (\CacheNotFoundException $e)
+        {
+            /*
+                例外 CacheNotFoundException をキャッチすると、
+                CacheNotFoundException と CacheExpiredException の両方をキャッチします。
+                例外をキャッチするときにはこれを使います。
+            */
+        }
+
+        if (!$followers) {
+            foreach ($ids as $id){
+                if ($count == 100) {
+                    break;
+                }
+                if ($idstr == '') {
+                    $idstr = $id;
+                    $sqlwherestr = "where tuserid = '" . $id . "'";
+                    $is_sql = true;
+                } else {
+                    $idstr = $idstr . ',' . $id;
+                    $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
+                }
+                $count++;
             }
-            if ($idstr == '') {
-                $idstr = $id;
-                $sqlwherestr = "where tuserid = '" . $id . "'";
-                $is_sql = true;
+            $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
+            if ($followers) {
+                $followers = $followers->__resp->data;
+                $ret = Cache::set('followers_' . $tuserid, $followers);
             } else {
-                $idstr = $idstr . ',' . $id;
-                $sqlwherestr = $sqlwherestr .  " or tuserid = '" . $id . "'";
+                $followers = array();
             }
-            $count++;
         }
-        $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
-        if ($followers) {
-            $data['followers'] = $followers->__resp->data;
-        } else {
-            $data['followers'] = array();
-        }
+
+        return $followers;
     }
 
     /**
