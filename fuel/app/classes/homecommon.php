@@ -146,6 +146,9 @@ class Homecommon {
             } else {
                 $followers = array();
             }
+            Log::warning('followers get twitter');
+        } else {
+            Log::warning('followers get cache');
         }
 
         return $followers;
