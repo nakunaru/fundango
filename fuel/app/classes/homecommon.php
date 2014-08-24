@@ -142,7 +142,7 @@ class Homecommon {
             $followers = Twitter::get("users/lookup",array('user_id'=>$idstr));
             if ($followers) {
                 $followers = $followers->__resp->data;
-                $ret = Cache::set('followers_' . $tuserid, $followers);
+                $ret = Cache::set('followers_' . $tuserid, $followers, 3600);
             } else {
                 $followers = array();
             }
@@ -188,7 +188,7 @@ class Homecommon {
                 }
             }
             //Session::delete('idstr');
-            $ret = Cache::set('idstr_' . $tuserid, $idstr);
+            $ret = Cache::set('idstr_' . $tuserid, $idstr, 3600);
 
             /*
             $ret = Session::get();
