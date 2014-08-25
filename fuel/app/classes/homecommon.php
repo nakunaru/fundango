@@ -197,10 +197,10 @@ class Homecommon {
             $output = print_r($ret,true);
             Log::warning('follower ids session all get ret = ' . $output);
             */
-            //Log::warning('ids get twitter');
+            Log::warning('ids get twitter');
         } else {
             $ids = explode(',', $idstr);
-            //Log::warning('ids get cache');
+            Log::warning('ids get cache');
         }
         return $ids;
     }
