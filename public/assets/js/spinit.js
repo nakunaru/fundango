@@ -198,6 +198,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#message').val("");
         $('#todepoimg').attr('src', $(this).attr('image_url'));
         $('#to_image_url').val($(this).attr('image_url'));
+        //$('#depositnum').attr('max', 10);
         /*
         $('#tweetflipswitch')[0].selectedIndex = 1;
         $('#tweetflipswitch').flipswitch( "refresh" );

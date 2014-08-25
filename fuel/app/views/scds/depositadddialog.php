@@ -15,7 +15,7 @@
             </center>
             <div class="ui-field-contain">
                 <label for="depositnum">デポる数:</label>
-                <input type="range" name="depositnum" id="depositnum" value="1" min="0" max="100" data-highlight="true">
+                <input type="range" name="depositnum" id="depositnum" value="1" min="1" max="<?php echo $user['social_credit'] - $user['deposit_credit'] ?>" data-highlight="true">
             </div>
             <div class="ui-field-contain">
                 <label for="message">メッセージ:</label>
