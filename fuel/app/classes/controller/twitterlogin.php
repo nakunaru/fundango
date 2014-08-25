@@ -43,9 +43,9 @@ class Controller_Twitterlogin extends Controller
     {
         $user = Session::get('user');
         if ($user) {
-            Cache::delete('idstr_' + $user->tuserid);
-            Cache::delete('followers_' + $user->tuserid);
-            Log::warning('cache delete');
+            Cache::delete('idstr_' . $user->tuserid);
+            Cache::delete('followers_' . $user->tuserid);
+            Log::warning('cache delete idstr_' . $user->tuserid . ' followers_' . $user->tuserid);
         }
         //Cache::delete_all();
         Session::destroy();

@@ -149,7 +149,7 @@ class Homecommon {
             }
             Log::warning('followers get twitter');
         } else {
-            Log::warning('followers get cache');
+            Log::warning('followers get cache followers_' . $tuserid);
         }
 
         return $followers;
@@ -200,7 +200,7 @@ class Homecommon {
             Log::warning('ids get twitter');
         } else {
             $ids = explode(',', $idstr);
-            Log::warning('ids get cache');
+            Log::warning('ids get cache idstr_' . $tuserid);
         }
         return $ids;
     }
