@@ -198,6 +198,13 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#message').val("");
         $('#todepoimg').attr('src', $(this).attr('image_url'));
         $('#to_image_url').val($(this).attr('image_url'));
+        var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
+        if (enabled_deponum == '0') {
+            alert('デポジット可能な団子がありません＞＜');
+            //$('#depositAddDialog')
+            $('.ui-dialog').dialog('close');
+            return;
+        }
         //$('#depositnum').attr('max', 10);
         /*
         $('#tweetflipswitch')[0].selectedIndex = 1;
