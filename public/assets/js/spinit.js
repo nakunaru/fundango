@@ -200,7 +200,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#to_image_url').val($(this).attr('image_url'));
         var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
         enabled_deponum = 0 + enabled_deponum;
-        if (enabled_deponum <= '0') {
+        if (enabled_deponum <= 0) {
             alert('デポジット可能な団子がありません＞＜');
             //$('#depositAddDialog')
             $('.ui-dialog').dialog('close');
