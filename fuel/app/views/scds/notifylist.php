@@ -4,7 +4,11 @@
         echo '<li data-role="list-divider">通知リスト</li>';
         foreach ($notifylist as $data)
         {
-            echo '<li>'. $data->message . ' ' . $data->date . '</li>';
+            if ($data->seen == '0') {
+                echo '<li><b>'. $data->message . ' ' . $data->date . '</b></li>';
+            } else {
+                echo '<li>'. $data->message . ' ' . $data->date . '</li>';
+            }
         }
         ?>
     </ul>
