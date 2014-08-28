@@ -189,7 +189,6 @@ $(document).on( "pageshow", "#home", function( event ) {
 
 
     $('.ui-page-active .friendli').unbind('click').click(function(){
-        //$( "#dialogPage" ).dialog({ overlayTheme: "b" });
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
@@ -206,6 +205,7 @@ $(document).on( "pageshow", "#home", function( event ) {
             $('.ui-dialog').dialog('close');
             return;
         }
+        $( "#depositAddDialog" ).dialog({ overlayTheme: "b" });
         //$('#depositnum').attr('max', 10);
         /*
         $('#tweetflipswitch')[0].selectedIndex = 1;
