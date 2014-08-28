@@ -101,6 +101,12 @@ class Controller_Deposit extends Controller
         $to_image_url = Input::param('to_image_url');
         $from_image_url = Input::param('from_image_url');
 
+        //デポジット可能数が足りないならエラーにする
+        if ($user->social_credit - $user->deposit_credit - $depositnum < 0) {
+            Log::warning('cant deposit screen_name = ' . $user->screen_name . ' depositnum=' . $depositnum);
+            return Response::redirect(Uri::create('home'));
+        }
+
         //ポートフォリオ情報を作成する
         $port = new Model_Port4lio();
         $port->from_screen_name = $user->screen_name;
