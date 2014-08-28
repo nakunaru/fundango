@@ -202,10 +202,12 @@ $(document).on( "pageshow", "#home", function( event ) {
         if (enabled_deponum <= 0) {
             alert('デポジット可能な団子がありません＞＜');
             //$('#depositAddDialog')
-            $('.ui-dialog').dialog('close');
+            setTimeout(function(){
+                $('.ui-dialog').dialog('close');
+            }, 2000)
             return;
         }
-        $( "#depositAddDialog" ).dialog({ overlayTheme: "b" });
+        //$( "#depositAddDialog" ).dialog({ overlayTheme: "b" });
         //$('#depositnum').attr('max', 10);
         /*
         $('#tweetflipswitch')[0].selectedIndex = 1;
