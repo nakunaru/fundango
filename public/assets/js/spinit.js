@@ -204,7 +204,7 @@ $(document).on( "pageshow", "#home", function( event ) {
             //$('#depositAddDialog')
             setTimeout(function(){
                 $('.ui-dialog').dialog('close');
-            }, 2000)
+            }, 1000);
             return;
         }
         //$( "#depositAddDialog" ).dialog({ overlayTheme: "b" });
