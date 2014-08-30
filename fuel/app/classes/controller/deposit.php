@@ -92,6 +92,7 @@ class Controller_Deposit extends Controller
         //ホーム画面のデータを取得する
         $data = Homecommon::getdata();
         $user = $data['user'];
+        $user = Model_User::find_one_by('tuserid', $user->tuserid, '=');
         //$twitter_user = Twitter::get('account/verify_credentials');
         //$user = Model_User::find_one_by('tuserid', $twitter_user->id, '=');
         $depositnum = Input::param('depositnum');
