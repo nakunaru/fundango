@@ -20,6 +20,9 @@ class Homecommon {
 
         //ユーザのポートフォリオを取得する
         $port4lio = Model_Port4lio::find_by('from_tuserid', $user->tuserid, '=');
+        if (!$port4lio) {
+            $port4lio = array();
+        }
         $data['port4lio'] = $port4lio;
 
         //ユーザの総数を取得
