@@ -199,8 +199,23 @@ $(document).on( "pageshow", "#home", function( event ) {
         $('#to_image_url').val($(this).attr('image_url'));
         var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
         enabled_deponum = Number(enabled_deponum);
-        if (enabled_deponum <= 0) {
-            alert('デポジット可能な団子がありません＞＜');
+
+        //デポジットが重複していないかチェックする
+        var port4liolistdiv = $('.port4liolistdiv');
+        var isduplicate = false;
+        for (var i=0; i<port4liolistdiv.length; i++) {
+            if (tuserid == $(port4liolistdiv[i]).text()) {
+                isduplicate = true;
+                break;
+            }
+        }
+
+        if (enabled_deponum <= 0 || isduplicate) {
+            if (enabled_deponum <= 0) {
+                alert('デポジット可能な団子がありません＞＜');
+            } else {
+                alert('すでにその人にデポジットしています。ドローしてください');
+            }
             //$('#depositAddDialog')
             setTimeout(function(){
                 $('.ui-dialog').dialog('close');
