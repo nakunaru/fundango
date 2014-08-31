@@ -21,5 +21,6 @@
 </div>
 <!-- デポジット追加ダイアログ -->
 <?php echo View::forge('scds/depositadddialog'); ?>
+<?php echo View::forge('scds/port4liodiv'); ?>
 </body>
 </html>

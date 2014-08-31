@@ -17,6 +17,11 @@ class Homecommon {
         $since_id = 0;
         $user = Homecommon::getuser();
         $data['user'] = $user;
+
+        //ユーザのポートフォリオを取得する
+        $port4lio = Model_Port4lio::find_by('from_tuserid', $user->tuserid, '=');
+        $data['port4lio'] = $port4lio;
+
         //ユーザの総数を取得
         $rank = Homecommon::getrank($user->tuserid);
         $data['rank'] = $rank;
@@ -270,6 +275,7 @@ class Homecommon {
         $view->set_global('timeline', $data['timeline']);
         $view->set_global('since_id', $data['since_id']);
         $view->set_global('rank', $data['rank']);
+        $view->set_global('port4lio', $data['port4lio']);
         return $view;
     }
 }
