@@ -9,7 +9,7 @@
 <!--  -->
 <div data-role="page" id="deposit"  data-title="deposit" data-url="<?php echo URI::create('deposit'); ?>" >
     <!--ヘッダー領域-->
-    <?php echo View::forge('scds/header'); ?>
+    <?php echo View::forge('scds/header2'); ?>
     <!-- 設定パネル -->
     <?php echo View::forge('scds/settingpanel'); ?>
     <!-- ポートフォリオ -->

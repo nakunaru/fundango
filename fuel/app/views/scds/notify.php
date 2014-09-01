@@ -9,7 +9,7 @@
 <!--  -->
 <div data-role="page" id="notify"  data-title="notify" data-url="<?php echo URI::create('notify'); ?>" >
     <!--ヘッダー領域-->
-    <?php echo View::forge('scds/header'); ?>
+    <?php echo View::forge('scds/header2'); ?>
     <!-- 設定パネル -->
     <?php echo View::forge('scds/settingpanel'); ?>
     <!-- 通知リスト -->

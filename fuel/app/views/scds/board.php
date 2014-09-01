@@ -9,7 +9,7 @@
 <!--  -->
 <div data-role="page" id="board"  data-title="board" data-url="<?php echo URI::create('board'); ?>" >
     <!--ヘッダー領域-->
-    <?php echo View::forge('scds/header'); ?>
+    <?php echo View::forge('scds/header2'); ?>
     <!-- 設定パネル -->
     <?php echo View::forge('scds/settingpanel'); ?>
     <!-- 株価ボード -->
