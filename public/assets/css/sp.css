@@ -130,3 +130,10 @@
     width: 100px;
     height: 100px;
 }
+
+.depositaddbuttondiv {
+    width: 40px;
+    height: 20px;
+    background: #99ff88;
+    cursor: pointer;
+}
