@@ -191,12 +191,13 @@ $(document).on( "pageshow", "#home", function( event ) {
     $('.ui-page-active .friendli').unbind('click').click(function(){
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
+        var toimg = $(this).attr('image_url');
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
         $('#to_screen_name').val(screen_name);
         $('#to_tuserid').val(tuserid);
         $('#message').val("");
-        $('#todepoimg').attr('src', $(this).attr('image_url'));
-        $('#to_image_url').val($(this).attr('image_url'));
+        $('#todepoimg').attr('src', toimg);
+        $('#to_image_url').val(toimg);
         var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
         enabled_deponum = Number(enabled_deponum);
 
@@ -322,7 +323,7 @@ function getTimeline()
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
                     //+ '<button class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
-                    + '<div class="depositaddbuttondiv">デポる</div>'
+                    + '<div class="depositaddbuttondiv"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
@@ -337,6 +338,9 @@ function getTimeline()
             $(timelineultmp).html('');
             $(timelineul).prepend('<li class="timelinedivider" since_id="' + since_id + '" data-role="list-divider">タイムライン</li>');
             $(timelineul).listview('refresh');
+
+            //デポジットボタン作る
+            $('.depositaddbuttondiv').append('<a href="#depositAddDialog">デポる</a>');
         },
         complete: function() {
             setUrlLink();
