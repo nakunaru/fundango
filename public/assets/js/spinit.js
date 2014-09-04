@@ -323,7 +323,7 @@ function getTimeline()
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
                     //+ '<button class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
-                    + '<div class="depositaddbuttondiv isnew"></div>'
+                    + '<div class="depositaddbuttondiv isnew" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
