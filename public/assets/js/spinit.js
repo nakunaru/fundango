@@ -178,6 +178,7 @@ $(document).on( "pageshow", "#deposit", function( event ) {
  * @param toimg
  */
 function openDepositAddDialog(tuserid, screen_name, toimg) {
+    $('#fromdepoimg').attr('src', $('#myaccountimg').attr('src'));
     $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
     $('#to_screen_name').val(screen_name);
     $('#to_tuserid').val(tuserid);
