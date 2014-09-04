@@ -323,7 +323,7 @@ function getTimeline()
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
                     //+ '<button class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
-                    + '<div class="depositaddbuttondiv"></div>'
+                    + '<div class="depositaddbuttondiv isnew"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
@@ -340,7 +340,7 @@ function getTimeline()
             $(timelineul).listview('refresh');
 
             //デポジットボタン作る
-            $('.depositaddbuttondiv').append('<a href="#depositAddDialog">デポる</a>');
+            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog">デポる</a>');
         },
         complete: function() {
             setUrlLink();
