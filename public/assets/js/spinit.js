@@ -340,7 +340,7 @@ function getTimeline()
             $(timelineul).listview('refresh');
 
             //デポジットボタン作る
-            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog">デポる</a>');
+            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-rel="dialog" data-transition="pop">デポる</a>');
         },
         complete: function() {
             setUrlLink();
