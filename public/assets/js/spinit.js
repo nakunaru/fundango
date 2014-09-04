@@ -171,6 +171,46 @@ $(document).on( "pageshow", "#deposit", function( event ) {
     });
 });
 
+/**
+ * デポジットダイアログを開く
+ * @param tuserid
+ * @param screen_name
+ * @param toimg
+ */
+function openDepositAddDialog(tuserid, screen_name, toimg) {
+    $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
+    $('#to_screen_name').val(screen_name);
+    $('#to_tuserid').val(tuserid);
+    $('#message').val("");
+    $('#todepoimg').attr('src', toimg);
+    $('#to_image_url').val(toimg);
+    var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
+    enabled_deponum = Number(enabled_deponum);
+
+    //デポジットが重複していないかチェックする
+    var port4liolistdiv = $('.port4liolistdiv');
+    var isduplicate = false;
+    for (var i=0; i<port4liolistdiv.length; i++) {
+        if (tuserid == $(port4liolistdiv[i]).text()) {
+            isduplicate = true;
+            break;
+        }
+    }
+
+    if (enabled_deponum <= 0 || isduplicate) {
+        if (enabled_deponum <= 0) {
+            alert('デポジット可能な団子がありません＞＜');
+        } else {
+            alert('すでにその人にデポジットしています。ドローしてください');
+        }
+        //$('#depositAddDialog')
+        setTimeout(function(){
+            $('.ui-dialog').dialog('close');
+        }, 1000);
+        return;
+    }
+}
+
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
@@ -192,6 +232,8 @@ $(document).on( "pageshow", "#home", function( event ) {
         var screen_name = $(this).attr('screen_name');
         var tuserid = $(this).attr('tuserid');
         var toimg = $(this).attr('image_url');
+        openDepositAddDialog(tuserid, screen_name, toimg);
+        /*
         $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
         $('#to_screen_name').val(screen_name);
         $('#to_tuserid').val(tuserid);
@@ -223,11 +265,6 @@ $(document).on( "pageshow", "#home", function( event ) {
             }, 1000);
             return;
         }
-        //$( "#depositAddDialog" ).dialog({ overlayTheme: "b" });
-        //$('#depositnum').attr('max', 10);
-        /*
-        $('#tweetflipswitch')[0].selectedIndex = 1;
-        $('#tweetflipswitch').flipswitch( "refresh" );
         */
     });
 
@@ -340,6 +377,12 @@ function getTimeline()
             $(timelineul).listview('refresh');
 
             //デポジットボタン作る
+            $('.depositaddbuttondiv.isnew').click(function() {
+                var screen_name = $(this).attr('screen_name');
+                var tuserid = $(this).attr('tuserid');
+                var toimg = $(this).attr('image_url');
+                openDepositAddDialog(tuserid, screen_name, toimg);
+            });
             $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-rel="dialog" data-transition="pop">デポる</a>');
         },
         complete: function() {
