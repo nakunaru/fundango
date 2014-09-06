@@ -11,8 +11,6 @@
     <!-- ユーザ情報 -->
     <!-- ユーザヘッダーパネル -->
     <?php echo View::forge('scds/userheader'); ?>
-    <!-- ユーザチャートパネル -->
-    <?php echo View::forge('scds/userchart'); ?>
     <!-- ユーザ情報パネル -->
     <?php echo View::forge('scds/userinfo'); ?>
 </div>
