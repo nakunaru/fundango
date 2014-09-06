@@ -152,3 +152,8 @@
 .timelineimg {
     width: 200px;
 }
+
+.timelinedate {
+    top: 0px;
+    right: 0px;
+}

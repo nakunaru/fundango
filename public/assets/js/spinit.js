@@ -356,7 +356,7 @@ function getTimeline()
                     + '<img class="slideRight" src="' + $data.user.profile_image_url
                     + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                     + $data.text + '</div>'
-                    + '<p class="ui-li-aside">' + $data.datestr + '</p>'
+                    + '<p class="ui-li-aside timelinedate">' + $data.datestr + '</p>'
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
