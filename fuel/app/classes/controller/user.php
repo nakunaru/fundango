@@ -34,6 +34,14 @@ class Controller_User extends Controller
     public function action_view()
     {
         //パラメータからscreen_name 取得
-        //ない場合、ユーザ一覧画面に飛ばす
+        $screen_name = Input::param('screen_name');
+
+        //ない場合、ログイン画面に飛ばす
+        $view = Usercommon::getview($screen_name);
+        if ($view == null) {
+            Response::redirect(Uri::create('login'));
+            return;
+        }
+        return Response::forge($view);
     }
 }

@@ -105,6 +105,7 @@ class Controller_Twitterlogin extends Controller
         Boardcommon::addboard($user->tuserid,$user->screen_name,$user->social_credit,$user->social_credit,$timestr);
 
         Session::set('user_id', $user->user_id);
+        Session::set('user', $user);
 
         $data = array();
         $data['user'] = $user;

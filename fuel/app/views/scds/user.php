@@ -9,6 +9,12 @@
 <!--  -->
 <div data-role="page" id="user"  data-title="user" data-url="<?php echo URI::create('user'); ?>" >
     <!-- ユーザ情報 -->
+    <!-- ユーザヘッダーパネル -->
+    <?php echo View::forge('scds/userheader'); ?>
+    <!-- ユーザチャートパネル -->
+    <?php echo View::forge('scds/userchart'); ?>
+    <!-- ユーザ情報パネル -->
+    <?php echo View::forge('scds/userinfo'); ?>
 </div>
 <!-- デポジット追加ダイアログ -->
 <?php echo View::forge('scds/depositadddialog'); ?>
