@@ -143,3 +143,7 @@
     position: relative;
     left: -20px;
 }
+
+#deposit .ui-listview .ui-li-aside {
+    top: 0px;
+}
