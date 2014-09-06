@@ -301,7 +301,7 @@ function setUrlLink() {
     //$('#timelinelist').html($('#timelinelist').html().replace(exp,"<a href='$1'>$1</a>"));
 
     $('.currli .timelinetext').each(function(){
-        $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a href="$1">$1</a> ')).attr('target','_blank');
+        $(this).html( $(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g, '<a target="_blank" href="$1">$1</a> '));
     });
 
     //@ユーザ名を自動リンクする
