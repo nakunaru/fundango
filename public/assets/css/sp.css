@@ -142,6 +142,7 @@
 .timelinetext {
     position: relative;
     left: -20px;
+    width: 120%;
 }
 
 #deposit .ui-listview .ui-li-aside {
