@@ -138,3 +138,8 @@
     cursor: pointer;
     color: #fff;
 }
+
+.timelinetext {
+    position: relative;
+    left: -20px;
+}
