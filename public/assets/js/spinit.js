@@ -367,7 +367,7 @@ function getTimeline()
                 //$(timelineul).prepend(str);
                 var img = getImageUrlLink($data);
                 if (img) {
-                   str += '<img class="slideUp" src="' + img + '">';
+                   str += '<img class="slideUp timelineimg" src="' + img + '">';
                 }
                 str += '</li>';
                 $(timelineultmp).append(str);
