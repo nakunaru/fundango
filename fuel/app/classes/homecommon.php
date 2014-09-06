@@ -220,22 +220,27 @@ class Homecommon {
     {
         $rank = Session::get('rank');
         if (!$rank) {
-            //ユーザの総数を取得
-            $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
-            $rank = array();
-            $all_users_count = count($all_users);
-            $rank['all_users_count'] = $all_users_count;
-            $rankcnt = 0;
-            foreach ($all_users as $tmp) {
-                $rankcnt++;
-                if ($tuserid == $tmp['tuserid']) {
-                    break;
-                }
-            }
-            $rank['user_rank'] = $rankcnt;
-            //Session::delete('rank');
+            $rank = Homecommon::getrankinfo($tuserid);
             Session::set('rank', $rank);
         }
+        return $rank;
+    }
+    public static function getrankinfo($tuserid)
+    {
+        //ユーザの総数を取得
+        $all_users = DB::query('select * from user order by total_credit desc;')->execute()->as_array();
+        $rank = array();
+        $all_users_count = count($all_users);
+        $rank['all_users_count'] = $all_users_count;
+        $rankcnt = 0;
+        foreach ($all_users as $tmp) {
+            $rankcnt++;
+            if ($tuserid == $tmp['tuserid']) {
+                break;
+            }
+        }
+        $rank['user_rank'] = $rankcnt;
+        //Session::delete('rank');
         return $rank;
     }
 
