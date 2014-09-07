@@ -21,6 +21,14 @@ class Boardcommon {
         $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
         $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
         */
+
+        //ポートフォリオに自分の情報を配列の先頭に足す
+        //$tuserid = $user->tuserid;
+        //$port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
+
+        //必要な情報
+        // 今日の株価　昨日の株価
+
         $data['user'] = $user;
         $data['rank'] = $rank;
         $data['followers'] = $followers;
