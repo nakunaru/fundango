@@ -220,20 +220,6 @@ $(document).on( "pageshow", "#home", function( event ) {
     //new WOW().init();
     panelOpenInit();
 
-    /*
-    if (timeline_timer != 0) {
-       return;
-    }
-    */
-
-    //未読の通知があるかどうか
-    var has_unread = $('.has_unread');
-    if (has_unread.length > 0) {
-        //フッターの通知の色を変える
-        $('#footernotify').css('color', '#ff0000');
-
-        showToastMessage('新着通知があります＞＜');
-    }
 
     $('#footerhome').addClass('ui-btn-active');
 
@@ -243,53 +229,8 @@ $(document).on( "pageshow", "#home", function( event ) {
         var tuserid = $(this).attr('tuserid');
         var toimg = $(this).attr('image_url');
         openDepositAddDialog(tuserid, screen_name, toimg);
-        /*
-        $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
-        $('#to_screen_name').val(screen_name);
-        $('#to_tuserid').val(tuserid);
-        $('#message').val("");
-        $('#todepoimg').attr('src', toimg);
-        $('#to_image_url').val(toimg);
-        var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
-        enabled_deponum = Number(enabled_deponum);
-
-        //デポジットが重複していないかチェックする
-        var port4liolistdiv = $('.port4liolistdiv');
-        var isduplicate = false;
-        for (var i=0; i<port4liolistdiv.length; i++) {
-            if (tuserid == $(port4liolistdiv[i]).text()) {
-                isduplicate = true;
-                break;
-            }
-        }
-
-        if (enabled_deponum <= 0 || isduplicate) {
-            if (enabled_deponum <= 0) {
-                alert('デポジット可能な団子がありません＞＜');
-            } else {
-                alert('すでにその人にデポジットしています。ドローしてください');
-            }
-            //$('#depositAddDialog')
-            setTimeout(function(){
-                $('.ui-dialog').dialog('close');
-            }, 1000);
-            return;
-        }
-        */
     });
 
-    /*
-    setUrlLink();
-    $('.currli').removeClass('currli');
-    */
-    /*
-    $('#depositaddsubmit').click(function(){
-        $('.ui-dialog').dialog('close')
-    });
-    */
-    //$('#homemyicon').badger('100d');
-
-    //if (timeline_timer == 0) {
     //最初の呼び出し
     getTimeline();
 
@@ -299,6 +240,14 @@ $(document).on( "pageshow", "#home", function( event ) {
     //タイムライン取得を６０秒間隔で行う
     timeline_timer = setInterval("getTimeline()",60000);
     //}
+    //未読の通知があるかどうか
+    var has_unread = $('.has_unread');
+    if (has_unread.length > 0) {
+        //フッターの通知の色を変える
+        $('#footernotify').css('color', '#ff0000');
+
+        showToastMessage('新着通知があります＞＜');
+    }
 });
 
 /**
@@ -495,7 +444,7 @@ function showToastMessage(message) {
         "top": $(window).scrollTop() + 100,
         "left": left
     })
-        .delay(1500)
+        .delay(3500)
         .fadeOut(400, function () {
             $(this).remove();
         });
