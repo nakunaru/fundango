@@ -38,7 +38,7 @@
                 echo '<li data-role="list-divider">友達からの被デポジットリスト</li>';
                 foreach ($depositedlist as $data)
                 {
-                    echo '<li><a href="' . echo URI::create('user/view?screen_name=') . $data->from_screen_name . '">'
+                    echo '<li><a href="' . URI::create('user/view?screen_name=') . $data->from_screen_name . '">'
                         .'<img src="' . $data->from_image_url . '">'
                         .'<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                         . $data->from_screen_name
