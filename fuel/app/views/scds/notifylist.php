@@ -5,7 +5,7 @@
         foreach ($notifylist as $data)
         {
             if ($data->seen == '0') {
-                echo '<li>' . '<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;"><b>'. $data->message . '</b></div> ' . '<p class="ui-li-aside">' . $data->date . '</p></li>';
+                echo '<li class="unreadnotify">' . '<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;"><b>'. $data->message . '</b></div> ' . '<p class="ui-li-aside">' . $data->date . '</p></li>';
             } else {
                 echo '<li>' . '<div style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'. $data->message . '</div> ' . '<p class="ui-li-aside">' . $data->date . '</p></li>';
             }

@@ -16,6 +16,8 @@
     <?php echo View::forge('scds/timeline'); ?>
     <!-- 友達パネル -->
     <?php echo View::forge('scds/friendpanel'); ?>
+
+    <?php echo '<div class="has_unread" hasunread="' . $has_unread . '"></div>'; ?>
     <!-- footer -->
     <?php echo View::forge('scds/footer'); ?>
 </div>

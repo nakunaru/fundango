@@ -18,6 +18,10 @@ class Homecommon {
         $user = Homecommon::getuser();
         $data['user'] = $user;
 
+        //未読通知があるかどうか
+        $has_unread = Notifycommon::hasunreadnotify($user->tuserid);
+        $data['has_unread'] = $has_unread;
+
         //ユーザのポートフォリオを取得する
         $port4lio = Model_Port4lio::find_by('from_tuserid', $user->tuserid, '=');
         if (!$port4lio) {
@@ -278,6 +282,7 @@ class Homecommon {
         $data = Homecommon::getdata();
         $view = View::forge('scds/home', $data);
         $view->set_global('user', $data['user']);
+        $view->set_global('has_unread', $data['has_unread']);
         $view->set_global('followers', $data['followers']);
         $view->set_global('to_users', $data['to_users']);
         $view->set_global('timeline', $data['timeline']);

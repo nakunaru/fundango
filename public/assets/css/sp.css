@@ -161,3 +161,8 @@
     right: 0px;
     color: #aaa;
 }
+
+.unreadnotify {
+    color: #ff1111;
+    background: #55bbFF;
+}

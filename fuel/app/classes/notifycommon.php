@@ -6,6 +6,25 @@
  * Time: 17:07
  */
 class Notifycommon {
+    /**
+     * 未読通知があるかどうか返す
+     * @return bool
+     */
+    public static function hasunreadnotify($tuserid)
+    {
+        $has_unread = false;
+        $notifylist = DB::query('select * from notify ' .'where tuserid = ' . $tuserid . ' and seen = 0' . ';')->execute()->as_array();
+        if ($notifylist) {
+            if (count($notifylist) > 0) {
+                $has_unread = true;
+            }
+        }
+        return $has_unread;
+    }
+    /**
+     * 通知データの取得
+     * @return array
+     */
     public static function getdata()
     {
         $data = array();
