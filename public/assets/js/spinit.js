@@ -231,6 +231,8 @@ $(document).on( "pageshow", "#home", function( event ) {
     if (has_unread.length > 0) {
         //フッターの通知の色を変える
         $('#footernotify').css('color', '#ff0000');
+
+        showToastMessage('新着通知があります＞＜');
     }
 
     $('#footerhome').addClass('ui-btn-active');
@@ -477,3 +479,24 @@ function panelOpenInit()
         $('.ui-page-active #friendpanel').panel('open');
     });
 }
+
+function showToastMessage(message) {
+    var box = $("<div class='ui-loader ui-overlay-shadow ui-body-a ui-corner-all'>"
+        + message + "</div>")
+        .css({
+            "padding": "7px 25px 7px 25px",
+            "display": "block",
+            "opacity": 0.8
+        })
+        .appendTo($.mobile.pageContainer);
+
+    var left = Math.floor(($(window).width() - box.width()) / 2);
+    box.css({
+        "top": $(window).scrollTop() + 100,
+        "left": left
+    })
+        .delay(1500)
+        .fadeOut(400, function () {
+            $(this).remove();
+        });
+};
