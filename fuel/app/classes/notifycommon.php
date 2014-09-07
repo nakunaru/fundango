@@ -24,7 +24,9 @@ class Notifycommon {
         */
 
         $tuserid = $user->tuserid;
-        $notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
+        //$notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
+        //日付の降順で取得する
+        $notifylist = DB::query('select * from notify order by date desc where tuserid = ' . $tuserid . ';')->execute()->as_array();
 
         if ($notifylist) {
             //既読save用の配列をクローンする
