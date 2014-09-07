@@ -226,6 +226,13 @@ $(document).on( "pageshow", "#home", function( event ) {
     }
     */
 
+    //未読の通知があるかどうか
+    var has_unread = $('.has_unread');
+    if (has_unread.length > 0) {
+        //フッターの通知の色を変える
+        $('#footernotify').css('color', '#ff0000');
+    }
+
     $('#footerhome').addClass('ui-btn-active');
 
 
