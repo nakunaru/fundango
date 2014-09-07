@@ -16,11 +16,6 @@ class Boardcommon {
         //$output = print_r($user,true);
         //Log::warning('session data = ' . $output);
         //$user = $data['user'];
-        /*
-        $tuserid = $user->tuserid;
-        $port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
-        $depositedlist = Model_Port4lio::find_by('to_tuserid', $tuserid, '=');
-        */
 
         //ポートフォリオに自分の情報を配列の先頭に足す
         //$tuserid = $user->tuserid;
@@ -28,12 +23,12 @@ class Boardcommon {
 
         //必要な情報
         // 今日の株価　昨日の株価
+        //$boards = array();
+        //$data['boards'] = $boards;
 
         $data['user'] = $user;
         $data['rank'] = $rank;
         $data['followers'] = $followers;
-        //$data['port4lio'] = $port4lio;
-        //$data['depositedlist'] = $depositedlist;
         return $data;
     }
 
@@ -44,10 +39,6 @@ class Boardcommon {
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
-        /*
-        $view->set_global('port4lio', $data['port4lio']);
-        $view->set_global('depositedlist', $data['depositedlist']);
-        */
         return $view;
     }
 
