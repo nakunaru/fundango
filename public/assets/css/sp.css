@@ -148,6 +148,9 @@
 #deposit .ui-listview .ui-li-aside {
     top: 0px;
 }
+#notify .ui-listview .ui-li-aside {
+    top: 0px;
+}
 
 .timelineimg {
     width: 200px;
