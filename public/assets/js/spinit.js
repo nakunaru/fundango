@@ -246,7 +246,7 @@ $(document).on( "pageshow", "#home", function( event ) {
         //フッターの通知の色を変える
         $('#footernotify').css('color', '#ff0000');
 
-        showToastMessage('新着通知があります＞＜');
+        showToastMessage('新着通知があります');
     }
 });
 
