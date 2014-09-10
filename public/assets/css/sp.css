@@ -172,6 +172,6 @@
 }
 
 .ui-page-theme-a a:link, html .ui-bar-a a:link, html .ui-body-a a:link, html body .ui-group-theme-a a:link {
-    color: #fff;
+    /*color: #fff;*/
     font-weight: normal;
 }
