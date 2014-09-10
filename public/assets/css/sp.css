@@ -166,3 +166,11 @@
     color: #ff1111;
     background: #55bbFF;
 }
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    text-shadow: 0 0 0 #fff;
+}
+
+.ui-page-theme-a a:link, html .ui-bar-a a:link, html .ui-body-a a:link, html body .ui-group-theme-a a:link {
+    color: #fff;
+}
