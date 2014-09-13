@@ -188,6 +188,6 @@
         linear-gradient(315deg, hsla(209, 95%, 45%, 1) 100%, hsla(209, 95%, 45%, 0) 70%);
 }
 
-#login .ui-page-theme-a h1 {
+#login.ui-page-theme-a h1 {
     color: #fff;
 }
