@@ -68,7 +68,8 @@ class Timelinecommon {
      */
     public static function updatetimeline($screen_name, $depositnum)
     {
-        $url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
+        //$url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
+        $url = URI::create('home');
         $result = Twitter::post('statuses/update',
             array('status' => '🍡' . ' @' . $screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
             ));
