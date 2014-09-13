@@ -41,11 +41,12 @@
     <br>
     <br>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
-    <center><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></center>
+    <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
+      <center><div><?php echo Asset::img('nyandango2_512.jpg',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
-            <a href="http://www.karamage.com/page-1810/">Fundangoとは？</a>
+            <center><a href="http://www.karamage.com/page-1810/">Fundangoとは？</a></center>
             <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false')); ?>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
         </div>
