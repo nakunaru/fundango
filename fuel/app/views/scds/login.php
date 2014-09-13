@@ -42,7 +42,7 @@
     <br>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
-      <center><div><?php echo Asset::img('nyandango2_512.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
+    <center><div><?php echo Asset::img('nyandango1_512.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
