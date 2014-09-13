@@ -25,7 +25,7 @@
 </head>
 <body>
 <!--ページ領域-->
-<div data-role="page" id="login"  data-title="Login">
+<div data-role="page" id="login"  data-title="Login" class="colorful">
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed" data-fullscreen="true">
