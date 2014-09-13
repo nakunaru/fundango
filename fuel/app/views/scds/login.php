@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
 <?php echo Asset::css('animations.css'); ?>
 <?php echo Asset::css('sp.css'); ?>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script> 
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 <?php echo Asset::js('spinit.js'); ?>
     <!-- script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,7 +25,7 @@
 </head>
 <body>
 <!--ページ領域-->
-<div data-role="page" id="login"  data-title="Login" class="colorful">
+<div data-role="page" id="login"  data-title="Fundango Login" class="colorful">
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed" data-fullscreen="true">
@@ -40,6 +40,7 @@
     <br>
     <br>
     <br>
+      <h1>みんなが"上場"している社会を創る</h1>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
     <center><div><?php echo Asset::img('nyandango1_512.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
