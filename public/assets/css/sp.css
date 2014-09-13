@@ -187,3 +187,7 @@
         linear-gradient(225deg, hsla(87, 98%, 44%, 1) 10%, hsla(87, 98%, 44%, 0) 80%),
         linear-gradient(315deg, hsla(209, 95%, 45%, 1) 100%, hsla(209, 95%, 45%, 0) 70%);
 }
+
+#login .ui-page-theme-a h1 {
+    color: #fff;
+}
