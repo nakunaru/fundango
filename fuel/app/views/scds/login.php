@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>fundango</title>
-<?php echo Asset::css('themes/watchme.min.css'); ?>
-<?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-<?php echo Asset::css('animations.css'); ?>
-<?php echo Asset::css('sp.css'); ?>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-<?php echo Asset::js('spinit.js'); ?>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="<?php echo Asset::img('favicon.ico'); ?>" >
+    <title>fundango</title>
+    <?php echo Asset::css('themes/watchme.min.css'); ?>
+    <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+    <?php echo Asset::css('animations.css'); ?>
+    <?php echo Asset::css('sp.css'); ?>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <?php echo Asset::js('spinit.js'); ?>
     <!-- script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,7 +41,7 @@
     <br>
     <br>
     <br>
-      <h1>みんなが"上場"している社会を創る</h1>
+      <h1>みんなが"上場"している社会</h1>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
     <center><div><?php echo Asset::img('nyandango1_512.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
