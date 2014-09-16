@@ -28,6 +28,19 @@ class Usercommon {
         $user = Model_User::find_one_by('screen_name', $screen_name, '=');
         return $user;
     }
+
+    /**
+     * Total Credit順にユーザのリストを取得する 最大20人
+     * @return null
+     */
+    public static function getuserlistbytotalcredit()
+    {
+        $userlist = DB::query('select * from user ' . ' order by total_credit desc' . ' limit 20;')->as_object('Model_User')->execute()->as_array();
+        if (!$userlist) {
+            $userlist = array();
+        }
+        return $userlist;
+    }
     public static function getview($screen_name)
     {
         $data = Usercommon::getdata($screen_name);
