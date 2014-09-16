@@ -23,9 +23,9 @@ class Controller_Login extends Controller
         //$data['users'] = Model_Tb1::find_all();
         $data['users'] = Usercommon::getuserlistbytotalcredit();
         //文字列を返す
-        $view = Response::forge(View::forge('scds/login', $data));
+        $view = View::forge('scds/login', $data);
 
         $view->set_global('users', $data['users']);
-        return $view;
+        return Response::forge($view);
     }
 }
