@@ -2,6 +2,7 @@
 
 class Controller_Login extends Controller
 {
+    /*
     public function action_auto_insert()
     {
         $post = Model_Tb1::forge();
@@ -14,6 +15,7 @@ class Controller_Login extends Controller
 
         $result = $post->save();
     }
+    */
 
     public function action_index()
     {
@@ -21,6 +23,9 @@ class Controller_Login extends Controller
         //$data['users'] = Model_Tb1::find_all();
         $data['users'] = Usercommon::getuserlistbytotalcredit();
         //文字列を返す
-        return Response::forge(View::forge('scds/login', $data));
+        $view = Response::forge(View::forge('scds/login', $data));
+
+        $view->set_global('users', $data['users']);
+        return $view;
     }
 }

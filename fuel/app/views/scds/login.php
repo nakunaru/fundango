@@ -56,6 +56,7 @@
     <br>
     <br>
     <br>
+    <?php echo View::forge('scds/userlist'); ?>
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
