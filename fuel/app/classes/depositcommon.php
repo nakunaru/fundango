@@ -74,7 +74,7 @@ class Depositcommon {
         $total_credit = 0;
         $port4lio = DB::query('select * from port4lio where to_tuserid = ' . $to_user->tuserid . ' and from_tuserid = ' . $from_user->tuserid . ';')->execute()->as_array();
         foreach ($port4lio as $port) {
-            $total_credit = $total_credit + $port->depositnum;
+            $total_credit = $total_credit + $port['depositnum'];
         }
         return $total_credit;
     }
