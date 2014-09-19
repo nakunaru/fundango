@@ -34,10 +34,13 @@ class Depositcommon {
             $depositedlist = array();
         }
 
+
         //キャピタルゲインを計算する
         foreach ($port4lio as $port) {
             $to_user = Model_User::find_one_by('tuserid', $port->to_tuserid, '=');
-            $port->cg = Depositcommon::getcg($to_user, $port->base_credit, $port->depositnum);
+            //自分がその人に投資した総デポジット数
+            $mine_deposit_credit = Depositcommon::getTotalCredit($to_user, $user);
+            $port->cg = Depositcommon::getcg($to_user, $port->base_credit, $port->depositnum, $mine_deposit_credit);
             /*
             if ($to_user) {
                 $port->cg = $to_user->social_credit - $port->base_credit;
@@ -63,9 +66,23 @@ class Depositcommon {
     }
 
     /**
+     * デポジットの総額を取得する
+     * @param $to_user
+     * @param $from_user
+     */
+    public static function getTotalCredit($to_user, $from_user) {
+        $total_credit = 0;
+        $port4lio = DB::query('select * from port4lio where to_tuserid = ' . $to_user->tuserid . ' and from_tuserid = ' . $from_user->tuserid . ';')->execute()->as_array();
+        foreach ($port4lio as $port) {
+            $total_credit = $total_credit + $port->depositnum;
+        }
+        return $total_credit;
+    }
+
+    /**
      * キャピタルゲインの取得
      */
-    public static function getcg($to_user, $base_credit, $depositnum)
+    public static function getcg($to_user, $base_credit, $depositnum, $mine_deposit_credit)
     {
         $cg = 0;
         if ($to_user) {
@@ -76,7 +93,7 @@ class Depositcommon {
                 }
             }
             //倍率
-            $percent = $to_user->total_credit;
+            $percent = $to_user->total_credit - $mine_deposit_credit;
             /*
             $percent = $to_user->social_credit ;
             if ($to_user->deposited_credit) {

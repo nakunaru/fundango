@@ -189,14 +189,16 @@ function openDepositAddDialog(tuserid, screen_name, toimg) {
     enabled_deponum = Number(enabled_deponum);
 
     //デポジットが重複していないかチェックする
-    var port4liolistdiv = $('.port4liolistdiv');
     var isduplicate = false;
+    /*
+    var port4liolistdiv = $('.port4liolistdiv');
     for (var i=0; i<port4liolistdiv.length; i++) {
         if (tuserid == $(port4liolistdiv[i]).text()) {
             isduplicate = true;
             break;
         }
     }
+    */
 
     if (enabled_deponum <= 0 || isduplicate) {
         if (enabled_deponum <= 0) {

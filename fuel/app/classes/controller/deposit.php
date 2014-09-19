@@ -46,8 +46,10 @@ class Controller_Deposit extends Controller
 
         //相手の株価情報を追加する
         $to_user = Model_User::find_one_by('tuserid', $to_tuserid, '=');
+        //自分がその人に投資した総デポジット数
+        $mine_deposit_credit = Depositcommon::getTotalCredit($to_user,$user);
         //キャピタルゲインを算出
-        $gc = Depositcommon::getcg($to_user, $port4lio->base_credit, $port4lio->depositnum);
+        $gc = Depositcommon::getcg($to_user, $port4lio->base_credit, $port4lio->depositnum, $mine_deposit_credit);
 
         $to_screen_name = $port4lio->to_screen_name;
         Boardcommon::addboard($to_tuserid, $to_screen_name, $to_user->total_credit - $port4lio->depositnum, $to_user->total_credit , $timestr);
