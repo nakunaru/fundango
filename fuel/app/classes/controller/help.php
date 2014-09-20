@@ -14,11 +14,13 @@ class Controller_Help extends Controller
     {
         parent::before(); // この行がないと、テンプレートが動作しません!
 
+        /*
         // 何かする
         if ( ! Twitter::logged_in() )
         {
             Response::redirect(Uri::create('login'));
         }
+        */
     }
 
     /**
