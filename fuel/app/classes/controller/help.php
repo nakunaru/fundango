@@ -29,7 +29,7 @@ class Controller_Help extends Controller
     public function action_index()
     {
         $data = array();
-        $view = View::forge('scds/notify', $data);
+        $view = View::forge('scds/help', $data);
         return Response::forge($view);
     }
 }
