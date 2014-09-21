@@ -8,7 +8,9 @@
 <!--ページ領域-->
 <!--  -->
 <div data-role="page" id="help"  data-title="help" data-url="<?php echo URI::create('help'); ?>" >
-    Fundangoって何？
+    <div data-role="header" data-position="fixed">
+        <h1>Fundangoって何？</h1>
+    </div>
 
     <div role="main" class="ui-content">
 
@@ -96,6 +98,7 @@
         &nbsp;
 
         今後は、スマホのアプリも作る予定です。
+        <a href="<?php echo URI::create('home'); ?>" data-ajax="false" data-role="button" data-rel="">ホームへ</a>
     </div>
 
 </div>
