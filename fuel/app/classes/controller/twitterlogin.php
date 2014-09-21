@@ -103,7 +103,7 @@ class Controller_Twitterlogin extends Controller
         $showhelp = false;
         if (!$user->is_show_help) {
             $showhelp = true;
-            $user->is_show_help;
+            $user->is_show_help = 1;
         }
 
         $user->save();
