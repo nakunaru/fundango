@@ -99,6 +99,13 @@ class Controller_Twitterlogin extends Controller
             $user->deposit_credit = 0;
             $user->total_credit = $user->social_credit + $user->deposited_credit;
         }
+
+        $showhelp = false;
+        if (!$user->is_show_help) {
+            $showhelp = true;
+            $user->is_show_help;
+        }
+
         $user->save();
 
         //株価情報を作成
@@ -109,6 +116,10 @@ class Controller_Twitterlogin extends Controller
 
         $data = array();
         $data['user'] = $user;
-        Response::redirect(Uri::create('home'));
+        if ($showhelp) {
+            Response::redirect(Uri::create('help'));
+        } else {
+            Response::redirect(Uri::create('home'));
+        }
     }
 }
