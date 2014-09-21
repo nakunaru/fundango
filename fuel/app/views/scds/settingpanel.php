@@ -7,7 +7,7 @@
     <!-- ユーザ情報パネル -->
     <?php echo View::forge('scds/userinfo'); ?>
     <br>
-    <a href="<?php echo URI::create('help'); ?>" target="_blank" data-role="button" data-rel="dialog">Fundangoとは?</a>
+    <a href="<?php echo URI::create('help'); ?>" data-role="button" data-rel="dialog">Fundangoとは?</a>
     <a href="<?php echo URI::create('twitterlogin/logout'); ?>" data-ajax="false" data-role="button" data-rel="">ログアウト</a>
     <a href="#" data-role="button" data-rel="close">閉じる</a>
 </div>
