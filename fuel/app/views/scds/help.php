@@ -7,13 +7,10 @@
 <body>
 <!--ページ領域-->
 <!--  -->
-<div data-role="page" id="help"  data-title="help" data-url="<?php echo URI::create('help'); ?>" >
-    <!--div data-role="header" data-position="fixed">
-        <h1>Fundangoって何？</h1>
-    </div -->
 
-    <div id="fsvs-body" role="main" class="ui-content">
+    <div id="fsvs-body">
         <div class="slide">
+        <h1>Fundangoって何？</h1>
         <h1>みんなが“上場”している社会を創る</h1>
         Fundangoの名前の由来は、
 
@@ -111,6 +108,5 @@
             </div>
     </div>
 
-</div>
 </body>
 </html>
