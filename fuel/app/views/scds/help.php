@@ -9,7 +9,10 @@
 <!--  -->
 
     <div id="fsvs-body">
-        <div class="slide">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <!-- div class="slide">
         <h1>Fundangoって何？</h1>
         <h1>みんなが“上場”している社会を創る</h1>
         Fundangoの名前の由来は、
@@ -93,8 +96,8 @@
 
 
         今後は、スマホのアプリも作る予定です。
-        <a href="<?php echo URI::create('home'); ?>" data-ajax="false" data-role="button" data-rel="">ホームへ</a>
-        </div>
+        <a href="<!?php echo URI::create('home'); ?>" data-ajax="false" data-role="button" data-rel="">ホームへ</a>
+        </div -->
     </div>
 
 </body>
