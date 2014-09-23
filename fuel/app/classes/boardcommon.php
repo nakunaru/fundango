@@ -52,13 +52,13 @@ class Boardcommon {
         $timestr = Date::forge()->format('%Y/%m/%d');
         $myboardlist = DB::query('select * from board where tuserid = ' . $user->tuserid . ' and date < "' . $timestr . '" order by date desc;')->execute()->as_array();
         if (!$myboardlist || count($myboardlist) == 0) {
-
+            //TODO
         } else {
             $myboard = $myboardlist[0];
-            $board['pre_total_credit'] = $myboard['total_credit'];
+            $board['pre_total_credit'] = $myboard['social_credit'];
 
             $update_num_str = '';
-            $update_num = $user->total_credit - $myboard['total_credit'];
+            $update_num = $user->total_credit - $myboard['social_credit'];
             if ($update_num >= 0) {
                 $update_num_str = '+' . $update_num;
             } else {
