@@ -234,7 +234,7 @@ $(document).on( "pageinit", "#help", function( event ) {
     //slider.slideUp();
     //slider.slideDown();
     //slider.slideToIndex( index );
-}
+});
 
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {

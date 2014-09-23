@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="fsvs">
 <head>
     <title>Fundango とは？</title>
     <?php echo View::forge('scds/htmlheader'); ?>
