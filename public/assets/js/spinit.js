@@ -214,6 +214,7 @@ function openDepositAddDialog(tuserid, screen_name, toimg) {
     }
 }
 
+/*
 $(document).on( "pageinit", "#help", function( event ) {
     var slider = $.fn.fsvs({
         speed : 5000,
@@ -235,6 +236,7 @@ $(document).on( "pageinit", "#help", function( event ) {
     //slider.slideDown();
     //slider.slideToIndex( index );
 });
+*/
 
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
