@@ -29,6 +29,7 @@ class Boardcommon {
         //
 
         $boards = array();
+        /*
         $board = array();
         $board['screen_name'] = 'kara_mage';
         $board['total_credit'] = 100;
@@ -38,7 +39,53 @@ class Boardcommon {
         $board['h_total_credit'] = 110;
         $board['l_total_credit'] = 89;
         $board['date'] = '11:21';
+        */
+
+        //自分の株価情報の取得
+        $board = array();
+        $board['screen_name'] = $user->screen_name;
+        $board['total_credit'] = $user->total_credit;
+
+        //昨日以降の最後の株価を取得する
+
+        //今日の日時取得
+        $timestr = Date::forge()->format('%Y/%m/%d');
+        $myboardlist = DB::query('select * from board where tuserid = ' . $user->tuserid . ' and date < ' . $timestr . ' order by date desc;')->execute()->as_array();
+        if (!$myboardlist || count($myboardlist) == 0) {
+
+        } else {
+            $myboard = $myboardlist[0];
+            $board['pre_total_credit'] = $myboard['total_credit'];
+
+            $update_num_str = '';
+            $update_num = $user->total_credit - $myboard['total_credit'];
+            if ($update_num >= 0) {
+                $update_num_str = '+' . $update_num;
+            } else {
+                $update_num_str = '-' . $update_num;
+            }
+
+            $board['update_num'] = $update_num_str;
+
+            $parcentstr = '';
+            $parcent = $update_num / $user->total_credit;
+            if ($update_num >= 0) {
+                $parcentstr = '▲+' . $parcent;
+            } else {
+                $parcentstr = '▼-' . $parcent;
+            }
+
+            $board['percent'] = $parcentstr;
+
+            $board['h_total_credit'] = 0;
+            $board['l_total_credit'] = 0;
+            $board['date'] = '00:00';
+        }
+
         $boards[] = $board;
+
+        //ポートフォリオから情報を取得する
+
         $data['boards'] = $boards;
 
         $data['user'] = $user;
