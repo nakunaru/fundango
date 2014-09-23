@@ -13,9 +13,15 @@
         <div id="tabboardlist" class="ui-body ui-body-a">
             <br>
             <ul data-role="listview">
-                <li class="boardli"><h1>kara_mage</h1><h5>現値 : 503d</h5><h5 class="boardparcentplus">前比 : ▲+0.23%  +3</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>
+                <?php
+                foreach ($boards as $data)
+                {
+                    echo '<li class="boardli"><h1>' . $data['screen_name'] . '</h1><h5>現値 : 503d</h5><h5 class="boardparcentplus">前比 : ▲+0.23%  +3</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>';
+                }
+                ?>
+                <!-- li class="boardli"><h1>kara_mage</h1><h5>現値 : 503d</h5><h5 class="boardparcentplus">前比 : ▲+0.23%  +3</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>
                 <li class="boardli"><h1>devfundango</h1><h5>現値 : 31d</h5><h5 class="boardparcentplus">前比 : ▲+2.11%  +6</h5><p>日時 : 14:01</p><p class="ui-li-aside">H 34 L 29</p></li>
-                <li class="boardli"><h1>bryu_seru</h1><h5>現値 : 16d</h5><h5 class="boardparcentminus">前比 : ▲+3.07%  +5</h5><p>日時 : 14:09</p><p class="ui-li-aside">H 21 L 15</p></li>
+                <li class="boardli"><h1>bryu_seru</h1><h5>現値 : 16d</h5><h5 class="boardparcentminus">前比 : ▲+3.07%  +5</h5><p>日時 : 14:09</p><p class="ui-li-aside">H 21 L 15</p></li -->
             </ul>
             <!-- canvas id="boardcanvas" height="500" width="500"></canvas -->
         </div>

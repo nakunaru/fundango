@@ -21,10 +21,23 @@ class Boardcommon {
         //$tuserid = $user->tuserid;
         //$port4lio = Model_Port4lio::find_by('from_tuserid', $tuserid, '=');
 
-        //必要な情報
-        // 今日の株価　昨日の株価
-        //$boards = array();
-        //$data['boards'] = $boards;
+        // board 必要な情報
+        // screen_name
+        // 現在の株価　昨日の株価
+        // 今日の株価 H L
+        // 最終取引日時 hh:mm
+        //
+
+        $boards = array();
+        $board = array();
+        $board['screen_name'] = 'kara_mage';
+        $board['total_credit'] = 100;
+        $board['pre_total_credit'] = 90;
+        $board['h_total_credit'] = 110;
+        $board['l_total_credit'] = 89;
+        $board['date'] = '11:21';
+        $boards[] = $board;
+        $data['boards'] = $boards;
 
         $data['user'] = $user;
         $data['rank'] = $rank;
@@ -39,6 +52,7 @@ class Boardcommon {
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
+        $view->set_global('board', $data['board']);
         return $view;
     }
 
