@@ -3,7 +3,8 @@
  */
 $(document).ready( function() {
     var slider = $.fn.fsvs({
-        speed : 5000,
+        speed: 1000
+        /*speed : 5000,
         bodyID : 'fsvs-body',
         selector : '> .slide',
         mouseSwipeDisance : 40,
@@ -16,7 +17,7 @@ $(document).ready( function() {
         arrowKeyEvents : true,
         pagination : true,
         nthClasses : false,
-        detectHash : true
+        detectHash : true */
     });
     //slider.slideUp();
     //slider.slideDown();
