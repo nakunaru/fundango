@@ -214,6 +214,28 @@ function openDepositAddDialog(tuserid, screen_name, toimg) {
     }
 }
 
+$(document).on( "pageinit", "#help", function( event ) {
+    var slider = $.fn.fsvs({
+        speed : 5000,
+        bodyID : 'fsvs-body',
+        selector : '> .slide',
+        mouseSwipeDisance : 40,
+        afterSlide : function(){},
+        beforeSlide : function(){},
+        endSlide : function(){},
+        mouseWheelEvents : true,
+        mouseDragEvents : true,
+        touchEvents : true,
+        arrowKeyEvents : true,
+        pagination : true,
+        nthClasses : false,
+        detectHash : true
+    });
+    //slider.slideUp();
+    //slider.slideDown();
+    //slider.slideToIndex( index );
+}
+
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";

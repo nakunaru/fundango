@@ -12,15 +12,17 @@
         <h1>Fundangoって何？</h1>
     </div>
 
-    <div role="main" class="ui-content">
-
+    <div id="fsvs-body" role="main" class="ui-content">
+        <div class="slide">
         <h1>みんなが“上場”している社会を創る</h1>
         Fundangoの名前の由来は、
 
         「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。
 
         "fund"には、「<span class="st">投資信託</span>=<span class="st">投資のプロ</span>」という意味も掛かっています。
+        </div>
 
+        <div class="slide">
         <h2>Fundangoの目的</h2>
         <strong>個人の信用を見える化する</strong>ことです。
 
@@ -33,6 +35,8 @@
         Fundangoでは、団子を持っている人ほど、株価が高いということになります。
 
         &nbsp;
+        </div>
+        <div class="slide">
         <h2>個人の信用=団子?</h2>
 
         &nbsp;
@@ -45,8 +49,9 @@
 
         &nbsp;
 
+            </div>
 
-        &nbsp;
+        <div class="slide">
         <h2>株式市場を簡略化したモデル</h2>
         Fundangoは株式市場をモデルとした取引を団子によって行います。
 
@@ -58,6 +63,8 @@
         ことができます。
 
         &nbsp;
+            </div>
+        <div class="slide">
         <h2>デポるとは？</h2>
         <p>団子は他のユーザに対してデポることができます。</p>
 
@@ -72,7 +79,9 @@
         これは株式市場でいう企業の株を買う行為に相当します。
 
         手持ちの団子の数とデポジットされた団子の合計が、その人の個人の株価となります。
+            </div>
 
+        <div class="slide">
         &nbsp;
         <h2>ポートフォリオとは?</h2>
         ポートフォリオとは、株式市場でいう投資家や金融機関が保有する、株式をはじめとする各種有価証券類のことです。
@@ -99,6 +108,7 @@
 
         今後は、スマホのアプリも作る予定です。
         <a href="<?php echo URI::create('home'); ?>" data-ajax="false" data-role="button" data-rel="">ホームへ</a>
+            </div>
     </div>
 
 </div>
