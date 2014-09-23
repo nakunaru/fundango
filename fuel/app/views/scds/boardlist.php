@@ -16,7 +16,7 @@
                 <?php
                 foreach ($boards as $data)
                 {
-                    echo '<li class="boardli"><h1>' . $data['screen_name'] . '</h1><h5>現値 : 503d</h5><h5 class="boardparcentplus">前比 : ▲+0.23%  +3</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>';
+                    echo '<li class="boardli"><h1>' . $data['screen_name'] . '</h1><h5>現値 : ' . $data['total_credit'] . 'd</h5><h5 class="boardparcentplus">前比 : ' . $data['percent'] . '%  ' . data['update_num'] .'</h5><p>日時 : ' . $data['date'] . '</p><p class="ui-li-aside">H ' . data['h_total_credit_'] . ' L ' . data['l_total_credit'] . '</p></li>';
                 }
                 ?>
                 <!-- li class="boardli"><h1>kara_mage</h1><h5>現値 : 503d</h5><h5 class="boardparcentplus">前比 : ▲+0.23%  +3</h5><p>日時 : 15:01</p><p class="ui-li-aside">H 504 L 499</p></li>

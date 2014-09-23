@@ -33,6 +33,8 @@ class Boardcommon {
         $board['screen_name'] = 'kara_mage';
         $board['total_credit'] = 100;
         $board['pre_total_credit'] = 90;
+        $board['percent'] = '▲+2.31';
+        $board['update_num'] = '+3';
         $board['h_total_credit'] = 110;
         $board['l_total_credit'] = 89;
         $board['date'] = '11:21';
