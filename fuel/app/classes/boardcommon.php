@@ -52,7 +52,7 @@ class Boardcommon {
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
         $view->set_global('followers', $data['followers']);
-        $view->set_global('board', $data['board']);
+        $view->set_global('boards', $data['boards']);
         return $view;
     }
 
