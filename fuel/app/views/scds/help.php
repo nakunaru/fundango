@@ -2,15 +2,15 @@
 <html class="fsvs">
 <head>
     <title>Fundango とは？</title>
-    <?php echo View::forge('scds/htmlheader'); ?>
+    <?php echo View::forge('scds/helphtmlheader'); ?>
 </head>
 <body>
 <!--ページ領域-->
 <!--  -->
 <div data-role="page" id="help"  data-title="help" data-url="<?php echo URI::create('help'); ?>" >
-    <div data-role="header" data-position="fixed">
+    <!--div data-role="header" data-position="fixed">
         <h1>Fundangoって何？</h1>
-    </div>
+    </div -->
 
     <div id="fsvs-body" role="main" class="ui-content">
         <div class="slide">
