@@ -50,7 +50,7 @@ class Boardcommon {
 
         //今日の日時取得
         $timestr = Date::forge()->format('%Y/%m/%d');
-        $myboardlist = DB::query('select * from board where tuserid = ' . $user->tuserid . ' and date < ' . $timestr . ' order by date desc;')->execute()->as_array();
+        $myboardlist = DB::query('select * from board where tuserid = ' . $user->tuserid . ' and date < "' . $timestr . '" order by date desc;')->execute()->as_array();
         if (!$myboardlist || count($myboardlist) == 0) {
 
         } else {
