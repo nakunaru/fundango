@@ -92,12 +92,14 @@ class Controller_Twitterlogin extends Controller
             $user->deposit_credit = 0;
             $user->deposited_credit = 0;
             $user->total_credit = $user->social_credit + $user->deposited_credit;
+            $user->is_show_help = false;
         }
         // デポジットを先行でユーザ作成行われた場合
         if ($user->social_credit == 0) {
             $user->social_credit = $user->followers_count;
             $user->deposit_credit = 0;
             $user->total_credit = $user->social_credit + $user->deposited_credit;
+            $user->is_show_help = false;
         }
 
         $showhelp = false;
