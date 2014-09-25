@@ -48,7 +48,7 @@
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
-            <center><a href="http://www.karamage.com/page-1810/">Fundangoとは？</a></center>
+            <center><a href="<?php echo URI::create('help'); ?>">Fundangoとは？</a></center>
             <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false')); ?>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
         </div>
