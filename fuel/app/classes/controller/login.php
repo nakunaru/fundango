@@ -19,6 +19,7 @@ class Controller_Login extends Controller
 
     public function action_index()
     {
+        Session::destroy();
         $data = array();
         //$data['users'] = Model_Tb1::find_all();
         $data['users'] = Usercommon::getuserlistbytotalcredit();
