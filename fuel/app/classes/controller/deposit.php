@@ -139,7 +139,7 @@ class Controller_Deposit extends Controller
             $to_user = new Model_User();
             $to_user->tuserid = $to_tuserid;
             $to_user->screen_name = $to_screen_name;
-            $user->avator = $to_image_url;
+            $to_user->avator = $to_image_url;
             //被デポジットをカウントアップ
             $to_user->deposited_credit = $depositnum;
             $to_user->social_credit = 0;
