@@ -5,7 +5,7 @@
         <div data-role="navbar">
             <ul>
                 <li><a href="#tabport4lio" class="ui-btn-active">ポートフォリオ</a></li>
-                <li><a href="#tabdeposited">被デポジットリスト</a></li>
+                <li><a href="#tabdeposited">デポられリスト</a></li>
             </ul>
         </div>
         <!--1パネル（コンテンツ領域）を準備-->
@@ -35,7 +35,7 @@
             <br>
             <ul data-role="listview">
                 <?php
-                echo '<li data-role="list-divider">友達からの被デポジットリスト</li>';
+                echo '<li data-role="list-divider">友達からのデポられリスト</li>';
                 foreach ($depositedlist as $data)
                 {
                     echo '<li><a target="_blank" href="' . URI::create('user/view?screen_name=') . $data->from_screen_name . '">'
