@@ -56,7 +56,7 @@
     <br>
     <br>
     <br>
-    <?php echo View::forge('scds/userlist'); ?>
+    <?php echo View::forge('scds/userrankinglist'); ?>
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
