@@ -81,6 +81,9 @@ class Homecommon {
         }
         */
         $followers = Homecommon::getfollowers($ids, $user->tuserid);
+        if (!$followers) {
+            $followers = array();
+        }
         $data['followers'] = $followers;
 
         if (count($followers) > 0) {
