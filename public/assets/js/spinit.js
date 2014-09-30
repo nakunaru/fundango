@@ -186,9 +186,9 @@ function openDepositAddDialog(tuserid, screen_name, toimg, timelineid) {
     $('#todepoimg').attr('src', toimg);
     $('#to_image_url').val(toimg);
     if (timelineid != undefined) {
-        $('#in_reply_status_id').val(timelineid);
+        $('#in_reply_to_status_id').val(timelineid);
     } else {
-        $('#in_reply_status_id').val("");
+        $('#in_reply_to_status_id').val("");
     }
     var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
     enabled_deponum = Number(enabled_deponum);
