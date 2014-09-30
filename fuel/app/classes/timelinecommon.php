@@ -68,11 +68,26 @@ class Timelinecommon {
      */
     public static function updatetimeline($screen_name, $depositnum)
     {
-        //$url = 'http://www.karamage.com/~kara_mage/scds/index.php/login';
         $url = URI::create('home');
         $result = Twitter::post('statuses/update',
             array('status' => '🍡' . ' @' . $screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
             ));
         return $result;
     }
+
+    /**
+     * ツイッターのタイムラインの投稿に返信する
+     * @param $screen_name
+     * @param $depositnum
+     * @param $in_reply_to_status_id
+     */
+    public static function updatetimelinereply($screen_name, $depositnum, $in_reply_to_status_id)
+    {
+        $url = URI::create('home');
+        $result = Twitter::post('statuses/update',
+            array('status' => '🍡' . ' @' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango', 'in_reply_to_status_id' => '' . $in_reply_to_status_id
+            ));
+        return $result;
+    }
+
 }

@@ -177,7 +177,7 @@ $(document).on( "pageshow", "#deposit", function( event ) {
  * @param screen_name
  * @param toimg
  */
-function openDepositAddDialog(tuserid, screen_name, toimg) {
+function openDepositAddDialog(tuserid, screen_name, toimg, timelineid) {
     $('#fromdepoimg').attr('src', $('#myaccountimg').attr('src'));
     $('#depositaddscreenname').attr('screen_name',screen_name).text(screen_name + 'さんに私の団子を預けます');
     $('#to_screen_name').val(screen_name);
@@ -185,6 +185,11 @@ function openDepositAddDialog(tuserid, screen_name, toimg) {
     $('#message').val("");
     $('#todepoimg').attr('src', toimg);
     $('#to_image_url').val(toimg);
+    if (timelineid != undefined) {
+        $('#in_reply_status_id').val(timelineid);
+    } else {
+        $('#in_reply_status_id').val("");
+    }
     var enabled_deponum = $('#account_enabled_deposit_credit').attr('credit');
     enabled_deponum = Number(enabled_deponum);
 
@@ -345,7 +350,7 @@ function getTimeline()
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
                     //+ '<button class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
-                    + '<div class="depositaddbuttondiv isnew" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
+                    + '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
@@ -366,7 +371,8 @@ function getTimeline()
                 var screen_name = $(this).attr('screen_name');
                 var tuserid = $(this).attr('tuserid');
                 var toimg = $(this).attr('image_url');
-                openDepositAddDialog(tuserid, screen_name, toimg);
+                var timelineid = $(this).attr('timelineid');
+                openDepositAddDialog(tuserid, screen_name, toimg, timelineid);
             });
             $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-rel="dialog" data-transition="pop">デポる</a>');
         },

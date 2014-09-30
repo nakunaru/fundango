@@ -103,6 +103,7 @@ class Controller_Deposit extends Controller
         $message = Input::param('message');
         $to_image_url = Input::param('to_image_url');
         $from_image_url = Input::param('from_image_url');
+        $in_reoly_to_status_id = Input::param('in_reply_to_status_id');
 
         //デポジット可能数が足りないならエラーにする
         if ($user->social_credit - $user->deposit_credit - $depositnum < 0) {
@@ -171,8 +172,13 @@ class Controller_Deposit extends Controller
         //$output = print_r($istweet,true);
         //Log::warning('istweet = ' . $output);
         if ($istweet === "on") {
-            //twitter に投稿するやり方
-            $result = Timelinecommon::updatetimeline($to_user->screen_name, $depositnum);
+            if ($in_reoly_to_status_id == "") {
+                //twitter に投稿するやり方
+                $result = Timelinecommon::updatetimeline($to_user->screen_name, $depositnum);
+            } else {
+                //twitter に投稿するやり方
+                $result = Timelinecommon::updatetimelinereply($to_user->screen_name, $depositnum, $in_reoly_to_status_id);
+            }
         } else {
             //Log::warning('not tweet');
         }
