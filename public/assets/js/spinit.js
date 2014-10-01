@@ -252,7 +252,7 @@ $(document).on( "pageshow", "#home", function( event ) {
     panelOpenInit();
 
     setTimeout(function(){
-        odometer.innerHTML = 456;
+        odometer.innerHTML = $('#odometer').attr('credit');
     }, 1000);
 
 
