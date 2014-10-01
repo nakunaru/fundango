@@ -84,7 +84,9 @@ class Timelinecommon {
     public static function updatetimelinereply($screen_name, $depositnum, $in_reply_to_status_id)
     {
         $url = URI::create('home');
+        Log::warning('in_reply_to_status_id = ' . $in_reply_to_status_id);
         $val = intval($in_reply_to_status_id);
+        Log::warning('val = ' . $val);
         $result = Twitter::post('statuses/update',
             array('status' => '@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango', 'in_reply_to_status_id'=>$in_reply_to_status_id
             ));
