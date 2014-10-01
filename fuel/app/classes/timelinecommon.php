@@ -90,7 +90,7 @@ class Timelinecommon {
         $result = Twitter::post('statuses/update',
             array(
                 'in_reply_to_status_id'=>$val,
-                'status'=>'@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url
+                'status'=>'🍡' .' @' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
             ));
         return $result;
     }
