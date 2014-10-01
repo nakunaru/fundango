@@ -3,7 +3,7 @@
 <link rel="shortcut icon" href="<?php echo Asset::get_file('favicon.ico', 'img'); ?>" >
 <?php echo Asset::css('themes/watchme.min.css'); ?>
 <?php echo Asset::css('themes/jquery.mobile.icons.min.css'); ?>
-<?php echo Asset::css('themes/odometer-theme-car.css'); ?>
+<?php echo Asset::css('themes/odometer-theme-train-station.css'); ?>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
 <?php echo Asset::css('animations.css'); ?>
 <?php echo Asset::css('sp.css'); ?>
