@@ -70,7 +70,7 @@ class Timelinecommon {
     {
         $url = URI::create('home');
         $result = Twitter::post('statuses/update',
-            array('status' => '🍡' . ' @' . $screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
+            array('status'=>'🍡' . ' @' . $screen_name . ' さんに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango'
             ));
         return $result;
     }
@@ -88,7 +88,9 @@ class Timelinecommon {
         $val = intval($in_reply_to_status_id);
         //Log::warning('val = ' . $val);
         $result = Twitter::post('statuses/update',
-            array('status' => '@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango', 'in_reply_to_status_id'=>$val
+            array(
+                'in_reply_to_status_id'=>$val,
+                'status'=>'@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url
             ));
         return $result;
     }
