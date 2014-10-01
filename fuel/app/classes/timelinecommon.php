@@ -86,7 +86,7 @@ class Timelinecommon {
         $url = URI::create('home');
         $val = intval($in_reply_to_status_id);
         $result = Twitter::post('statuses/update',
-            array('status' => '@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango', 'in_reply_to_status_id' => $val
+            array('status' => '@' . $screen_name . ' さんのツイートに' . $depositnum . '団子、デポりました。 ' . $url . ' #fundango', 'in_reply_to_status_id'=>$in_reply_to_status_id
             ));
         return $result;
     }
