@@ -251,6 +251,10 @@ $(document).on( "pageshow", "#home", function( event ) {
     //new WOW().init();
     panelOpenInit();
 
+    setTimeout(function(){
+        odometer.innerHTML = 456;
+    }, 1000);
+
 
     $('#footerhome').addClass('ui-btn-active');
 
