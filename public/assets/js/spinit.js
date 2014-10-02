@@ -245,7 +245,7 @@ $(document).on( "pageinit", "#help", function( event ) {
 
 $(document).on( "pageinit", "#user", function( event ) {
     setTimeout(function(){
-        odometer.innerHTML = $('.ui-page-active #odometer').attr('credit');
+        odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
     }, 1000);
 });
 //$(document).on( "pageinit", "#home", function( event ) {
