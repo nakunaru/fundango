@@ -457,12 +457,14 @@ function panelOpenInit()
 {
     $( ".ui-page-active #settingopenbtn").unbind('click').click(function() {
         $('.ui-page-active #settingpanel').panel('open');
+        /*
         var myDoughnut = new Chart(document.getElementById("accountchartcanvas").
             getContext("2d")).Doughnut(doughnutData);
         var ctx = document.getElementById("accountchartcanvas2").getContext("2d");
         new Chart(ctx).Radar(radarchartdata, {
             pointDot: false
         });
+        */
         setTimeout(function(){
             odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
         }, 1000);
