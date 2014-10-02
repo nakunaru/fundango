@@ -243,7 +243,7 @@ $(document).on( "pageinit", "#help", function( event ) {
 });
 */
 
-$(document).on( "pageinit", "#user", function( event ) {
+$(document).on( "pageshow", "#user", function( event ) {
     setTimeout(function(){
         odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
     }, 1000);
