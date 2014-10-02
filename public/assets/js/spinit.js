@@ -243,6 +243,11 @@ $(document).on( "pageinit", "#help", function( event ) {
 });
 */
 
+$(document).on( "pageinit", "#user", function( event ) {
+    setTimeout(function(){
+        odometer.innerHTML = $('.ui-page-active #odometer').attr('credit');
+    }, 1000);
+});
 //$(document).on( "pageinit", "#home", function( event ) {
 $(document).on( "pageshow", "#home", function( event ) {
     var aaa = "";
@@ -252,7 +257,7 @@ $(document).on( "pageshow", "#home", function( event ) {
     panelOpenInit();
 
     setTimeout(function(){
-        odometer.innerHTML = $('#odometer').attr('credit');
+        odometer.innerHTML = $('.ui-page-active #odometer').attr('credit');
     }, 1000);
 
 
