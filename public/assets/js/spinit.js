@@ -463,6 +463,9 @@ function panelOpenInit()
         new Chart(ctx).Radar(radarchartdata, {
             pointDot: false
         });
+        setTimeout(function(){
+            odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
+        }, 1000);
     });
     $( ".ui-page-active #friendopenbtn").unbind('click').click(function() {
         $('#fromdepoimg').attr('src', $('#myaccountimg').attr('src'));
