@@ -5,5 +5,5 @@
                 . '</img><div>' . $user['screen_name'] . '</div>' ?>
         現値:<div id="odometer2" class="odometer" credit="<?php echo '' .(0 + $user['social_credit'] + $user['deposited_credit']); ?>">00000</div>d<br>
     </h1>
-    <p><?php echo $user['description'] ?></p>
+    <center><p><?php echo $user['description'] ?></p></center>
 </div>
