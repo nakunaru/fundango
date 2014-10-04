@@ -32,17 +32,17 @@
     <br>
     <br>
       <center>
-          <h1>Fundangoは、みんなが"上場"している社会を実現する</h1>
-          <p class="description">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
+          <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
+          <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
       </center>
-      <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
+      <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
             <center><a href="<?php echo URI::create('help'); ?>">Fundangoとは？</a></center>
-            <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false')); ?>
+            <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
         </div>
     </div>
