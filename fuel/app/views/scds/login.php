@@ -36,7 +36,7 @@
           <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
           <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
           <h1>日経平均だんご株価</h1>
-          <h1><div id="odometernikkei" class="odometer" >00000</div>d</h1>
+          <h1><div id="odometernikkei" class="odometer" >2981</div>d</h1>
       </center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
