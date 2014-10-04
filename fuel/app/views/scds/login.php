@@ -49,7 +49,7 @@
             <br>
             <br>
             <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>が運営しています。<br>からまげについて詳しく知りたい方は下記に今すぐアクセス!</p>
-            <a data-role="button" data-inline="true" data-mini="true" href="http://wwww.karamage.com/" target="_blank">http://wwww.karamage.com</a>
+            <a data-role="button" data-inline="true" data-mini="true" href="http://www.karamage.com/" target="_blank">http://www.karamage.com</a>
             <br>
             <a data-role="button" data-inline="true" data-mini="true" target="_blank" href="<?php echo URI::create('help'); ?>">Fundangoとは？</a>
         </div>
