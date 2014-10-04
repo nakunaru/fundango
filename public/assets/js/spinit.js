@@ -131,7 +131,7 @@ $(document).on( "pageinit", "#login", function( event ) {
         var credit = 0 + $(creditlist[i]).attr('total_credit');
         total_credit = total_credit + credit;
     }
-    total_credit = total_credit / 20;
+    total_credit = total_credit;
     setTimeout(function(){
         odometernikkei.innerHTML = String(parseInt(total_credit));
     }, 1000);
