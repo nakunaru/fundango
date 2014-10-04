@@ -128,7 +128,7 @@ $(document).on( "pageinit", "#login", function( event ) {
         if (i == 0) {
             continue;
         }
-        var credit = 0 + $(creditlist[i]).attr('total_credit');
+        var credit = parseInt($(creditlist[i]).attr('total_credit'));
         total_credit = total_credit + credit;
     }
     total_credit = total_credit;
