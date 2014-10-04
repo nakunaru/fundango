@@ -203,3 +203,7 @@
 .odometer {
     font-size: 20px;
 }
+
+#login .ui-overlay-a, #login .ui-page-theme-a,  #login .ui-page-theme-a .ui-panel-wrapper {
+    color: #fff;
+}

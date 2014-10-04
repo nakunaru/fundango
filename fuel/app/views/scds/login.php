@@ -33,7 +33,7 @@
     <br>
       <center>
           <h1>Fundangoは、みんなが"上場"している社会を実現する</h1>
-          <p>Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。このサービスにログインするためにはTwitterアカウントが必要です。</p>
+          <p>Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
       </center>
       <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'hatch'));  ?></div></center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
