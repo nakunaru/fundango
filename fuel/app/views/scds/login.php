@@ -34,6 +34,8 @@
       <center>
           <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
           <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
+          <h5>現在の日経平均団子株価</h5>
+          <div id="odometernikkei" class="odometer" >00000</div>d
       </center>
       <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->

@@ -120,6 +120,11 @@ $(document).on( "pageinit", "#login", function( event ) {
     //$('.tweet').socialbutton('twitter',{button : "horizontal"}).width(95);
     //$('.facebook_like').socialbutton('facebook_like',{button : "button_count"}).width(110);
     var test = "";
+
+    //日経平均を出す
+    setTimeout(function(){
+        odometernikkei.innerHTML = '12345';
+    }, 1000);
 });
 
 $(document).on( "pageshow", "#notify", function( event ) {
