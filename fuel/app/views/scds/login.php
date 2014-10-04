@@ -31,9 +31,6 @@
     <br>
     <br>
     <br>
-      <center>
-          <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
-          <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
           <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
           <h1>日経平均だんご株価</h1>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
@@ -46,6 +43,11 @@
             <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
             <br>
+            <br>
+            <br>
+            <center>
+                <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
+                <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
             <br>
             <br>
             <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>が運営しています。<br>からまげについて詳しく知りたい方は下記に今すぐアクセス!</p>
