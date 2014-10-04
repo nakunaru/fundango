@@ -52,6 +52,10 @@
     <br>
     <br>
     <?php echo View::forge('scds/userrankinglist'); ?>
+
+      <p class="description fadeIn">このサービスについて詳しく知りたい方は下記に今すぐアクセス!</p>
+      <a href="http://wwww.karamage.com">http://wwww.karamage.com</a>
+
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
