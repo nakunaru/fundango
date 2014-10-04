@@ -133,7 +133,7 @@ $(document).on( "pageinit", "#login", function( event ) {
     }
     total_credit = total_credit / 20;
     setTimeout(function(){
-        odometernikkei.innerHTML = '' + parseInt(total_credit);
+        odometernikkei.innerHTML = String(parseInt(total_credit));
     }, 1000);
 });
 
