@@ -46,6 +46,11 @@
             <center><a href="<?php echo URI::create('help'); ?>">Fundangoとは？</a></center>
             <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inset'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
+            <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>によって運営されています。<br>このサービスについて詳しく知りたい方は下記に今すぐアクセス!</p>
+            <a href="http://wwww.karamage.com" target="_blank">http://wwww.karamage.com</a>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
     <br>
@@ -53,11 +58,6 @@
     <br>
     <?php echo View::forge('scds/userrankinglist'); ?>
 
-      <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>によって運営されています。<br>このサービスについて詳しく知りたい方は下記に今すぐアクセス!</p>
-      <a href="http://wwww.karamage.com" target="_blank">http://wwww.karamage.com</a>
-      <br>
-      <br>
-      <br>
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
