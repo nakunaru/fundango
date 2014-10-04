@@ -1,7 +1,7 @@
 <div data-role="panel" id="settingpanel" data-position="left" data-display="overlay">
     <!-- panel content goes here -->
     <!-- ユーザヘッダーパネル -->
-    <?php echo View::forge('scds/userheader'); ?>
+    <?php echo View::forge('scds/userheader2'); ?>
     <!-- ユーザチャートパネル -->
     <!--?php echo View::forge('scds/userchart'); ? -->
     <!-- ユーザ情報パネル -->
