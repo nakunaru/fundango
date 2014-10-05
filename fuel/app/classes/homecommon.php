@@ -274,6 +274,10 @@ class Homecommon {
             Log::warning('user session all get ret = ' . $output);
             */
         }
+        if (!isset($user->page_count)) {
+            $user->page_count = 0;
+        }
+
         return $user;
     }
     /**
