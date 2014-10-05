@@ -44,15 +44,16 @@ class Usercommon {
     public static function getview($screen_name)
     {
         $data = Usercommon::getdata($screen_name);
+        if ($data == null) {
+            return null;
+        }
         $user = $data['user'];
         if (!$user->page_count) {
             $user->page_count = 1;
         } else {
             $user->page_count++;
         }
-        if ($data == null) {
-            return null;
-        }
+        $user->save();
         $view = View::forge('scds/user', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
