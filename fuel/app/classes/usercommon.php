@@ -44,6 +44,12 @@ class Usercommon {
     public static function getview($screen_name)
     {
         $data = Usercommon::getdata($screen_name);
+        $user = data['user'];
+        if (!$user->page_count) {
+            $user->page_count = 1;
+        } else {
+            $user->page_count++;
+        }
         if ($data == null) {
             return null;
         }
