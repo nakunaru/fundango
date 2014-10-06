@@ -64,4 +64,30 @@ class Usercommon {
         */
         return $view;
     }
+    public static function getuserlistview($screen_name)
+    {
+
+    }
+    public static function getuserlistdata($screen_name)
+    {
+        $data = array();
+        /*
+        $user = Usercommon::getuser($screen_name);
+        if (!$user) {
+            return null;
+        }
+        $data['user'] = $user;
+        $rank = Homecommon::getrankinfo($user->tuserid);
+        $data['rank'] = $rank;
+        */
+        return $data;
+    }
+    public static function getuserlist()
+    {
+        $userlist = DB::query('select * from user ' . ' order by screen_name desc' . ';')->as_object('Model_User')->execute()->as_array();
+        if (!$userlist) {
+            $userlist = array();
+        }
+        return $userlist;
+    }
 }
