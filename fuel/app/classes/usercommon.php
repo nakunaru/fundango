@@ -64,22 +64,29 @@ class Usercommon {
         */
         return $view;
     }
-    public static function getuserlistview($screen_name)
+    public static function getuserlistview()
     {
+        $data = Usercommon::getuserlistdata();
 
+        $view = View::forge('scds/userlist', $data);
+        $view->set_global('user', $data['user']);
+        $view->set_global('users', $data['users']);
+        $view->set_global('rank', $data['rank']);
+        return $view;
     }
-    public static function getuserlistdata($screen_name)
+    public static function getuserlistdata()
     {
         $data = array();
-        /*
-        $user = Usercommon::getuser($screen_name);
-        if (!$user) {
+        $users = Usercommon::getuserlist();
+        if (!$users) {
             return null;
         }
+        $user = Session::get('user');
+        $rank = Session::get('rank');
+
+        $data['users'] = $users;
         $data['user'] = $user;
-        $rank = Homecommon::getrankinfo($user->tuserid);
         $data['rank'] = $rank;
-        */
         return $data;
     }
     public static function getuserlist()

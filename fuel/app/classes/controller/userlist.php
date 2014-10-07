@@ -26,10 +26,7 @@ class Controller_Userlist extends Controller
      */
     public function action_index()
     {
-        //TODO
-        /*
-        $view = Boardcommon::getview();
+        $view = Usercommon::getuserlistview();
         return Response::forge($view);
-        */
     }
 }
