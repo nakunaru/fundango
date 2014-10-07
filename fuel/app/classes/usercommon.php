@@ -72,6 +72,7 @@ class Usercommon {
         $view->set_global('user', $data['user']);
         $view->set_global('users', $data['users']);
         $view->set_global('rank', $data['rank']);
+        $view->set_global('followers', array());
         return $view;
     }
     public static function getuserlistdata()
