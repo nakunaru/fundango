@@ -92,7 +92,7 @@ class Usercommon {
     }
     public static function getuserlist()
     {
-        $userlist = DB::query('select * from user ' . ' order by screen_name desc' . ';')->as_object('Model_User')->execute()->as_array();
+        $userlist = DB::query('select * from user ' . ' order by screen_name asc' . ';')->as_object('Model_User')->execute()->as_array();
         if (!$userlist) {
             $userlist = array();
         }
