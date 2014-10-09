@@ -132,11 +132,21 @@
 }
 
 .depositaddbuttondiv {
-    width: 48px;
     height: 20px;
-    background: #99ccff;
     cursor: pointer;
+    /*
+    width: 48px;
+    background: #99ccff;
     color: #fff;
+    */
+
+    background: -moz-linear-gradient(top,#0099CC 0%,#006699);
+    background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
+    border: 1px solid #DDD;
+    color:#FFF;
+    width: 100px;
+    padding: 10px 0;
+
 }
 
 .timelinetext {
