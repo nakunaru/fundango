@@ -41,7 +41,9 @@
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
-            <?php echo Html::anchor('twitterlogin/login', 'Twitterでログイン', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inline'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
+            <center>
+            <?php echo Html::anchor('twitterlogin/login', 'FundangoにTwitterでログインする!', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inline'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
+            </center>
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
             <br>
             <br>
