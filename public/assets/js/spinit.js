@@ -373,7 +373,7 @@ function getTimeline()
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
-                    + '<button data-inline="true" class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
+                    + '<a href="#" data-role="button" data-inline="true" class="timelinedepositaddbutton" value="デポる" data-inline="true"></a>'
                     //+ '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id_str + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
