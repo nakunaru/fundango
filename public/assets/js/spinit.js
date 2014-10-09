@@ -373,8 +373,8 @@ function getTimeline()
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
-                    + '<a href="#" data-role="button" data-inline="true" class="timelinedepositaddbutton" value="デポる" data-inline="true"></a>'
-                    //+ '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id_str + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
+                    //+ '<a href="#" data-role="button" data-inline="true" class="timelinedepositaddbutton" value="デポる" data-inline="true"></a>'
+                    + '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id_str + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
@@ -398,7 +398,7 @@ function getTimeline()
                 var timelineid = $(this).attr('timelineid');
                 openDepositAddDialog(tuserid, screen_name, toimg, timelineid);
             });
-            $('.depositaddbuttondiv.isnew').removeClass('isnew');//.append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
+            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
         },
         complete: function() {
             setUrlLink();
