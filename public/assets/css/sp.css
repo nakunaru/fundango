@@ -146,7 +146,12 @@
     color:#FFF;
     width: 100px;
     padding: 10px 0;
+    text-align: center;
+}
 
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    color:#fff;
+    text-decoration: none;
 }
 
 .timelinetext {
