@@ -398,7 +398,7 @@ function getTimeline()
                 var timelineid = $(this).attr('timelineid');
                 openDepositAddDialog(tuserid, screen_name, toimg, timelineid);
             });
-            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-rel="dialog" data-transition="pop">デポる</a>');
+            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
         },
         complete: function() {
             setUrlLink();
