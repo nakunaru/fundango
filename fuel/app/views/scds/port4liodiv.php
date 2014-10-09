@@ -2,7 +2,7 @@
     <?php
     foreach ($port4lio as $data)
     {
-        echo '<div class="port4liolistdiv">'. $data->to_tuserid . '</div>';
+        echo '<div style="display:none;" class="port4liolistdiv">'. $data->to_tuserid . '</div>';
     }
     ?>
 </div>
