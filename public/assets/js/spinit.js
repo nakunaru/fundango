@@ -373,8 +373,8 @@ function getTimeline()
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
                     + $data.user.name + ' @' + $data.user.screen_name + '</p>'
                     + '<p class="ui-li-count">' + $data.credit + 'd</p>'
-                    //+ '<button class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
-                    + '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id_str + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
+                    + '<button data-inline="true" class="timelinedepositaddbutton" value="デポる" data-inline="true"></button>'
+                    //+ '<div class="depositaddbuttondiv isnew" timelineid="' + $data.id_str + '" tuserid="' + $data.user.id + '" screen_name="' + $data.user.screen_name + '" image_url="' + $data.user.profile_image_url + '"></div>'
                     //+ '<a href="#">デポる</a>'
                     ;
                 //$(timelineul).prepend(str);
@@ -388,6 +388,7 @@ function getTimeline()
             $(timelineul).prepend($(timelineultmp).html());
             $(timelineultmp).html('');
             $(timelineul).prepend('<li class="timelinedivider" since_id="' + since_id + '" data-role="list-divider">タイムライン</li>');
+            $(timelineul).listview('refresh');
 
             //デポジットボタン作る
             $('.depositaddbuttondiv.isnew').click(function() {
@@ -397,8 +398,7 @@ function getTimeline()
                 var timelineid = $(this).attr('timelineid');
                 openDepositAddDialog(tuserid, screen_name, toimg, timelineid);
             });
-            $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
-            $(timelineul).listview('refresh');
+            $('.depositaddbuttondiv.isnew').removeClass('isnew');//.append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
         },
         complete: function() {
             setUrlLink();
