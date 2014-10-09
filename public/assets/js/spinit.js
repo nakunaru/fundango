@@ -388,7 +388,6 @@ function getTimeline()
             $(timelineul).prepend($(timelineultmp).html());
             $(timelineultmp).html('');
             $(timelineul).prepend('<li class="timelinedivider" since_id="' + since_id + '" data-role="list-divider">タイムライン</li>');
-            $(timelineul).listview('refresh');
 
             //デポジットボタン作る
             $('.depositaddbuttondiv.isnew').click(function() {
@@ -399,6 +398,7 @@ function getTimeline()
                 openDepositAddDialog(tuserid, screen_name, toimg, timelineid);
             });
             $('.depositaddbuttondiv.isnew').removeClass('isnew').append('<a href="#depositAddDialog" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">デポる</a>');
+            $(timelineul).listview('refresh');
         },
         complete: function() {
             setUrlLink();
