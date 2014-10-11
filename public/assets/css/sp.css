@@ -91,6 +91,9 @@ html.login {
     background-attachment: fixed;
 
     /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     /*background-size: contain;*/
 
