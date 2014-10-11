@@ -258,8 +258,10 @@ $(document).on( "pageinit", "#help", function( event ) {
 });
 */
 
-$(document).on( "pageshow", "#user", function( event ) {
+$(document).on( "pageshow", "#userlist", function( event ) {
     panelOpenInit();
+}
+$(document).on( "pageshow", "#user", function( event ) {
     setTimeout(function(){
         odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
     }, 1000);
