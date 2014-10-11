@@ -95,8 +95,9 @@
   background-attachment: fixed;
   
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
-  
+  /*background-size: cover;*/
+  background-size: contain;
+
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #234978;
 }
