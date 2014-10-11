@@ -69,6 +69,12 @@
     background-color: #fff;
 }
 
+
+#sociallogincontain {
+    background-color: #555;
+    opacity: 0.93;
+}
+
 #login {
    background-image: url("../img/bg_book.jpg"); /* 全体の背景画像 */
    background-repeat: no-repeat;            /* 背景を繰り返さない */
