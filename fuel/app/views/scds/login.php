@@ -30,9 +30,9 @@
   <div role="main" class="ui-content">
     <br>
       <center>
-          <h1 class="">Fundangoは、みんなが"上場"している社会を実現します</h1>
+          <h2 class="">Fundangoは、みんなが"上場"している社会を実現します</h2>
           <br>
-          <h2>日経平均だんご株価</h2>
+          <h3>現在の日経平均Dango株価</h3>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
       </center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
@@ -40,6 +40,7 @@
       <center>
           <?php echo Html::anchor('twitterlogin/login', 'FundangoにTwitterでログインする!', array( 'data-role'=>'button','id'=>'tweetloginbtn', 'data-inline'=>'true', 'data-ajax'=>'false', 'class'=>'pulse')); ?>
       </center>
+      <br>
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
