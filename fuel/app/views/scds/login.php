@@ -16,7 +16,7 @@
 </head>
 <body>
 <!--ページ領域-->
-<div data-role="page" id="login"  data-title="Fundango Login" class="colorful">
+<div data-role="page" id="login"  data-title="Fundango Login" class="">
 
   <!--ヘッダー領域-->
   <div data-role="header" data-position="fixed" data-fullscreen="true">
