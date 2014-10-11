@@ -30,7 +30,7 @@
   <div role="main" class="ui-content">
     <br>
       <center>
-          <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
+          <h1 class="">Fundangoは、みんなが"上場"している社会を実現します</h1>
           <br>
           <h2>日経平均だんご株価</h2>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
@@ -45,7 +45,7 @@
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
             <center>
-                <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
+                <p class="description">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
             <br>
                 <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
             <br>
