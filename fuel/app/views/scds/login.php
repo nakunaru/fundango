@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="login">
 <head>
     <title>fundango</title>
     <?php echo View::forge('scds/htmlheader'); ?>
@@ -14,7 +14,7 @@
 
     </script -->
 </head>
-<body class="login">
+<body>
 <!--ページ領域-->
 <div data-role="page" id="login"  data-title="Fundango Login" class="">
 

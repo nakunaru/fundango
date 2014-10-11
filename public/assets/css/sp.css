@@ -75,7 +75,7 @@
     opacity: 0.90;
 }
 
-body.login {
+html.login {
 
     /* 画像ファイルの指定 */
     background-image: url("../img/bg_book.jpg"); /* 全体の背景画像 */
