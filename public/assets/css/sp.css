@@ -79,7 +79,7 @@ html.login {
 
     min-height: 100%;
     /* 画像ファイルの指定 */
-    background-image: url("../img/bg_money.jpg"); /* 全体の背景画像 */
+    background-image: url("../img/fundango_bg_mini.jpg"); /* 全体の背景画像 */
 
     /* 画像を常に天地左右の中央に配置 */
     background-position: center center;
