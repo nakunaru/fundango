@@ -31,13 +31,13 @@
     <br>
     <br>
     <br>
-          <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
       <center>
+          <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
           <h1>日経平均だんご株価</h1>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
       </center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
-    <center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center>
+    <!-- center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center -->
     <div id="sociallogincontain" data-role="fieldcontain">
         <div data-role="fieldcontain">
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
@@ -49,7 +49,6 @@
             <br>
             <br>
             <center>
-                <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
                 <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
             <br>
             <br>
@@ -58,6 +57,7 @@
             <br>
             <a data-role="button" data-inline="true" data-mini="true" target="_blank" href="<?php echo URI::create('help'); ?>">Fundangoとは？</a>
             </center>
+            <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
         </div>
     </div>
     <?php echo View::forge('scds/userrankinglist'); ?>
