@@ -178,6 +178,7 @@
 }
 
 .timelineimg {
+    float:left;
     width: 200px;
 }
 
