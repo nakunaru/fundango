@@ -29,15 +29,12 @@
 
   <div role="main" class="ui-content">
     <br>
-    <br>
-    <br>
       <center>
           <h1 class="fadeIn">Fundangoは、みんなが"上場"している社会を実現します</h1>
           <br>
           <h2>日経平均だんご株価</h2>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
       </center>
-      <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
     <!-- center><img id="logintitle"  src="../../images/title.jpg"></center -->
     <!-- center><div><?php echo Asset::img('fundango_logo_mini.jpg',array('id'=>'logintitle', 'class'=>'hatch'));  ?></div></center -->
       <center>
@@ -50,6 +47,7 @@
             <center>
                 <p class="description fadeIn">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
             <br>
+                <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
             <br>
             <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>が運営しています。<br>からまげについて詳しく知りたい方は下記に今すぐアクセス!</p>
             <a data-role="button" data-inline="true" data-mini="true" href="http://www.karamage.com/" target="_blank">http://www.karamage.com</a>
