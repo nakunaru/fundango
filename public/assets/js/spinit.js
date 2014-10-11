@@ -259,6 +259,7 @@ $(document).on( "pageinit", "#help", function( event ) {
 */
 
 $(document).on( "pageshow", "#user", function( event ) {
+    panelOpenInit();
     setTimeout(function(){
         odometer2.innerHTML = $('.ui-page-active #odometer2').attr('credit');
     }, 1000);
