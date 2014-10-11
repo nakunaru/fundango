@@ -77,8 +77,8 @@
 
 #login {
    min-height: 100%;
-    min-width: 100%;
-   background-image: url("../img/bg_book.jpg"); /* 全体の背景画像 */
+   min-width: 100%;
+   /*background-image: url("../img/bg_book.jpg");*/ /* 全体の背景画像 */
    /*background-repeat: no-repeat;            /* 背景を繰り返さない */
    /*background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
    /*background-attachment:fixed;             /* 背景画像を固定する */
