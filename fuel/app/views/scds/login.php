@@ -14,7 +14,7 @@
 
     </script -->
 </head>
-<body>
+<body class="login">
 <!--ページ領域-->
 <div data-role="page" id="login"  data-title="Fundango Login" class="">
 
