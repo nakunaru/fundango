@@ -77,6 +77,7 @@
 
 #login {
    min-height: 100%;
+    min-width: 100%;
    background-image: url("../img/bg_book.jpg"); /* 全体の背景画像 */
    /*background-repeat: no-repeat;            /* 背景を繰り返さない */
    /*background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
@@ -95,8 +96,8 @@
   background-attachment: fixed;
   
   /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  /*background-size: cover;*/
-  background-size: contain;
+  background-size: cover;
+  /*background-size: contain;*/
 
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #234978;
