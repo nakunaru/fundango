@@ -97,7 +97,7 @@ body.login {
     background-color: #234978;
 }
 
-#login .ui-overlay-a, #login .ui-page-theme-a, #login .ui-page-theme-a .ui-panel-wrapper {
+.login .ui-overlay-a, .login .ui-page-theme-a, .login .ui-page-theme-a .ui-panel-wrapper {
     background-color: transparent;
 }
 
