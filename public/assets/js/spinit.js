@@ -369,8 +369,8 @@ function getTimeline()
                 }
                 var $data = timeline[i];
                 var str = '<li class="timelineli currli" timelineid="' + $data.id_str + '" >'
-                    + '<img class="slideRight" src="' + $data.user.profile_image_url
-                    + '"><div class="timelinetext slideLeft" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
+                    + '<img class="" src="' + $data.user.profile_image_url
+                    + '"><div class="timelinetext" style="text-overflow:ellipsis; overflow:hidden; white-space: normal;">'
                     + $data.text + '</div>'
                     + '<p class="ui-li-aside timelinedate">' + $data.datestr + '</p>'
                     + '<p style="text-overflow:ellipsis; overflow:hidden; ">'
