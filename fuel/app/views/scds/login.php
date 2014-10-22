@@ -57,8 +57,6 @@
                 <p class="description">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。<br>このサービスにログインするためにはTwitterアカウントが必要です。</p>
                 <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <!-- ブログをいいね！するボタン -->
-                <div class="fb-like" expr:data-href="data:blog.url" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"/>
             <br>
                 <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
             <br>
@@ -74,7 +72,7 @@
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
-    <h3>Copyright 2014, Masaaki Kakimoto</h3>
+    <h3><div class="fb-like" expr:data-href="data:blog.url" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"/>Copyright 2014, Masaaki Kakimoto</h3>
   </div>
 
 </div>
