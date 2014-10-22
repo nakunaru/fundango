@@ -64,10 +64,10 @@
             <a data-role="button" data-inline="true" data-mini="true" href="http://www.karamage.com/" target="_blank">http://www.karamage.com</a>
             <br>
             <a data-role="button" data-inline="true" data-mini="true" target="_blank" href="<?php echo URI::create('help'); ?>">Fundangoとは？</a>
-                <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fkaramage.umauma&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
             </center>
         </div>
     </div>
+      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fkaramage.umauma&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
     <?php echo View::forge('scds/userrankinglist'); ?>
 
   </div>
