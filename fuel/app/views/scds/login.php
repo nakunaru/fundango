@@ -60,10 +60,12 @@
             <br>
                 <center><div><?php echo Asset::img('nyandango_128.png',array('id'=>'loginnyandango', 'class'=>'tossing'));  ?></div></center>
             <br>
-            <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage</a>が運営しています。<br>からまげについて詳しく知りたい方は下記に今すぐアクセス!</p>
+            <p class="description fadeIn">このサービスは<a href="https://twitter.com/kara_mage" target="_blank">@kara_mage(柿本匡章)</a>が運営しています。<br>からまげについて詳しく知りたい方は下記に今すぐアクセス!</p>
             <a data-role="button" data-inline="true" data-mini="true" href="http://www.karamage.com/" target="_blank">http://www.karamage.com</a>
             <br>
             <a data-role="button" data-inline="true" data-mini="true" target="_blank" href="<?php echo URI::create('help'); ?>">Fundangoとは？</a>
+            <br>
+            <div class="fb-like-box" data-href="https://www.facebook.com/fundango.jp" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
             </center>
         </div>
     </div>
