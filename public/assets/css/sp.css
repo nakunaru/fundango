@@ -78,6 +78,10 @@
     background-color:rgba(50,50,50,0.65);
 }
 
+.fb-like-box.fb_iframe_widget {
+    background-color: #fff;
+}
+
 html.login {
 
     /*min-height: 100%;*/
