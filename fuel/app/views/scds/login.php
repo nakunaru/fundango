@@ -40,9 +40,8 @@
       <center>
           <h2 class="">Fundangoは、みんなが"上場"している社会を実現します</h2>
           <br>
-          <p class="description">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。</p>
-          <p class="description">Fundangoの目的は、<b>個人の信用を見える化する</b>ことです。 誰が誰に対して信用しているのか、それを数値やグラフとして表示します。</p>
-          <p class="description">このサービスにログインするためにはTwitterアカウントが必要です。</p>
+          <p class="description">名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。</p>
+          <p class="description">このサービスの目的は、<b>個人の信用を見える化する</b>ことです。 誰が誰に対して信用しているのか、それを数値やグラフとして表示します。</p>
           <br>
           <h3>現在の日経平均Dango株価</h3>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
@@ -58,6 +57,7 @@
             <!-- a href="home.html" data-icon="twittericon" data-role="button" id="tweetloginbtn">Twitterでログイン</a -->
             <!--a href="#" class="pullUp" data-icon="facebookicon" data-role="button" id="fbloginbtn">Facebookでログイン</a -->
             <center>
+                <p class="description">このサービスにログインするためにはTwitterアカウントが必要です。</p>
                 <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             <br>
