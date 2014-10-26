@@ -7,7 +7,7 @@
  */
 
 class Depositcommon {
-    public static function getdata()
+    public static function getdata($target_user)
     {
         $data = array();
 
@@ -17,7 +17,11 @@ class Depositcommon {
         Log::warning('deposit session all get ret = ' . $output);
         */
 
-        $user = Session::get('user');
+        if ($target_user != null) {
+            $user = $target_user;
+        } else {
+            $user = Session::get('user');
+        }
         $rank = Session::get('rank');
         $followers = array();
 
@@ -41,20 +45,6 @@ class Depositcommon {
             //自分がその人に投資した総デポジット数
             $mine_deposit_credit = Depositcommon::getTotalCredit($to_user, $user);
             $port->cg = Depositcommon::getcg($to_user, $port->base_credit, $port->depositnum, $mine_deposit_credit);
-            /*
-            if ($to_user) {
-                $port->cg = $to_user->social_credit - $port->base_credit;
-                //$port->cg = 0;
-                if ($to_user->deposited_credit) {
-                    $port->cg +=  $to_user->deposited_credit;
-                }
-                if ($port->cg < 0) {
-                    $port->cg = 0;
-                }
-            } else {
-                $port->cg = 0;
-            }
-            */
         }
 
         $data['user'] = $user;
@@ -112,7 +102,7 @@ class Depositcommon {
 
     public static function getview()
     {
-        $data = Depositcommon::getdata();
+        $data = Depositcommon::getdata(null);
         $view = View::forge('scds/deposit', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);

@@ -48,6 +48,7 @@ class Usercommon {
             return null;
         }
         $user = $data['user'];
+        $data2 = Depositcommon::getdata($user);
         if (!$user->page_count) {
             $user->page_count = 1;
         } else {
@@ -57,11 +58,8 @@ class Usercommon {
         $view = View::forge('scds/user', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
-        /*
-        $view->set_global('followers', $data['followers']);
-        $view->set_global('port4lio', $data['port4lio']);
-        $view->set_global('depositedlist', $data['depositedlist']);
-        */
+        $view->set_global('port4lio', $data2['port4lio']);
+        $view->set_global('depositedlist', $data2['depositedlist']);
         return $view;
     }
     public static function getuserlistview()
