@@ -22,11 +22,11 @@ class Controller_Login extends Controller
         Session::destroy();
         $data = array();
         //$data['users'] = Model_Tb1::find_all();
-        $data['users'] = Usercommon::getuserlistbytotalcredit();
+        $data['userranks'] = Usercommon::getuserlistbytotalcredit();
         //文字列を返す
         $view = View::forge('scds/login', $data);
 
-        $view->set_global('users', $data['users']);
+        $view->set_global('userranks', $data['userranks']);
         return Response::forge($view);
     }
 }

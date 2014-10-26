@@ -69,8 +69,10 @@ class Usercommon {
         $data = Usercommon::getuserlistdata();
 
         $view = View::forge('scds/userlist', $data);
+        $data['userranks'] = Usercommon::getuserlistbytotalcredit();
         $view->set_global('user', $data['user']);
         $view->set_global('users', $data['users']);
+        $view->set_global('userranks', $data['userranks']);
         $view->set_global('rank', $data['rank']);
         $view->set_global('followers', array());
         return $view;
