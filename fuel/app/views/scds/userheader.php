@@ -1,4 +1,5 @@
 <div data-role="header">
+    <a href="" data-rel="back">戻る</a>
     <h1>
         <?php echo '<img id="myaccountimg" src="'
             . $user['avator'] . '">'
