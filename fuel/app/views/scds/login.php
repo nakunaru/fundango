@@ -41,8 +41,8 @@
           <h2 class="">Fundangoは、みんなが"上場"している社会を実現します</h2>
           <br>
           <p class="description">Fundangoの名前の由来は、「私は○○さんの"ファン"です」の"fun"と"dango"=団子とを掛けあわせた言葉です。</p>
-          <p>Fundangoの目的、は<b>個人の信用を見える化する</b>ことです。 誰が誰に対して信用しているのか、それを数値やグラフとして表示します。</p>
-          <p>このサービスにログインするためにはTwitterアカウントが必要です。</p>
+          <p class="description">Fundangoの目的は、<b>個人の信用を見える化する</b>ことです。 誰が誰に対して信用しているのか、それを数値やグラフとして表示します。</p>
+          <p class="description">このサービスにログインするためにはTwitterアカウントが必要です。</p>
           <br>
           <h3>現在の日経平均Dango株価</h3>
           <h1><div id="odometernikkei" class="odometer" >0724545</div>d</h1>
