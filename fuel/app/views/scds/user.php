@@ -13,6 +13,8 @@
     <?php echo View::forge('scds/userheader'); ?>
     <!-- ユーザ情報パネル -->
     <?php echo View::forge('scds/userinfo'); ?>
+    <!-- ポートフォリオ -->
+    <?php echo View::forge('scds/userdeposit'); ?>
 </div>
 <!-- デポジット追加ダイアログ -->
 <?php echo View::forge('scds/depositadddialog'); ?>

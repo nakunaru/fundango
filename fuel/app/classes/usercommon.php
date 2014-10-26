@@ -48,13 +48,13 @@ class Usercommon {
             return null;
         }
         $user = $data['user'];
-        $data2 = Depositcommon::getdata($user);
         if (!$user->page_count) {
             $user->page_count = 1;
         } else {
             $user->page_count++;
         }
         $user->save();
+        $data2 = Depositcommon::getdata($user);
         $view = View::forge('scds/user', $data);
         $view->set_global('user', $data['user']);
         $view->set_global('rank', $data['rank']);
