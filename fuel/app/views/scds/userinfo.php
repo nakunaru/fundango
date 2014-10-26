@@ -6,5 +6,5 @@
     <li>デポった数<div class="ui-li-count"><?php echo $user['deposit_credit'] . 'd' ?></div></li>
     <li>デポられ数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div></li>
 </ul>
-<a data-role="button" data-inline="true" data-mini="true" href="https://twitter.com/<?php echo $user['screen_name'] ?>" target="_blank">Twitterのページ</a>
+<a data-role="button" href="https://twitter.com/<?php echo $user['screen_name'] ?>" target="_blank">Twitterのページ</a>
 <br>
