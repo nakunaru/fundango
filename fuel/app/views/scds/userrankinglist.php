@@ -1,4 +1,4 @@
-<div role="main" class="ui-content">
+<div role="main" class="ui-content" id="userrankinglist">
     <ol data-role="listview" data-inset="true" >
         <?php
         echo '<li data-role="list-divider">ユーザ株価ランキング(上位20位)</li>';

@@ -1,4 +1,4 @@
-<div role="main" class="ui-content">
+<div role="main" class="ui-content" id="userlist2">
     <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-filter-placeholder="Search user...">
         <?php
         echo '<li data-role="list-divider">ユーザリスト</li>';
