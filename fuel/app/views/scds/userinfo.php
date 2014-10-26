@@ -6,6 +6,6 @@
     <li>デポった数<div class="ui-li-count"><?php echo $user['deposit_credit'] . 'd' ?></div></li>
     <li>デポられ数<div class="ui-li-count"><?php echo $user['deposited_credit'] . 'd' ?></div></li>
 </ul>
-<a data-role="button" href="https://twitter.com/<?php echo $user['screen_name'] ?>" target="_blank">Twitterのページ</a>
+<a data-role="button" href="https://twitter.com/<?php echo $user['screen_name'] ?>" target="_blank">Twitterのページへ</a>
 <br>
-<a class="twitter-timeline" href="https://twitter.com/<?php echo $user['screen_name'] ?>" data-widget-id="526283876742615042">@<?php echo $user['screen_name'] ?> からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a class="twitter-timeline" href="https://twitter.com/hashtag/fundango" data-widget-id="526166424037781504">#fundango件のツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
