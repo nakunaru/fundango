@@ -13,7 +13,8 @@ class Notifycommon {
     public static function hasunreadnotify($tuserid)
     {
         $has_unread = false;
-        $notifylist = DB::query('select * from notify ' .'where tuserid = ' . $tuserid . ' and seen = 0' . ';')->execute()->as_array();
+        $notifylist_sql = "select * from notify where tuserid = :tuserid and seen = 0";
+        $notifylist = DB::query($notifylist_sql)->bind('tuserid', $tuserid)->execute()->as_array();
         if ($notifylist) {
             if (count($notifylist) > 0) {
                 $has_unread = true;
@@ -45,7 +46,8 @@ class Notifycommon {
         $tuserid = $user->tuserid;
         //$notifylist = Model_Notify::find_by('tuserid', $tuserid, '=');
         //日付の降順で取得する
-        $notifylist = DB::query('select * from notify ' .'where tuserid = ' . $tuserid . ' order by date desc' . ';')->as_object('Model_Notify')->execute()->as_array();
+        $notifylist_sql = "select * from notify where tuserid = :tuserid order by date desc;";
+        $notifylist = DB::query($notifylist_sql)->bind('tuserid', $tuserid)->as_object('Model_Notify')->execute()->as_array();
 
         if ($notifylist) {
             //既読save用の配列をクローンする
