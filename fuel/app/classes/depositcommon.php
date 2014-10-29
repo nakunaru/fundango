@@ -63,7 +63,7 @@ class Depositcommon {
     public static function getTotalCredit($to_user, $from_user) {
         $total_credit = 0;
         $prt4lio_sql = "select sum(depositnum) as depositnum from port4lio where to_tuserid = :to_user and from_tuserid = :from_user;";
-        $port4lio = DB::query($prt4lio_sql)->parameters(array('to_tuserid'=>$to_user->tuserid, 'from_user'=>$from_user->tuserid))->execute()->as_array();
+        $port4lio = DB::query($prt4lio_sql)->parameters(array('to_tuser'=>$to_user->tuserid, 'from_user'=>$from_user->tuserid))->execute()->as_array();
         foreach ($port4lio as $port) {      // 1行のみ確定ならifにするべき？
             $total_credit = $total_credit + $port['depositnum'];
         }
